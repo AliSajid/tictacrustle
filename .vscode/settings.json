@@ -29,6 +29,7 @@
         "struct",
         "tictacrustle",
         "serde",
+||||||| parent of 6343a60 (build: update releaserc)
         "Slint",
         "struct",
         "tictacrustle",
