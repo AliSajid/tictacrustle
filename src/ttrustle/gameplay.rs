@@ -7,6 +7,10 @@ mod errors;
 mod game;
 mod player;
 
-pub use self::game::Game;
-pub use self::player::Player;
-pub use self::player::Symbol;
+pub use self::{
+    game::Game,
+    player::{
+        Player,
+        Symbol,
+    },
+};

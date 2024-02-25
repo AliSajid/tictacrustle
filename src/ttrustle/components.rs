@@ -7,5 +7,7 @@ mod board;
 mod square;
 mod square_value;
 
-pub use self::board::Board;
-pub use self::square::Square;
+pub use self::{
+    board::Board,
+    square::Square,
+};

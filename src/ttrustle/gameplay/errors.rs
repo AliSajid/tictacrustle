@@ -3,7 +3,11 @@
 // SPDX-License-Identifier: Apache-2.0
 // SPDX-License-Identifier: MIT
 
-use std::fmt::{Display, Error, Formatter};
+use std::fmt::{
+    Display,
+    Error,
+    Formatter,
+};
 
 #[allow(dead_code)]
 #[derive(Debug)]
