@@ -78,7 +78,7 @@ repos:
           args:
             - --fix=no
         - id: pretty-format-json
-          exclude: ".vscode/launch.json"
+          exclude: ".vscode/.*json"
           args:
             - --indent=4
             - --autofix
