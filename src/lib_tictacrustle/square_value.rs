@@ -59,11 +59,11 @@ impl fmt::Display for SquareValue {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         match self {
             // If the `SquareValue` is `X`, it will display " X ".
-            SquareValue::X => write!(f, " X "),
+            Self::X => write!(f, " X "),
             // If the `SquareValue` is `O`, it will display " O ".
-            SquareValue::O => write!(f, " O "),
+            Self::O => write!(f, " O "),
             // If the `SquareValue` is `Empty`, it will display "   ".
-            SquareValue::Empty => write!(f, "   "),
+            Self::Empty => write!(f, "   "),
         }
     }
 }
