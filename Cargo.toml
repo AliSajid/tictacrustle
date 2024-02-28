@@ -15,7 +15,7 @@ keywords = ["tictactoe", "menace", "rust"]
 license = "MIT OR Apache-2.0"
 readme = "README.md"
 repository = "https://github.com/AliSajid/tictactoe"
-version = "1.0.0-next.1"
+version = "1.0.0-next.2"
 
 [lib]
 name = "tictacrustle"

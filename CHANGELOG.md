@@ -1,3 +1,11 @@
+## [1.0.0-next.2](https://github.com/AliSajid/tictacrustle/compare/v1.0.0-next.1...v1.0.0-next.2) (2024-02-28)
+
+
+### Bug Fixes
+
+* cleanup settings and vale rules ([59fba1e](https://github.com/AliSajid/tictacrustle/commit/59fba1e531750fb0b3949d4a9c71d3b94db39e7c))
+* clear warnings in ci scripts ([8f66930](https://github.com/AliSajid/tictacrustle/commit/8f6693089bef5702e03ea9bf2e7e11dc6ca5c925))
+
 ## 1.0.0-next.1 (2024-02-26)
 
 
