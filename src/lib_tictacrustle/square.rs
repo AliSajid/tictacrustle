@@ -342,6 +342,12 @@ impl Display for Square {
     }
 }
 
+impl Display for Square {
+    fn fmt(&self, f: &mut Formatter) -> fmt::Result {
+        write!(f, "{}", self.value)
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use rstest::{
