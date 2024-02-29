@@ -73,33 +73,164 @@ impl Square {
     /// # Returns
     ///
     /// A new `Square` instance with an `Empty` value.
-impl Display for Square {
-    fn fmt(&self, f: &mut Formatter) -> fmt::Result {
-        write!(f, "{}", self.value)
-    }
-}
-
-#[allow(dead_code)]
-impl Square {
     pub fn new() -> Square {
         Square {
             value: SquareValue::Empty,
         }
     }
 
-    fn is_empty(&self) -> bool {
+    /// Checks if the `Square` is empty.
+    ///
+    /// This method returns `true` if `value` in the [`Square`](struct.Square.html) instance is
+    /// [`Empty`](enum.SquareValue.html#variant.Empty), and `false` otherwise.
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// use tictacrustle::{
+    ///     Square,
+    ///     SquareValue,
+    /// };
+    ///
+    /// // Create a new square
+    /// let square = Square::new();
+    //# assert_eq!(square.is_empty(), true);
+    /// // Create a square with an 'X'
+    /// let mut x_square = Square::new();
+    /// x_square.set_x();
+    //# assert_eq!(square.is_empty(), false);
+    /// // Create a square with an 'O'
+    /// let mut o_square = Square::new();
+    /// o_square.set_o();
+    //# assert_eq!(square.is_empty(), false);
+    /// ```
+    /// # Returns
+    ///
+    /// A boolean indicating whether the `Square` is empty.
+    ///
+    /// # See Also
+    ///
+    /// - [`is_x`](struct.Square.html#method.is_x)
+    /// - [`is_o`](struct.Square.html#method.is_o)
+    pub fn is_empty(&self) -> bool {
         self.value == SquareValue::Empty
     }
 
-    fn is_x(&self) -> bool {
+    /// Checks if the `Square`'s value is `X`.
+    ///
+    /// This method returns `true` if the `Square`'s value is `SquareValue::X`, and `false`
+    /// otherwise.
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// use tictacrustle::{
+    ///     Square,
+    ///     SquareValue,
+    /// };
+    ///
+    /// // Create a new square
+    /// let square = Square::new();
+    //# assert_eq!(square.is_x(), false);
+    /// // Create a square with an 'X'
+    /// let mut x_square = Square::new();
+    /// x_square.set_x();
+    //# assert_eq!(x_square.is_x(), true);
+    /// // Create a square with an 'O'
+    /// let mut o_square = Square::new();
+    /// o_square.set_o();
+    //# assert_eq!(o_square.is_x(), false);
+    /// ```
+    /// # Returns
+    ///
+    /// A boolean indicating whether the `Square`'s value is `X`.
+    ///
+    /// # See Also
+    ///
+    /// - [`is_empty`](struct.Square.html#method.is_empty)
+    /// - [`is_o`](struct.Square.html#method.is_o)
+    pub fn is_x(&self) -> bool {
         self.value == SquareValue::X
     }
 
-    fn is_o(&self) -> bool {
+    /// Checks if the `Square`'s value is `O`.
+    ///
+    /// This method returns `true` if the `Square`'s value is `SquareValue::O`, and `false`
+    /// otherwise.
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// use tictacrustle::{
+    ///     Square,
+    ///     SquareValue,
+    /// };
+    ///
+    /// // Create a new square
+    /// let square = Square::new();
+    //# assert_eq!(square.is_o(), false);
+    /// // Create a square with an 'O'
+    /// let mut o_square = Square::new();
+    /// o_square.set_o();
+    //# assert_eq!(o_square.is_o(), true);
+    /// // Create a square with an 'X'
+    /// let mut x_square = Square::new();
+    /// x_square.set_x();
+    //# assert_eq!(x_square.is_o(), false);
+    /// ```
+    /// # Returns
+    ///
+    /// A boolean indicating whether the `Square`'s value is `O`.
+    ///
+    /// # See Also
+    ///
+    /// - [`is_empty`](struct.Square.html#method.is_empty)
+    /// - [`is_x`](struct.Square.html#method.is_x)
+    pub fn is_o(&self) -> bool {
         self.value == SquareValue::O
     }
 
-    fn get_value(&self) -> SquareValue {
+    /// Returns the value of the `Square`.
+    ///
+    /// This method returns the current `SquareValue` of the `Square` instance. The `SquareValue`
+    /// can be either `X`, `O`, or `Empty`.
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// use tictacrustle::{
+    ///     Square,
+    ///     SquareValue,
+    /// };
+    ///
+    /// // Create a square with an 'X'
+    /// let mut x_square = Square::new();
+    /// x_square.set_x();
+    /// assert_eq!(x_square.get_value(), SquareValue::X);
+    ///
+    /// // Create a square with an 'O'
+    /// let mut o_square = Square::new();
+    /// o_square.set_o();
+    /// assert_eq!(o_square.get_value(), SquareValue::O);
+    ///
+    /// // Create an empty square
+    /// let empty_square = Square::new();
+    /// assert_eq!(empty_square.get_value(), SquareValue::Empty);
+    /// ```
+    ///
+    /// # Returns
+    ///
+    /// The current `SquareValue` of the `Square`.
+    ///
+    /// # See Also
+    ///
+    /// - [`set_value`](struct.Square.html#method.set_value)
+    /// - [`set_x`](struct.Square.html#method.set_x)
+    /// - [`set_o`](struct.Square.html#method.set_o)
+    /// - [`is_empty`](struct.Square.html#method.is_empty)
+    /// - [`is_x`](struct.Square.html#method.is_x)
+    /// - [`is_o`](struct.Square.html#method.is_o)
+    pub fn get_value(&self) -> SquareValue {
         self.value
     }
 
@@ -126,7 +257,7 @@ impl Square {
 
 impl Default for Square {
     fn default() -> Self {
-        Square::new()
+        Self::new()
     }
 }
 
