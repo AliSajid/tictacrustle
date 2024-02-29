@@ -11,7 +11,7 @@ This page lists the licenses of the projects used in cargo-about.
 
 ## Overview of licenses
 
-- [Apache License 2.0](#Apache-2.0) (68)
+- [Apache License 2.0](#Apache-2.0) (69)
 - [MIT License](#MIT) (12)
 - [Unicode License Agreement - Data Files and Software (2016)](#Unicode-DFS-2016) (1)
 
@@ -872,6 +872,7 @@ Apache License 2.0
 
 #### Used by
 
+- [anyhow]( https://github.com/dtolnay/anyhow ) 1.0.80
 - [itoa]( https://github.com/dtolnay/itoa ) 1.0.10
 - [libc]( https://github.com/rust-lang/libc ) 0.2.153
 - [proc-macro2]( https://github.com/dtolnay/proc-macro2 ) 1.0.78

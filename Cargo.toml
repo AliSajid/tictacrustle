@@ -26,6 +26,7 @@ name = "ttrustle"
 path = "src/ttrustle/main.rs"
 
 [dependencies]
+anyhow = { version = "1.0.80", features = ["backtrace"] }
 color-eyre = "0.6.2"
 env_logger = "0.11.2"
 log = "0.4.20"

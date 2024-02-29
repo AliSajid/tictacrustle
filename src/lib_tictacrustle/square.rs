@@ -73,8 +73,9 @@ impl Square {
     /// # Returns
     ///
     /// A new `Square` instance with an `Empty` value.
-    pub fn new() -> Square {
-        Square {
+    #[must_use]
+    pub const fn new() -> Self {
+        Self {
             value: SquareValue::Empty,
         }
     }
@@ -112,6 +113,7 @@ impl Square {
     ///
     /// - [`is_x`](struct.Square.html#method.is_x)
     /// - [`is_o`](struct.Square.html#method.is_o)
+    #[must_use]
     pub fn is_empty(&self) -> bool {
         self.value == SquareValue::Empty
     }
@@ -149,6 +151,7 @@ impl Square {
     ///
     /// - [`is_empty`](struct.Square.html#method.is_empty)
     /// - [`is_o`](struct.Square.html#method.is_o)
+    #[must_use]
     pub fn is_x(&self) -> bool {
         self.value == SquareValue::X
     }
@@ -186,6 +189,7 @@ impl Square {
     ///
     /// - [`is_empty`](struct.Square.html#method.is_empty)
     /// - [`is_x`](struct.Square.html#method.is_x)
+    #[must_use]
     pub fn is_o(&self) -> bool {
         self.value == SquareValue::O
     }
@@ -230,7 +234,8 @@ impl Square {
     /// - [`is_empty`](struct.Square.html#method.is_empty)
     /// - [`is_x`](struct.Square.html#method.is_x)
     /// - [`is_o`](struct.Square.html#method.is_o)
-    pub fn get_value(&self) -> SquareValue {
+    #[must_use]
+    pub const fn get_value(&self) -> SquareValue {
         self.value
     }
 
@@ -333,7 +338,7 @@ impl Square {
 
 impl Default for Square {
     fn default() -> Self {
-        Square::new()
+        Self::new()
     }
 }
 
