@@ -22,6 +22,7 @@
         "serde",
         "Slint",
         "struct",
+        "structfield",
         "tictacrustle",
         "serde",
         "tictactoe",
