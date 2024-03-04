@@ -8,6 +8,7 @@
         "Michie",
         "NAMTAO",
         "Pshonyak",
+        "rstest",
         "Rustacean",
         "Slint",
         "struct",
@@ -39,4 +40,5 @@
         "meta/vale-styles/config"
     ],
     "vale.enableSpellcheck": true,
+    "rust-analyzer.showUnlinkedFileNotification": false,
 }

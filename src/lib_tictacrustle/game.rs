@@ -18,8 +18,8 @@ pub struct Player {
 pub struct Game {
     player_x: Player,
     player_o: Player,
-    board: Board,
-    winner: Option<Player>,
+    board:    Board,
+    winner:   Option<Player>,
 }
 
 impl Game {
@@ -29,8 +29,8 @@ impl Game {
         Self {
             player_x: current_player,
             player_o: other_player,
-            board: Board::new(),
-            winner: None,
+            board:    Board::new(),
+            winner:   None,
         }
     }
 

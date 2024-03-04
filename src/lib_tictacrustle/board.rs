@@ -3,70 +3,73 @@
 // SPDX-License-Identifier: Apache-2.0
 // SPDX-License-Identifier: MIT
 
-use super::square::Square;
+use std::fmt::Display;
+
+use crate::Square;
 
 #[derive(Debug, PartialEq, Eq)]
-
 pub struct Board {
-    squares: [[Square; 3]; 3],
+    squares: [Square; 9],
 }
 
-#[allow(dead_code)]
 impl Board {
-    pub fn new() -> Board {
-        Board {
-            squares: [[Square::new(); 3]; 3],
+    #[must_use]
+    pub fn new() -> Self {
+        Self {
+            squares: [Square::default(); 9],
         }
     }
 
-    fn get_row(&self, row: usize) -> [Square; 3] {
+    #[must_use]
+    pub const fn get_square(&self, row: usize, col: usize) -> &Square {
+        let index = Self::translate_coordinates(row, col);
+        &self.squares[index]
+    }
+
+    pub fn get_square_mut(&mut self, row: usize, col: usize) -> &mut Square {
+        let index = Self::translate_coordinates(row, col);
+        &mut self.squares[index]
+    }
+
+    #[must_use]
+    pub const fn get_row(&self, row: usize) -> [&Square; 3] {
         [
-            self.get_square(row, 0),
             self.get_square(row, 1),
             self.get_square(row, 2),
+            self.get_square(row, 3),
         ]
     }
 
-    fn get_column(&self, column: usize) -> [Square; 3] {
+    #[must_use]
+    pub const fn get_column(&self, col: usize) -> [&Square; 3] {
         [
-            self.get_square(0, column),
-            self.get_square(1, column),
-            self.get_square(2, column),
+            self.get_square(1, col),
+            self.get_square(2, col),
+            self.get_square(3, col),
         ]
     }
 
-    fn get_diagonal(&self, diagonal: usize) -> [Square; 3] {
+    #[must_use]
+    pub fn get_diagonal(&self, diagonal: &str) -> [&Square; 3] {
         match diagonal {
-            0 => [
-                self.get_square(0, 0),
+            "l" => [
                 self.get_square(1, 1),
                 self.get_square(2, 2),
+                self.get_square(3, 3),
             ],
-            1 => [
-                self.get_square(0, 2),
-                self.get_square(1, 1),
-                self.get_square(2, 0),
+            "r" => [
+                self.get_square(1, 3),
+                self.get_square(2, 2),
+                self.get_square(3, 1),
             ],
             _ => panic!("Invalid diagonal"),
         }
     }
 
-    pub fn get_square(&self, row: usize, column: usize) -> Square {
-        self.squares[row][column]
-    }
-
-    pub fn print(&self) {
-        for row in 0..3 {
-            println!(
-                "{}|{}|{}",
-                self.get_square(row, 0),
-                self.get_square(row, 1),
-                self.get_square(row, 2)
-            );
-            if row < 2 {
-                println!("-----------");
-            }
-        }
+    const fn translate_coordinates(row: usize, col: usize) -> usize {
+        let row_index = (row - 1) * 3;
+        let col_index = col - 1;
+        row_index + col_index
     }
 }
 
@@ -76,54 +79,48 @@ impl Default for Board {
     }
 }
 
+impl Display for Board {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(
+            f,
+            "{}|{}|{}\n-----------\n{}|{}|{}\n-----------\n{}|{}|{}",
+            self.get_square(1, 1),
+            self.get_square(1, 2),
+            self.get_square(1, 3),
+            self.get_square(2, 1),
+            self.get_square(2, 2),
+            self.get_square(2, 3),
+            self.get_square(3, 1),
+            self.get_square(3, 2),
+            self.get_square(3, 3)
+        )
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
 
     #[test]
     fn test_get_row() {
-        let board = Board::new();
-        assert_eq!(
-            board.get_row(0),
-            [Square::new(), Square::new(), Square::new()]
-        );
-        assert_eq!(
-            board.get_row(1),
-            [Square::new(), Square::new(), Square::new()]
-        );
-        assert_eq!(
-            board.get_row(2),
-            [Square::new(), Square::new(), Square::new()]
-        );
+        let board = Board::default();
+        assert_eq!(board.get_row(1), [&Square::default(); 3]);
+        assert_eq!(board.get_row(2), [&Square::default(); 3]);
+        assert_eq!(board.get_row(3), [&Square::default(); 3]);
     }
 
     #[test]
     fn test_get_column() {
-        let board = Board::new();
-        assert_eq!(
-            board.get_column(0),
-            [Square::new(), Square::new(), Square::new()]
-        );
-        assert_eq!(
-            board.get_column(1),
-            [Square::new(), Square::new(), Square::new()]
-        );
-        assert_eq!(
-            board.get_column(2),
-            [Square::new(), Square::new(), Square::new()]
-        );
+        let board = Board::default();
+        assert_eq!(board.get_column(1), [&Square::default(); 3]);
+        assert_eq!(board.get_column(2), [&Square::default(); 3]);
+        assert_eq!(board.get_column(3), [&Square::default(); 3]);
     }
 
     #[test]
     fn test_get_diagonal() {
-        let board = Board::new();
-        assert_eq!(
-            board.get_diagonal(0),
-            [Square::new(), Square::new(), Square::new()]
-        );
-        assert_eq!(
-            board.get_diagonal(1),
-            [Square::new(), Square::new(), Square::new()]
-        );
+        let board = Board::default();
+        assert_eq!(board.get_diagonal("l"), [&Square::default(); 3]);
+        assert_eq!(board.get_diagonal("r"), [&Square::default(); 3]);
     }
 }
