@@ -1,0 +1,155 @@
+Results of kics linter (version 2.1.1)
+See documentation on https://megalinter.io/7.13.0/descriptors/repository_kics/
+-----------------------------------------------
+
+❌ [ERROR] for workspace /tmp/lint
+Linter raw log:
+
+                                                                                                                                                   
+                                                                                                                                                                                                    
+   MLLLLLM             MLLLLLLLLL   LLLLLLL             KLLLLLLLLLLLLLLLL       LLLLLLLLLLLLLLLLLLLLLLL 
+   MMMMMMM           MMMMMMMMMML    MMMMMMMK       LMMMMMMMMMMMMMMMMMMMML   KLMMMMMMMMMMMMMMMMMMMMMMMMM 
+   MMMMMMM         MMMMMMMMML       MMMMMMMK     LMMMMMMMMMMMMMMMMMMMMMML  LMMMMMMMMMMMMMMMMMMMMMMMMMMM 
+   MMMMMMM      MMMMMMMMMML         MMMMMMMK   LMMMMMMMMMMMMMMMMMMMMMMMML LMMMMMMMMMMMMMMMMMMMMMMMMMMMM 
+   MMMMMMM    LMMMMMMMMML           MMMMMMMK  LMMMMMMMMMLLMLLLLLLLLLLLLLL LMMMMMMMLLLLLLLLLLLLLLLLLLLLM 
+   MMMMMMM  MMMMMMMMMLM             MMMMMMMK LMMMMMMMM                    LMMMMMML                      
+   MMMMMMMLMMMMMMMML                MMMMMMMK MMMMMMML                     LMMMMMMMMLLLLLLLLLLLLLMLL     
+   MMMMMMMMMMMMMMMM                 MMMMMMMK MMMMMML                       LMMMMMMMMMMMMMMMMMMMMMMMMML  
+   MMMMMMMMMMMMMMMMMM               MMMMMMMK MMMMMMM                         LMMMMMMMMMMMMMMMMMMMMMMMML 
+   MMMMMMM KLMMMMMMMMML             MMMMMMMK LMMMMMMM                                          MMMMMMMML
+   MMMMMMM    LMMMMMMMMMM           MMMMMMMK LMMMMMMMMLL                                        MMMMMMML
+   MMMMMMM      LMMMMMMMMMLL        MMMMMMMK  LMMMMMMMMMMMMMMMMMMMMMMMMML LLLLLLLLLLLLLLLLLLLLMMMMMMMMMM
+   MMMMMMM        MMMMMMMMMMML      MMMMMMMK   MMMMMMMMMMMMMMMMMMMMMMMMML LMMMMMMMMMMMMMMMMMMMMMMMMMMMM 
+   MMMMMMM          LLMMMMMMMMML    MMMMMMMK     LLMMMMMMMMMMMMMMMMMMMMML LMMMMMMMMMMMMMMMMMMMMMMMMMML  
+   MMMMMMM             MMMMMMMMMML  MMMMMMMK         KLMMMMMMMMMMMMMMMMML LMMMMMMMMMMMMMMMMMMMMMMMLK    
+                                                                                                            
+                                                                                                                                                                                                                                                                                                                        
+
+
+Scanning with Keeping Infrastructure as Code Secure v2.1.1
+
+
+
+
+
+Unpinned Actions Full Length Commit SHA, Severity: LOW, Results: 15
+Description: Pinning an action to a full length commit SHA is currently the only way to use an action as an immutable release. Pinning to a particular SHA helps mitigate the risk of a bad actor adding a backdoor to the action's repository, as they would need to generate a SHA-1 collision for a valid Git object payload. When selecting a SHA, you should verify it is from the action's repository and not a repository fork.
+Platform: CICD
+Learn more about this vulnerability: https://docs.kics.io/latest/queries/cicd-queries/555ab8f9-2001-455e-a077-f2d0f41e2fb9
+
+	[1]: .github/workflows/ci.yaml:76
+
+		075:             - name: Wait before badge creation
+		076:               uses: AliSajid/random-wait-action@v1.1.0
+		077:               with:
+
+
+	[2]: .github/workflows/ci.yaml:56
+
+		055:             - name: Install Rust
+		056:               uses: dtolnay/rust-toolchain@master
+		057:               with:
+
+
+	[3]: .github/workflows/release.yaml:72
+
+		071:             - name: Install cross
+		072:               uses: taiki-e/install-action@v2
+		073:               with:
+
+
+	[4]: .github/workflows/release.yaml:139
+
+		138:             - name: Install semantic-release-cargo
+		139:               uses: taiki-e/install-action@v2
+		140:               with:
+
+
+	[5]: .github/workflows/code_coverage.yaml:27
+
+		026:             - name: Upload to codecov.io
+		027:               uses: codecov/codecov-action@v3
+		028:               with:
+
+
+	[6]: .github/workflows/code_coverage.yaml:16
+
+		015:             # Nightly Rust is required for cargo llvm-cov --doc.
+		016:             - uses: dtolnay/rust-toolchain@nightly
+		017:               with:
+
+
+	[7]: .github/workflows/code_coverage.yaml:19
+
+		018:                 components: llvm-tools-preview
+		019:             - uses: taiki-e/install-action@cargo-llvm-cov
+		020:             - uses: taiki-e/install-action@nextest
+
+
+	[8]: .github/workflows/release.yaml:123
+
+		122:             - name: Import GPG key
+		123:               uses: crazy-max/ghaction-import-gpg@v6
+		124:               with:
+
+
+	[9]: .github/workflows/audit.yaml:19
+
+		018:             - name: Install Rust
+		019:               uses: dtolnay/rust-toolchain@stable
+		020:             - name: Install cargo-audit
+
+
+	[10]: .github/workflows/deploy_mdbook.yaml:53
+
+		052:       - name: Install Rust toolchain
+		053:         uses: dtolnay/rust-toolchain@master
+		054:         id: rust-toolchain
+
+
+	[11]: .github/workflows/deploy_mdbook.yaml:37
+
+		036:       - name: Install pnpm
+		037:         uses: pnpm/action-setup@v2
+		038:         with:
+
+
+	[12]: .github/workflows/deploy_mdbook.yaml:60
+
+		059:       - name: Install cargo-binstall
+		060:         uses: taiki-e/install-action@v2
+		061:         with:
+
+
+	[13]: .github/workflows/ci.yaml:61
+
+		060:             - name: Install nightly Rust
+		061:               uses: dtolnay/rust-toolchain@nightly
+		062:               with:
+
+
+	[14]: .github/workflows/code_coverage.yaml:20
+
+		019:             - uses: taiki-e/install-action@cargo-llvm-cov
+		020:             - uses: taiki-e/install-action@nextest
+		021:             - name: Collect coverage data (including doctests)
+
+
+	[15]: .github/workflows/release.yaml:64
+
+		063:             - name: Install Rust toolchain
+		064:               uses: dtolnay/rust-toolchain@master
+		065:               id: rust-toolchain
+
+
+
+Results Summary:
+CRITICAL: 0
+HIGH: 0
+MEDIUM: 0
+LOW: 15
+INFO: 0
+TOTAL: 15
+
+A new version 'v2.1.2' of KICS is available, please consider updating
+

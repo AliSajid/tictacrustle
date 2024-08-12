@@ -1,0 +1,895 @@
+Results of cspell linter (version 8.10.4)
+See documentation on https://megalinter.io/7.13.0/descriptors/spell_cspell/
+-----------------------------------------------
+
+❌ [ERROR] for workspace /tmp/lint
+Linter raw log:
+ 1/42 ./.github/ISSUE_TEMPLATE/bug_report.md 650.75ms X
+./.github/ISSUE_TEMPLATE/bug_report.md:6:15      - Unknown word (Sajid)      -- assignees: AliSajid
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+ 2/42 ./.github/ISSUE_TEMPLATE/feature_request.md 114.20ms X
+./.github/ISSUE_TEMPLATE/feature_request.md:6:15      - Unknown word (Sajid)      -- assignees: AliSajid
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+ 3/42 ./.github/PULL_REQUEST_TEMPLATE.md 59.49ms X
+./.github/PULL_REQUEST_TEMPLATE.md:26:33     - Unknown word (rustc)      -- Version (I.e, output of `rustc -V`):
+	 Suggestions: [rust, rusts, rusty, rustic, Rusty]
+ 4/42 ./.github/workflows/audit.yaml 163.60ms X
+./.github/workflows/audit.yaml:19:21     - Unknown word (dtolnay)    -- uses: dtolnay/rust-toolchain@stable
+	 Suggestions: [tolan, tonya, dona, dtoa, delay]
+./.github/workflows/audit.yaml:21:21     - Unknown word (taiki)      -- uses: taiki-e/install-action@d3
+	 Suggestions: [tiki, tajik, takin, Tajik, tack]
+ 5/42 ./.github/workflows/ci.yaml 757.90ms X
+./.github/workflows/ci.yaml:33:32     - Unknown word (MSRV)       -- - 1.72.1 # MSRV
+	 Suggestions: [mirv, MIRV, movr, MOVR, MRS]
+./.github/workflows/ci.yaml:45:38     - Unknown word (MSRV)       -- - rust: 1.72.1 # MSRV
+	 Suggestions: [mirv, MIRV, movr, MOVR, MRS]
+./.github/workflows/ci.yaml:46:30     - Unknown word (msrv)       -- label: msrv
+	 Suggestions: [mirv, MIRV, movr, mrs, Mrs]
+./.github/workflows/ci.yaml:56:21     - Unknown word (dtolnay)    -- uses: dtolnay/rust-toolchain@master
+	 Suggestions: [tolan, tonya, dona, dtoa, delay]
+./.github/workflows/ci.yaml:59:29     - Unknown word (rustfmt)    -- components: rustfmt, clippy
+	 Suggestions: [rtfm, rust, rusts, rusty, russet]
+./.github/workflows/ci.yaml:59:38     - Unknown word (clippy)     -- components: rustfmt, clippy
+	 Suggestions: [chippy, lippy, flippy, slippy, clip]
+./.github/workflows/ci.yaml:61:21     - Unknown word (dtolnay)    -- uses: dtolnay/rust-toolchain@nightly
+	 Suggestions: [tolan, tonya, dona, dtoa, delay]
+./.github/workflows/ci.yaml:64:29     - Unknown word (rustfmt)    -- components: rustfmt, clippy
+	 Suggestions: [rtfm, rust, rusts, rusty, russet]
+./.github/workflows/ci.yaml:64:38     - Unknown word (clippy)     -- components: rustfmt, clippy
+	 Suggestions: [chippy, lippy, flippy, slippy, clip]
+./.github/workflows/ci.yaml:66:21     - Unknown word (Swatinem)   -- uses: Swatinem/rust-cache@6fd3edff
+	 Suggestions: [Satinet, Stained, Stainer, Satem, Satin]
+./.github/workflows/ci.yaml:74:26     - Unknown word (clippy)     -- run: cargo clippy -- -D warnings
+	 Suggestions: [chippy, lippy, flippy, slippy, clip]
+./.github/workflows/ci.yaml:76:24     - Unknown word (Sajid)      -- uses: AliSajid/random-wait-action@v
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./.github/workflows/ci.yaml:81:21     - Unknown word (schneegans) -- uses: schneegans/dynamic-badges-action
+	 Suggestions: []
+./.github/workflows/ci.yaml:92:21     - Unknown word (schneegans) -- uses: schneegans/dynamic-badges-action
+	 Suggestions: []
+./.github/workflows/ci.yaml:110:14    - Unknown word (mdbook)     -- generate_mdbook:
+	 Suggestions: [book, ebook, mbox, mdoc, mock]
+./.github/workflows/ci.yaml:111:42    - Unknown word (mdbook)     -- github/workflows/deploy_mdbook.yaml
+	 Suggestions: [book, ebook, mbox, mdoc, mock]
+ 6/42 ./.github/workflows/code_coverage.yaml 327.05ms X
+./.github/workflows/code_coverage.yaml:11:37     - Unknown word (seccomp)    -- options: --security-opt seccomp=unconfined
+	 Suggestions: [secco, scop, scamp, scoop, second]
+./.github/workflows/code_coverage.yaml:16:21     - Unknown word (dtolnay)    -- - uses: dtolnay/rust-toolchain@nightly
+	 Suggestions: [tolan, tonya, dona, dtoa, delay]
+./.github/workflows/code_coverage.yaml:19:21     - Unknown word (taiki)      -- - uses: taiki-e/install-action@cargo
+	 Suggestions: [tiki, tajik, takin, Tajik, tack]
+./.github/workflows/code_coverage.yaml:20:21     - Unknown word (taiki)      -- - uses: taiki-e/install-action@nextest
+	 Suggestions: [tiki, tajik, takin, Tajik, tack]
+./.github/workflows/code_coverage.yaml:20:44     - Unknown word (nextest)    -- taiki-e/install-action@nextest
+	 Suggestions: [neatest, sextets, newest, next's, nextel]
+./.github/workflows/code_coverage.yaml:21:54     - Unknown word (doctests)   -- coverage data (including doctests)
+	 Suggestions: [docents, dockets, docetist, Docetist, doest]
+./.github/workflows/code_coverage.yaml:23:44     - Unknown word (nextest)    -- llvm-cov --no-report nextest --config-file nextest
+	 Suggestions: [neatest, sextets, newest, next's, nextel]
+./.github/workflows/code_coverage.yaml:23:66     - Unknown word (nextest)    -- nextest --config-file nextest.toml
+	 Suggestions: [neatest, sextets, newest, next's, nextel]
+./.github/workflows/code_coverage.yaml:25:41     - Unknown word (doctests)   -- cargo llvm-cov report --doctests --lcov --output-path
+	 Suggestions: [docents, dockets, docetist, Docetist, doest]
+ 7/42 ./.github/workflows/deploy_mdbook.yaml 763.13ms X
+./.github/workflows/deploy_mdbook.yaml:6:27      - Unknown word (vercel)     -- description: "The vercel deployment url of the
+	 Suggestions: [tercel, verde, verge, verne, verse]
+./.github/workflows/deploy_mdbook.yaml:10:3      - Unknown word (VERCEL)     -- VERCEL_ORG_ID: ${{ secrets
+	 Suggestions: [TERCEL, VERDE, VERGE, VERNE, VERSE]
+./.github/workflows/deploy_mdbook.yaml:10:30     - Unknown word (VERCEL)     -- ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+	 Suggestions: [TERCEL, VERDE, VERGE, VERNE, VERSE]
+./.github/workflows/deploy_mdbook.yaml:11:3      - Unknown word (VERCEL)     -- VERCEL_PROJECT_ID: ${{ secrets
+	 Suggestions: [TERCEL, VERDE, VERGE, VERNE, VERSE]
+./.github/workflows/deploy_mdbook.yaml:11:34     - Unknown word (VERCEL)     -- PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+	 Suggestions: [TERCEL, VERDE, VERGE, VERNE, VERSE]
+./.github/workflows/deploy_mdbook.yaml:12:3      - Unknown word (VERCEL)     -- VERCEL_TOKEN: ${{ secrets.VERCEL
+	 Suggestions: [TERCEL, VERDE, VERGE, VERNE, VERSE]
+./.github/workflows/deploy_mdbook.yaml:53:15     - Unknown word (dtolnay)    -- uses: dtolnay/rust-toolchain@master
+	 Suggestions: [tolan, tonya, dona, dtoa, delay]
+./.github/workflows/deploy_mdbook.yaml:58:15     - Unknown word (Swatinem)   -- uses: Swatinem/rust-cache@6fd3edff
+	 Suggestions: [Satinet, Stained, Stainer, Satem, Satin]
+./.github/workflows/deploy_mdbook.yaml:59:29     - Unknown word (binstall)   -- name: Install cargo-binstall
+	 Suggestions: [install, uninstall, binal, bimetal, bistate]
+./.github/workflows/deploy_mdbook.yaml:60:15     - Unknown word (taiki)      -- uses: taiki-e/install-action@v2
+	 Suggestions: [tiki, tajik, takin, Tajik, tack]
+./.github/workflows/deploy_mdbook.yaml:62:23     - Unknown word (binstall)   -- tool: cargo-binstall
+	 Suggestions: [install, uninstall, binal, bimetal, bistate]
+./.github/workflows/deploy_mdbook.yaml:64:20     - Unknown word (binstall)   -- run: cargo binstall --log-level debug -
+	 Suggestions: [install, uninstall, binal, bimetal, bistate]
+./.github/workflows/deploy_mdbook.yaml:64:69     - Unknown word (mdbook)     -- no-confirm --locked mdbook mdbook-plantuml mdbook
+	 Suggestions: [book, ebook, mbox, mdoc, mock]
+./.github/workflows/deploy_mdbook.yaml:64:76     - Unknown word (mdbook)     -- confirm --locked mdbook mdbook-plantuml mdbook-inline
+	 Suggestions: [book, ebook, mbox, mdoc, mock]
+./.github/workflows/deploy_mdbook.yaml:64:83     - Unknown word (plantuml)   -- locked mdbook mdbook-plantuml mdbook-inline-highlighting
+	 Suggestions: [plant, panful, plants, plenum, phantom]
+./.github/workflows/deploy_mdbook.yaml:64:92     - Unknown word (mdbook)     -- mdbook mdbook-plantuml mdbook-inline-highlighting
+	 Suggestions: [book, ebook, mbox, mdoc, mock]
+./.github/workflows/deploy_mdbook.yaml:66:30     - Unknown word (vercel)     -- run: pnpm install -g vercel@latest
+	 Suggestions: [tercel, verde, verge, verne, verse]
+./.github/workflows/deploy_mdbook.yaml:68:14     - Unknown word (vercel)     -- run: vercel pull --yes --environment
+	 Suggestions: [tercel, verde, verge, verne, verse]
+./.github/workflows/deploy_mdbook.yaml:70:14     - Unknown word (mdbook)     -- run: mdbook build guide
+	 Suggestions: [book, ebook, mbox, mdoc, mock]
+./.github/workflows/deploy_mdbook.yaml:71:25     - Unknown word (Vercel)     -- - name: Build for Vercel deployment -- Preview
+	 Suggestions: [Tercel, verde, Verde, Verge, Verne]
+./.github/workflows/deploy_mdbook.yaml:73:14     - Unknown word (vercel)     -- run: vercel build --cwd guide/book
+	 Suggestions: [tercel, verde, verge, verne, verse]
+./.github/workflows/deploy_mdbook.yaml:74:25     - Unknown word (Vercel)     -- - name: Build for Vercel deployment -- Production
+	 Suggestions: [Tercel, verde, Verde, Verge, Verne]
+./.github/workflows/deploy_mdbook.yaml:76:14     - Unknown word (vercel)     -- run: vercel build --cwd guide/book
+	 Suggestions: [tercel, verde, verge, verne, verse]
+./.github/workflows/deploy_mdbook.yaml:77:25     - Unknown word (Vercel)     -- - name: Deploy to Vercel -- Preview
+	 Suggestions: [Tercel, verde, Verde, Verge, Verne]
+./.github/workflows/deploy_mdbook.yaml:80:25     - Unknown word (Vercel)     -- - name: Deploy to Vercel -- Production
+	 Suggestions: [Tercel, verde, Verde, Verge, Verne]
+ 8/42 ./.github/workflows/get_next_version.yaml 8.75ms
+ 9/42 ./.github/workflows/release.yaml 1163.28ms X
+./.github/workflows/release.yaml:8:5       - Unknown word (SEMREL)     -- SEMREL_RUST_VERSION: 2.1.5
+	 Suggestions: [SEMELE, SEMMLE, Semele, Semmle, SEEL]
+./.github/workflows/release.yaml:20:23     - Unknown word (tactix)     -- - tactix
+	 Suggestions: [tactic, tacit, tact, tacts, tact's]
+./.github/workflows/release.yaml:21:23     - Unknown word (tactix)     -- - tactix-bench
+	 Suggestions: [tactic, tacit, tact, tacts, tact's]
+./.github/workflows/release.yaml:23:23     - Unknown word (alphabatized) -- # alphabatized by target
+	 Suggestions: [alphabetized, alphabetize, alphabetizer, alphabetizes, alphabeted]
+./.github/workflows/release.yaml:25:31     - Unknown word (aarch)        -- target: aarch64-apple-darwin
+	 Suggestions: [arch, anarch, Arch, larch, march]
+./.github/workflows/release.yaml:28:31     - Unknown word (aarch)        -- target: aarch64-unknown-linux-gnu
+	 Suggestions: [arch, anarch, Arch, larch, march]
+./.github/workflows/release.yaml:31:31     - Unknown word (aarch)        -- target: aarch64-unknown-linux-musl
+	 Suggestions: [arch, anarch, Arch, larch, march]
+./.github/workflows/release.yaml:64:21     - Unknown word (dtolnay)      -- uses: dtolnay/rust-toolchain@master
+	 Suggestions: [tolan, tonya, dona, dtoa, delay]
+./.github/workflows/release.yaml:70:21     - Unknown word (Swatinem)     -- uses: Swatinem/rust-cache@6fd3edff
+	 Suggestions: [Satinet, Stained, Stainer, Satem, Satin]
+./.github/workflows/release.yaml:72:21     - Unknown word (taiki)        -- uses: taiki-e/install-action@v2
+	 Suggestions: [tiki, tajik, takin, Tajik, tack]
+./.github/workflows/release.yaml:123:31    - Unknown word (ghaction)     -- uses: crazy-max/ghaction-import-gpg@v6
+	 Suggestions: [action, graviton, location, gabion, galton]
+./.github/workflows/release.yaml:127:46    - Unknown word (SUBKEY)       -- fingerprint: ${{ secrets.GPG_SUBKEY_FINGERPRINT }}
+	 Suggestions: [SUEY, SULKY, SMOKEY, SUBBED, SUBDEB]
+./.github/workflows/release.yaml:129:26    - Unknown word (signingkey)   -- git_user_signingkey: true
+	 Suggestions: [signing, signings, signing's]
+./.github/workflows/release.yaml:130:28    - Unknown word (gpgsign)      -- git_commit_gpgsign: true
+	 Suggestions: [opsign, gaging, gagging, gassing, gigging]
+./.github/workflows/release.yaml:131:25    - Unknown word (gpgsign)      -- git_tag_gpgsign: false
+	 Suggestions: [opsign, gaging, gagging, gassing, gigging]
+./.github/workflows/release.yaml:135:38    - Unknown word (keyid)        -- run: gpg --list-keys --keyid-format LONG
+	 Suggestions: [keyed, keio, kepi, keri, keys]
+./.github/workflows/release.yaml:139:21    - Unknown word (taiki)        -- uses: taiki-e/install-action@v2
+	 Suggestions: [tiki, tajik, takin, Tajik, tack]
+./.github/workflows/release.yaml:141:53    - Unknown word (SEMREL)       -- release-cargo@${{env.SEMREL_RUST_VERSION}}
+	 Suggestions: [SEMELE, SEMMLE, Semele, Semmle, SEEL]
+./.github/workflows/release.yaml:151:33    - Unknown word (aarch)        -- mv -v artifacts/aarch64-apple-darwin dist
+	 Suggestions: [arch, anarch, Arch, larch, march]
+./.github/workflows/release.yaml:152:33    - Unknown word (aarch)        -- mv -v artifacts/aarch64-unknown-linux-gnu
+	 Suggestions: [arch, anarch, Arch, larch, march]
+./.github/workflows/release.yaml:164:55    - Unknown word (conventionalcommits) -- conventional-changelog-conventionalcommits
+	 Suggestions: []
+./.github/workflows/release.yaml:166:21    - Unknown word (cycjimmy)            -- uses: cycjimmy/semantic-release-action
+	 Suggestions: [cyclicly]
+./.github/workflows/release.yaml:175:50    - Unknown word (SEMREL)              -- REGISTRY_TOKEN: ${{secrets.SEMREL_CRATES_IO}}
+	 Suggestions: [SEMELE, SEMMLE, Semele, Semmle, SEEL]
+10/42 ./.gitignore 297.90ms X
+./.gitignore:1:43      - Unknown word (Sajid)      -- opyrightText: 2023 - 2024 Ali Sajid Imami
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./.gitignore:1:49      - Unknown word (Imami)      -- 23 - 2024 Ali Sajid Imami
+	 Suggestions: [Miami, imam, Imam, Imams, Mimi]
+./.gitignore:18:39     - Unknown word (rustfmt)    -- backup files generated by rustfmt
+	 Suggestions: [rtfm, rust, rusts, rusty, russet]
+./.gitignore:21:3      - Unknown word (MSVC)       -- # MSVC Windows builds of rustc
+	 Suggestions: [MSEC, SVC, Svc, MACC, MARC]
+./.gitignore:21:26     - Unknown word (rustc)      -- MSVC Windows builds of rustc generate these, which
+	 Suggestions: [rust, rusts, rusty, rustic, Rusty]
+11/42 ./.gitpod.yml 4.69ms
+12/42 ./.markdownlint.json 111.96ms
+13/42 ./.markdownlintignore 3.22ms
+14/42 ./.pre-commit-config.yaml 501.60ms X
+./.pre-commit-config.yaml:1:43      - Unknown word (Sajid)      -- opyrightText: 2023 - 2024 Ali Sajid Imami
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./.pre-commit-config.yaml:1:49      - Unknown word (Imami)      -- 23 - 2024 Ali Sajid Imami
+	 Suggestions: [Miami, imam, Imam, Imams, Mimi]
+./.pre-commit-config.yaml:14:13     - Unknown word (clippy)     -- - id: clippy
+	 Suggestions: [chippy, lippy, flippy, slippy, clip]
+./.pre-commit-config.yaml:15:19     - Unknown word (clippy)     -- name: Run clippy linter
+	 Suggestions: [chippy, lippy, flippy, slippy, clip]
+./.pre-commit-config.yaml:16:31     - Unknown word (clippy)     -- entry: cargo +nightly clippy --all-targets --all
+	 Suggestions: [chippy, lippy, flippy, slippy, clip]
+./.pre-commit-config.yaml:58:13     - Unknown word (commitizen) -- - id: commitizen
+	 Suggestions: [comities, commitid, committed, committee, committer]
+./.pre-commit-config.yaml:119:13    - Unknown word (yamlfmt)    -- - id: yamlfmt
+	 Suggestions: [yaml, yamllint]
+./.pre-commit-config.yaml:124:13    - Unknown word (markdownlint) -- - id: markdownlint
+	 Suggestions: []
+./.pre-commit-config.yaml:139:17    - Unknown word (smartquotes)  -- - id: fix-smartquotes
+	 Suggestions: [smartphones]
+./.pre-commit-config.yaml:142:20    - Unknown word (bidi)         -- - id: forbid-bidi-controls
+	 Suggestions: [bide, bids, bini, Bini, bid]
+15/42 ./.releaserc.yml 5.65ms
+16/42 ./.vscode/settings.json 1124.97ms X
+./.vscode/settings.json:3:10      - Unknown word (automerge)  -- "automerge",
+	 Suggestions: [auberge, antimere, automake, automate, autowire]
+./.vscode/settings.json:4:10      - Unknown word (Bogdan)     -- "Bogdan",
+	 Suggestions: [Boga, Began, Bogon, Bagman, Borden]
+./.vscode/settings.json:5:10      - Unknown word (Cloudant)   -- "Cloudant",
+	 Suggestions: [Courant, Clouding, Cloudlet, Cloudland, Colorant]
+./.vscode/settings.json:6:10      - Unknown word (Krycho)     -- "Krycho",
+	 Suggestions: [ricoh, pyrrho, Pyrrho, Ricoh, Kayo]
+./.vscode/settings.json:7:10      - Unknown word (Michie)     -- "Michie",
+	 Suggestions: [mickie, Mickie, richie, Richie, Mice]
+./.vscode/settings.json:8:10      - Unknown word (NAMTAO)     -- "NAMTAO",
+	 Suggestions: [NAMTAR, Namtar, NAMATH, Namath, NAMA]
+./.vscode/settings.json:9:10      - Unknown word (Pshonyak)   -- "Pshonyak",
+	 Suggestions: [Phony, Phonal, Phony's]
+./.vscode/settings.json:10:10     - Unknown word (Rustacean)  -- "Rustacean",
+	 Suggestions: [rastaban, Rastaban, Rustical]
+./.vscode/settings.json:11:10     - Unknown word (serde)      -- "serde",
+	 Suggestions: [sered, sere, serge, serve, verde]
+./.vscode/settings.json:12:10     - Unknown word (tictactoe)  -- "tictactoe",
+	 Suggestions: [ticktacktoe, tictac, tictacs]
+./.vscode/settings.json:13:10     - Unknown word (tttm)       -- "tttm",
+	 Suggestions: [stmt, tam, tem, tim, tlm]
+./.vscode/settings.json:14:10     - Unknown word (valeignore) -- "valeignore"
+	 Suggestions: []
+17/42 ./4c571fe4-cf41-47ec-83df-2d2de51df7ca-megalinter_file_names_cspell.txt 378.71ms X
+./4c571fe4-cf41-47ec-83df-2d2de51df7ca-megalinter_file_names_cspell.txt:8:26      - Unknown word (mdbook)     -- github workflows deploy mdbook
+	 Suggestions: [book, ebook, mbox, mdoc, mock]
+./4c571fe4-cf41-47ec-83df-2d2de51df7ca-megalinter_file_names_cspell.txt:13:2      - Unknown word (markdownlint) -- markdownlint
+	 Suggestions: []
+./4c571fe4-cf41-47ec-83df-2d2de51df7ca-megalinter_file_names_cspell.txt:14:2      - Unknown word (markdownlintignore) -- markdownlintignore
+	 Suggestions: []
+./4c571fe4-cf41-47ec-83df-2d2de51df7ca-megalinter_file_names_cspell.txt:16:2      - Unknown word (releaserc)          -- releaserc
+	 Suggestions: [releaser, releasers, release, released, releases]
+./4c571fe4-cf41-47ec-83df-2d2de51df7ca-megalinter_file_names_cspell.txt:29:9      - Unknown word (tictacrustle)       -- src lib tictacrustle board
+	 Suggestions: []
+./4c571fe4-cf41-47ec-83df-2d2de51df7ca-megalinter_file_names_cspell.txt:30:9      - Unknown word (tictacrustle)       -- src lib tictacrustle game
+	 Suggestions: []
+./4c571fe4-cf41-47ec-83df-2d2de51df7ca-megalinter_file_names_cspell.txt:31:9      - Unknown word (tictacrustle)       -- src lib tictacrustle lib
+	 Suggestions: []
+./4c571fe4-cf41-47ec-83df-2d2de51df7ca-megalinter_file_names_cspell.txt:32:9      - Unknown word (tictacrustle)       -- src lib tictacrustle square
+	 Suggestions: []
+./4c571fe4-cf41-47ec-83df-2d2de51df7ca-megalinter_file_names_cspell.txt:33:9      - Unknown word (tictacrustle)       -- src lib tictacrustle square value
+	 Suggestions: []
+./4c571fe4-cf41-47ec-83df-2d2de51df7ca-megalinter_file_names_cspell.txt:34:5      - Unknown word (ttrustle)           -- src ttrustle components
+	 Suggestions: [trestle, trustee, throstle, turtle, trust]
+./4c571fe4-cf41-47ec-83df-2d2de51df7ca-megalinter_file_names_cspell.txt:35:5      - Unknown word (ttrustle)           -- src ttrustle components board
+	 Suggestions: [trestle, trustee, throstle, turtle, trust]
+./4c571fe4-cf41-47ec-83df-2d2de51df7ca-megalinter_file_names_cspell.txt:36:5      - Unknown word (ttrustle)           -- src ttrustle components square
+	 Suggestions: [trestle, trustee, throstle, turtle, trust]
+./4c571fe4-cf41-47ec-83df-2d2de51df7ca-megalinter_file_names_cspell.txt:37:5      - Unknown word (ttrustle)           -- src ttrustle components square value
+	 Suggestions: [trestle, trustee, throstle, turtle, trust]
+./4c571fe4-cf41-47ec-83df-2d2de51df7ca-megalinter_file_names_cspell.txt:38:5      - Unknown word (ttrustle)           -- src ttrustle gameplay
+	 Suggestions: [trestle, trustee, throstle, turtle, trust]
+./4c571fe4-cf41-47ec-83df-2d2de51df7ca-megalinter_file_names_cspell.txt:38:14     - Unknown word (gameplay)           -- src ttrustle gameplay
+	 Suggestions: [gamely, gamelan, gamay, gamey, gamily]
+./4c571fe4-cf41-47ec-83df-2d2de51df7ca-megalinter_file_names_cspell.txt:39:14     - Unknown word (gameplay)           -- src ttrustle gameplay errors
+	 Suggestions: [gamely, gamelan, gamay, gamey, gamily]
+./4c571fe4-cf41-47ec-83df-2d2de51df7ca-megalinter_file_names_cspell.txt:40:14     - Unknown word (gameplay)           -- src ttrustle gameplay game
+	 Suggestions: [gamely, gamelan, gamay, gamey, gamily]
+./4c571fe4-cf41-47ec-83df-2d2de51df7ca-megalinter_file_names_cspell.txt:41:14     - Unknown word (gameplay)           -- src ttrustle gameplay player
+	 Suggestions: [gamely, gamelan, gamay, gamey, gamily]
+18/42 ./CODE_OF_CONDUCT.md 220.86ms X
+./CODE_OF_CONDUCT.md:2:41      - Unknown word (Sajid)      -- opyrightText: 2022 - 2024 Ali Sajid Imami
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./CODE_OF_CONDUCT.md:2:47      - Unknown word (Imami)      -- 22 - 2024 Ali Sajid Imami
+	 Suggestions: [Miami, imam, Imam, Imams, Mimi]
+19/42 ./CONTRIBUTING.md 536.75ms X
+./CONTRIBUTING.md:2:41      - Unknown word (Sajid)      -- opyrightText: 2022 - 2024 Ali Sajid Imami
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./CONTRIBUTING.md:2:47      - Unknown word (Imami)      -- 22 - 2024 Ali Sajid Imami
+	 Suggestions: [Miami, imam, Imam, Imams, Mimi]
+./CONTRIBUTING.md:73:18     - Unknown word (Traceback)  -- - Stack trace (Traceback). We use RUST_BACKTRACE
+	 Suggestions: [Traceable, Traceably, Trackball, Trademark]
+./CONTRIBUTING.md:134:9     - Unknown word (rustfmt)    -- We use `rustfmt`, `clippy` and `cargo
+	 Suggestions: [rtfm, rust, rusts, rusty, russet]
+./CONTRIBUTING.md:134:20    - Unknown word (clippy)     -- We use `rustfmt`, `clippy` and `cargo check` to
+	 Suggestions: [chippy, lippy, flippy, slippy, clip]
+./CONTRIBUTING.md:134:167   - Unknown word (clippy)     -- not allow specific `clippy` lints without discussion
+	 Suggestions: [chippy, lippy, flippy, slippy, clip]
+20/42 ./guide/.gitignore 1.82ms
+21/42 ./guide/src/chapter_1.md 180.47ms X
+./guide/src/chapter_1.md:2:41      - Unknown word (Sajid)      -- opyrightText: 2022 - 2024 Ali Sajid Imami
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./guide/src/chapter_1.md:2:47      - Unknown word (Imami)      -- 22 - 2024 Ali Sajid Imami
+	 Suggestions: [Miami, imam, Imam, Imams, Mimi]
+22/42 ./guide/src/SUMMARY.md 185.39ms X
+./guide/src/SUMMARY.md:2:41      - Unknown word (Sajid)      -- opyrightText: 2022 - 2024 Ali Sajid Imami
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./guide/src/SUMMARY.md:2:47      - Unknown word (Imami)      -- 22 - 2024 Ali Sajid Imami
+	 Suggestions: [Miami, imam, Imam, Imams, Mimi]
+23/42 ./LICENSE 497.21ms
+24/42 ./LICENSES/Apache-2.0.txt 32.70ms
+25/42 ./LICENSES/CC0-1.0.txt 100.72ms X
+./LICENSES/CC0-1.0.txt:85:46     - Unknown word (sublicensable) -- non transferable, non sublicensable, non exclusive,
+	 Suggestions: [sublicense, sublicensee]
+26/42 ./LICENSES/MIT.txt 11.35ms
+27/42 ./README.md 1413.23ms X
+./README.md:2:41      - Unknown word (Sajid)      -- opyrightText: 2022 - 2024 Ali Sajid Imami
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./README.md:2:47      - Unknown word (Imami)      -- 22 - 2024 Ali Sajid Imami
+	 Suggestions: [Miami, imam, Imam, Imams, Mimi]
+./README.md:28:52     - Unknown word (MSRV)       -- <br/> nightly <br/> MSRV (1.64.0) | ![Ubuntu
+	 Suggestions: [mirv, MIRV, movr, MOVR, MRS]
+./README.md:28:578    - Unknown word (MSRV)       -- json) <br/> ![Ubuntu x MSRV Rust](https://img.shields
+	 Suggestions: [mirv, MIRV, movr, MOVR, MRS]
+./README.md:29:52     - Unknown word (MSRV)       -- <br/> nightly <br/> MSRV (1.64.0) | ![macos x
+	 Suggestions: [mirv, MIRV, movr, MOVR, MRS]
+./README.md:29:577    - Unknown word (MSRV)       -- json) <br/> ![macos x MSRV Rust](https://img.shields
+	 Suggestions: [mirv, MIRV, movr, MOVR, MRS]
+./README.md:30:52     - Unknown word (MSRV)       -- <br/> nightly <br/> MSRV (1.64.0) | ![Windows
+	 Suggestions: [mirv, MIRV, movr, MOVR, MRS]
+./README.md:35:8      - Unknown word (Michie)     -- Donald Michie in 1961. The original
+	 Suggestions: [mickie, Mickie, richie, Richie, Mice]
+./README.md:51:4      - Unknown word (tttm)       -- - `tttm`: This is a binary crate
+	 Suggestions: [stmt, tam, tem, tim, tlm]
+./README.md:52:8      - Unknown word (tictactoe)  -- - `lib_tictactoe_menace`: This is a library
+	 Suggestions: [ticktacktoe, tictac, tictacs]
+./README.md:53:4      - Unknown word (tictactoe)  -- - `tictactoe_menace_player`: This
+	 Suggestions: [ticktacktoe, tictac, tictacs]
+./README.md:54:4      - Unknown word (tictactoe)  -- - `tictactoe_menace_c`: This is a
+	 Suggestions: [ticktacktoe, tictac, tictacs]
+./README.md:54:158    - Unknown word (tictactoe)  -- interface defined in `tictactoe_menace_player`.
+	 Suggestions: [ticktacktoe, tictac, tictacs]
+./README.md:55:4      - Unknown word (tictactoe)  -- - `tictactoe_menace_s`: This is a
+	 Suggestions: [ticktacktoe, tictac, tictacs]
+./README.md:103:9     - Unknown word (Krycho)     -- - Chris Krycho and the [New Rustacean
+	 Suggestions: [ricoh, pyrrho, Pyrrho, Ricoh, Kayo]
+./README.md:103:29    - Unknown word (Rustacean)  -- Krycho and the [New Rustacean](https://newrustacean
+	 Suggestions: [rastaban, Rastaban, Rustical]
+./README.md:104:3     - Unknown word (Bogdan)     -- - Bogdan Pshonyak and the [Let
+	 Suggestions: [Boga, Began, Bogon, Bagman, Borden]
+./README.md:104:10    - Unknown word (Pshonyak)   -- - Bogdan Pshonyak and the [Let's Get Rusty
+	 Suggestions: [Phony, Phonal, Phony's]
+./README.md:105:3     - Unknown word (Tris)       -- - Tris Oaten (NAMTAO) and his
+	 Suggestions: [tais, Tais, This, Tres, Très]
+./README.md:105:15    - Unknown word (NAMTAO)     -- - Tris Oaten (NAMTAO) and his [No Boilerplate
+	 Suggestions: [NAMTAR, Namtar, NAMATH, Namath, NAMA]
+28/42 ./renovate.json 466.17ms X
+./renovate.json:4:13      - Unknown word (Sajid)      -- "AliSajid"
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./renovate.json:20:14     - Unknown word (automerge)  -- "automerge": true,
+	 Suggestions: [auberge, antimere, automake, automate, autowire]
+./renovate.json:38:27     - Unknown word (serde)      -- "groupName": "serde",
+	 Suggestions: [sered, sere, serge, serve, verde]
+./renovate.json:39:27     - Unknown word (serde)      -- "groupSlug": "serde",
+	 Suggestions: [sered, sere, serge, serve, verde]
+./renovate.json:41:18     - Unknown word (serde)      -- "serde-*"
+	 Suggestions: [sered, sere, serge, serve, verde]
+./renovate.json:49:14     - Unknown word (automerge)  -- "automerge": true,
+	 Suggestions: [auberge, antimere, automake, automate, autowire]
+29/42 ./src/lib_tictacrustle/board.rs 181.74ms X
+./src/lib_tictacrustle/board.rs:1:44      - Unknown word (Sajid)      -- opyrightText: 2022 - 2024 Ali Sajid Imami
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./src/lib_tictacrustle/board.rs:1:50      - Unknown word (Imami)      -- 22 - 2024 Ali Sajid Imami
+	 Suggestions: [Miami, imam, Imam, Imams, Mimi]
+30/42 ./src/lib_tictacrustle/game.rs 160.04ms X
+./src/lib_tictacrustle/game.rs:1:44      - Unknown word (Sajid)      -- opyrightText: 2022 - 2024 Ali Sajid Imami
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./src/lib_tictacrustle/game.rs:1:50      - Unknown word (Imami)      -- 22 - 2024 Ali Sajid Imami
+	 Suggestions: [Miami, imam, Imam, Imams, Mimi]
+31/42 ./src/lib_tictacrustle/lib.rs 156.19ms X
+./src/lib_tictacrustle/lib.rs:1:44      - Unknown word (Sajid)      -- opyrightText: 2022 - 2024 Ali Sajid Imami
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./src/lib_tictacrustle/lib.rs:1:50      - Unknown word (Imami)      -- 22 - 2024 Ali Sajid Imami
+	 Suggestions: [Miami, imam, Imam, Imams, Mimi]
+32/42 ./src/lib_tictacrustle/square_value.rs 159.31ms X
+./src/lib_tictacrustle/square_value.rs:1:44      - Unknown word (Sajid)      -- opyrightText: 2022 - 2024 Ali Sajid Imami
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./src/lib_tictacrustle/square_value.rs:1:50      - Unknown word (Imami)      -- 22 - 2024 Ali Sajid Imami
+	 Suggestions: [Miami, imam, Imam, Imams, Mimi]
+33/42 ./src/lib_tictacrustle/square.rs 165.33ms X
+./src/lib_tictacrustle/square.rs:1:44      - Unknown word (Sajid)      -- opyrightText: 2022 - 2024 Ali Sajid Imami
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./src/lib_tictacrustle/square.rs:1:50      - Unknown word (Imami)      -- 22 - 2024 Ali Sajid Imami
+	 Suggestions: [Miami, imam, Imam, Imams, Mimi]
+34/42 ./src/ttrustle/components.rs 154.50ms X
+./src/ttrustle/components.rs:1:44      - Unknown word (Sajid)      -- opyrightText: 2022 - 2024 Ali Sajid Imami
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./src/ttrustle/components.rs:1:50      - Unknown word (Imami)      -- 22 - 2024 Ali Sajid Imami
+	 Suggestions: [Miami, imam, Imam, Imams, Mimi]
+35/42 ./src/ttrustle/components/board.rs 157.99ms X
+./src/ttrustle/components/board.rs:1:44      - Unknown word (Sajid)      -- opyrightText: 2022 - 2024 Ali Sajid Imami
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./src/ttrustle/components/board.rs:1:50      - Unknown word (Imami)      -- 22 - 2024 Ali Sajid Imami
+	 Suggestions: [Miami, imam, Imam, Imams, Mimi]
+36/42 ./src/ttrustle/components/square_value.rs 160.64ms X
+./src/ttrustle/components/square_value.rs:1:44      - Unknown word (Sajid)      -- opyrightText: 2022 - 2024 Ali Sajid Imami
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./src/ttrustle/components/square_value.rs:1:50      - Unknown word (Imami)      -- 22 - 2024 Ali Sajid Imami
+	 Suggestions: [Miami, imam, Imam, Imams, Mimi]
+37/42 ./src/ttrustle/components/square.rs 306.29ms X
+./src/ttrustle/components/square.rs:1:44      - Unknown word (Sajid)      -- opyrightText: 2022 - 2024 Ali Sajid Imami
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./src/ttrustle/components/square.rs:1:50      - Unknown word (Imami)      -- 22 - 2024 Ali Sajid Imami
+	 Suggestions: [Miami, imam, Imam, Imams, Mimi]
+./src/ttrustle/components/square.rs:6:12      - Unknown word (gameplay)   -- use crate::gameplay::Symbol;
+	 Suggestions: [gamely, gamelan, gamay, gamey, gamily]
+38/42 ./src/ttrustle/gameplay.rs 197.71ms X
+./src/ttrustle/gameplay.rs:1:44      - Unknown word (Sajid)      -- opyrightText: 2022 - 2024 Ali Sajid Imami
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./src/ttrustle/gameplay.rs:1:50      - Unknown word (Imami)      -- 22 - 2024 Ali Sajid Imami
+	 Suggestions: [Miami, imam, Imam, Imams, Mimi]
+39/42 ./src/ttrustle/gameplay/errors.rs 169.36ms X
+./src/ttrustle/gameplay/errors.rs:1:44      - Unknown word (Sajid)      -- opyrightText: 2022 - 2024 Ali Sajid Imami
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./src/ttrustle/gameplay/errors.rs:1:50      - Unknown word (Imami)      -- 22 - 2024 Ali Sajid Imami
+	 Suggestions: [Miami, imam, Imam, Imams, Mimi]
+40/42 ./src/ttrustle/gameplay/game.rs 154.95ms X
+./src/ttrustle/gameplay/game.rs:1:44      - Unknown word (Sajid)      -- opyrightText: 2022 - 2024 Ali Sajid Imami
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./src/ttrustle/gameplay/game.rs:1:50      - Unknown word (Imami)      -- 22 - 2024 Ali Sajid Imami
+	 Suggestions: [Miami, imam, Imam, Imams, Mimi]
+41/42 ./src/ttrustle/gameplay/player.rs 159.77ms X
+./src/ttrustle/gameplay/player.rs:1:44      - Unknown word (Sajid)      -- opyrightText: 2022 - 2024 Ali Sajid Imami
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./src/ttrustle/gameplay/player.rs:1:50      - Unknown word (Imami)      -- 22 - 2024 Ali Sajid Imami
+	 Suggestions: [Miami, imam, Imam, Imams, Mimi]
+42/42 ./src/ttrustle/main.rs 267.63ms X
+./src/ttrustle/main.rs:1:44      - Unknown word (Sajid)      -- opyrightText: 2022 - 2024 Ali Sajid Imami
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./src/ttrustle/main.rs:1:50      - Unknown word (Imami)      -- 22 - 2024 Ali Sajid Imami
+	 Suggestions: [Miami, imam, Imam, Imams, Mimi]
+-------------------------------------------
+Issues found:
+./.github/ISSUE_TEMPLATE/bug_report.md:6:15      - Unknown word (Sajid)      -- assignees: AliSajid
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./.github/ISSUE_TEMPLATE/feature_request.md:6:15      - Unknown word (Sajid)      -- assignees: AliSajid
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./.github/PULL_REQUEST_TEMPLATE.md:26:33     - Unknown word (rustc)      -- Version (I.e, output of `rustc -V`):
+	 Suggestions: [rust, rusts, rusty, rustic, Rusty]
+./.github/workflows/audit.yaml:19:21     - Unknown word (dtolnay)    -- uses: dtolnay/rust-toolchain@stable
+	 Suggestions: [tolan, tonya, dona, dtoa, delay]
+./.github/workflows/audit.yaml:21:21     - Unknown word (taiki)      -- uses: taiki-e/install-action@d3
+	 Suggestions: [tiki, tajik, takin, Tajik, tack]
+./.github/workflows/ci.yaml:33:32     - Unknown word (MSRV)       -- - 1.72.1 # MSRV
+	 Suggestions: [mirv, MIRV, movr, MOVR, MRS]
+./.github/workflows/ci.yaml:45:38     - Unknown word (MSRV)       -- - rust: 1.72.1 # MSRV
+	 Suggestions: [mirv, MIRV, movr, MOVR, MRS]
+./.github/workflows/ci.yaml:46:30     - Unknown word (msrv)       -- label: msrv
+	 Suggestions: [mirv, MIRV, movr, mrs, Mrs]
+./.github/workflows/ci.yaml:56:21     - Unknown word (dtolnay)    -- uses: dtolnay/rust-toolchain@master
+	 Suggestions: [tolan, tonya, dona, dtoa, delay]
+./.github/workflows/ci.yaml:59:29     - Unknown word (rustfmt)    -- components: rustfmt, clippy
+	 Suggestions: [rtfm, rust, rusts, rusty, russet]
+./.github/workflows/ci.yaml:59:38     - Unknown word (clippy)     -- components: rustfmt, clippy
+	 Suggestions: [chippy, lippy, flippy, slippy, clip]
+./.github/workflows/ci.yaml:61:21     - Unknown word (dtolnay)    -- uses: dtolnay/rust-toolchain@nightly
+	 Suggestions: [tolan, tonya, dona, dtoa, delay]
+./.github/workflows/ci.yaml:64:29     - Unknown word (rustfmt)    -- components: rustfmt, clippy
+	 Suggestions: [rtfm, rust, rusts, rusty, russet]
+./.github/workflows/ci.yaml:64:38     - Unknown word (clippy)     -- components: rustfmt, clippy
+	 Suggestions: [chippy, lippy, flippy, slippy, clip]
+./.github/workflows/ci.yaml:66:21     - Unknown word (Swatinem)   -- uses: Swatinem/rust-cache@6fd3edff
+	 Suggestions: [Satinet, Stained, Stainer, Satem, Satin]
+./.github/workflows/ci.yaml:74:26     - Unknown word (clippy)     -- run: cargo clippy -- -D warnings
+	 Suggestions: [chippy, lippy, flippy, slippy, clip]
+./.github/workflows/ci.yaml:76:24     - Unknown word (Sajid)      -- uses: AliSajid/random-wait-action@v
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./.github/workflows/ci.yaml:81:21     - Unknown word (schneegans) -- uses: schneegans/dynamic-badges-action
+	 Suggestions: []
+./.github/workflows/ci.yaml:92:21     - Unknown word (schneegans) -- uses: schneegans/dynamic-badges-action
+	 Suggestions: []
+./.github/workflows/ci.yaml:110:14    - Unknown word (mdbook)     -- generate_mdbook:
+	 Suggestions: [book, ebook, mbox, mdoc, mock]
+./.github/workflows/ci.yaml:111:42    - Unknown word (mdbook)     -- github/workflows/deploy_mdbook.yaml
+	 Suggestions: [book, ebook, mbox, mdoc, mock]
+./.github/workflows/code_coverage.yaml:11:37     - Unknown word (seccomp)    -- options: --security-opt seccomp=unconfined
+	 Suggestions: [secco, scop, scamp, scoop, second]
+./.github/workflows/code_coverage.yaml:16:21     - Unknown word (dtolnay)    -- - uses: dtolnay/rust-toolchain@nightly
+	 Suggestions: [tolan, tonya, dona, dtoa, delay]
+./.github/workflows/code_coverage.yaml:19:21     - Unknown word (taiki)      -- - uses: taiki-e/install-action@cargo
+	 Suggestions: [tiki, tajik, takin, Tajik, tack]
+./.github/workflows/code_coverage.yaml:20:21     - Unknown word (taiki)      -- - uses: taiki-e/install-action@nextest
+	 Suggestions: [tiki, tajik, takin, Tajik, tack]
+./.github/workflows/code_coverage.yaml:20:44     - Unknown word (nextest)    -- taiki-e/install-action@nextest
+	 Suggestions: [neatest, sextets, newest, next's, nextel]
+./.github/workflows/code_coverage.yaml:21:54     - Unknown word (doctests)   -- coverage data (including doctests)
+	 Suggestions: [docents, dockets, docetist, Docetist, doest]
+./.github/workflows/code_coverage.yaml:23:44     - Unknown word (nextest)    -- llvm-cov --no-report nextest --config-file nextest
+	 Suggestions: [neatest, sextets, newest, next's, nextel]
+./.github/workflows/code_coverage.yaml:23:66     - Unknown word (nextest)    -- nextest --config-file nextest.toml
+	 Suggestions: [neatest, sextets, newest, next's, nextel]
+./.github/workflows/code_coverage.yaml:25:41     - Unknown word (doctests)   -- cargo llvm-cov report --doctests --lcov --output-path
+	 Suggestions: [docents, dockets, docetist, Docetist, doest]
+./.github/workflows/deploy_mdbook.yaml:6:27      - Unknown word (vercel)     -- description: "The vercel deployment url of the
+	 Suggestions: [tercel, verde, verge, verne, verse]
+./.github/workflows/deploy_mdbook.yaml:10:3      - Unknown word (VERCEL)     -- VERCEL_ORG_ID: ${{ secrets
+	 Suggestions: [TERCEL, VERDE, VERGE, VERNE, VERSE]
+./.github/workflows/deploy_mdbook.yaml:10:30     - Unknown word (VERCEL)     -- ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+	 Suggestions: [TERCEL, VERDE, VERGE, VERNE, VERSE]
+./.github/workflows/deploy_mdbook.yaml:11:3      - Unknown word (VERCEL)     -- VERCEL_PROJECT_ID: ${{ secrets
+	 Suggestions: [TERCEL, VERDE, VERGE, VERNE, VERSE]
+./.github/workflows/deploy_mdbook.yaml:11:34     - Unknown word (VERCEL)     -- PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+	 Suggestions: [TERCEL, VERDE, VERGE, VERNE, VERSE]
+./.github/workflows/deploy_mdbook.yaml:12:3      - Unknown word (VERCEL)     -- VERCEL_TOKEN: ${{ secrets.VERCEL
+	 Suggestions: [TERCEL, VERDE, VERGE, VERNE, VERSE]
+./.github/workflows/deploy_mdbook.yaml:53:15     - Unknown word (dtolnay)    -- uses: dtolnay/rust-toolchain@master
+	 Suggestions: [tolan, tonya, dona, dtoa, delay]
+./.github/workflows/deploy_mdbook.yaml:58:15     - Unknown word (Swatinem)   -- uses: Swatinem/rust-cache@6fd3edff
+	 Suggestions: [Satinet, Stained, Stainer, Satem, Satin]
+./.github/workflows/deploy_mdbook.yaml:59:29     - Unknown word (binstall)   -- name: Install cargo-binstall
+	 Suggestions: [install, uninstall, binal, bimetal, bistate]
+./.github/workflows/deploy_mdbook.yaml:60:15     - Unknown word (taiki)      -- uses: taiki-e/install-action@v2
+	 Suggestions: [tiki, tajik, takin, Tajik, tack]
+./.github/workflows/deploy_mdbook.yaml:62:23     - Unknown word (binstall)   -- tool: cargo-binstall
+	 Suggestions: [install, uninstall, binal, bimetal, bistate]
+./.github/workflows/deploy_mdbook.yaml:64:20     - Unknown word (binstall)   -- run: cargo binstall --log-level debug -
+	 Suggestions: [install, uninstall, binal, bimetal, bistate]
+./.github/workflows/deploy_mdbook.yaml:64:69     - Unknown word (mdbook)     -- no-confirm --locked mdbook mdbook-plantuml mdbook
+	 Suggestions: [book, ebook, mbox, mdoc, mock]
+./.github/workflows/deploy_mdbook.yaml:64:76     - Unknown word (mdbook)     -- confirm --locked mdbook mdbook-plantuml mdbook-inline
+	 Suggestions: [book, ebook, mbox, mdoc, mock]
+./.github/workflows/deploy_mdbook.yaml:64:83     - Unknown word (plantuml)   -- locked mdbook mdbook-plantuml mdbook-inline-highlighting
+	 Suggestions: [plant, panful, plants, plenum, phantom]
+./.github/workflows/deploy_mdbook.yaml:64:92     - Unknown word (mdbook)     -- mdbook mdbook-plantuml mdbook-inline-highlighting
+	 Suggestions: [book, ebook, mbox, mdoc, mock]
+./.github/workflows/deploy_mdbook.yaml:66:30     - Unknown word (vercel)     -- run: pnpm install -g vercel@latest
+	 Suggestions: [tercel, verde, verge, verne, verse]
+./.github/workflows/deploy_mdbook.yaml:68:14     - Unknown word (vercel)     -- run: vercel pull --yes --environment
+	 Suggestions: [tercel, verde, verge, verne, verse]
+./.github/workflows/deploy_mdbook.yaml:70:14     - Unknown word (mdbook)     -- run: mdbook build guide
+	 Suggestions: [book, ebook, mbox, mdoc, mock]
+./.github/workflows/deploy_mdbook.yaml:71:25     - Unknown word (Vercel)     -- - name: Build for Vercel deployment -- Preview
+	 Suggestions: [Tercel, verde, Verde, Verge, Verne]
+./.github/workflows/deploy_mdbook.yaml:73:14     - Unknown word (vercel)     -- run: vercel build --cwd guide/book
+	 Suggestions: [tercel, verde, verge, verne, verse]
+./.github/workflows/deploy_mdbook.yaml:74:25     - Unknown word (Vercel)     -- - name: Build for Vercel deployment -- Production
+	 Suggestions: [Tercel, verde, Verde, Verge, Verne]
+./.github/workflows/deploy_mdbook.yaml:76:14     - Unknown word (vercel)     -- run: vercel build --cwd guide/book
+	 Suggestions: [tercel, verde, verge, verne, verse]
+./.github/workflows/deploy_mdbook.yaml:77:25     - Unknown word (Vercel)     -- - name: Deploy to Vercel -- Preview
+	 Suggestions: [Tercel, verde, Verde, Verge, Verne]
+./.github/workflows/deploy_mdbook.yaml:80:25     - Unknown word (Vercel)     -- - name: Deploy to Vercel -- Production
+	 Suggestions: [Tercel, verde, Verde, Verge, Verne]
+./.github/workflows/release.yaml:8:5       - Unknown word (SEMREL)     -- SEMREL_RUST_VERSION: 2.1.5
+	 Suggestions: [SEMELE, SEMMLE, Semele, Semmle, SEEL]
+./.github/workflows/release.yaml:20:23     - Unknown word (tactix)     -- - tactix
+	 Suggestions: [tactic, tacit, tact, tacts, tact's]
+./.github/workflows/release.yaml:21:23     - Unknown word (tactix)     -- - tactix-bench
+	 Suggestions: [tactic, tacit, tact, tacts, tact's]
+./.github/workflows/release.yaml:23:23     - Unknown word (alphabatized) -- # alphabatized by target
+	 Suggestions: [alphabetized, alphabetize, alphabetizer, alphabetizes, alphabeted]
+./.github/workflows/release.yaml:25:31     - Unknown word (aarch)        -- target: aarch64-apple-darwin
+	 Suggestions: [arch, anarch, Arch, larch, march]
+./.github/workflows/release.yaml:28:31     - Unknown word (aarch)        -- target: aarch64-unknown-linux-gnu
+	 Suggestions: [arch, anarch, Arch, larch, march]
+./.github/workflows/release.yaml:31:31     - Unknown word (aarch)        -- target: aarch64-unknown-linux-musl
+	 Suggestions: [arch, anarch, Arch, larch, march]
+./.github/workflows/release.yaml:64:21     - Unknown word (dtolnay)      -- uses: dtolnay/rust-toolchain@master
+	 Suggestions: [tolan, tonya, dona, dtoa, delay]
+./.github/workflows/release.yaml:70:21     - Unknown word (Swatinem)     -- uses: Swatinem/rust-cache@6fd3edff
+	 Suggestions: [Satinet, Stained, Stainer, Satem, Satin]
+./.github/workflows/release.yaml:72:21     - Unknown word (taiki)        -- uses: taiki-e/install-action@v2
+	 Suggestions: [tiki, tajik, takin, Tajik, tack]
+./.github/workflows/release.yaml:123:31    - Unknown word (ghaction)     -- uses: crazy-max/ghaction-import-gpg@v6
+	 Suggestions: [action, graviton, location, gabion, galton]
+./.github/workflows/release.yaml:127:46    - Unknown word (SUBKEY)       -- fingerprint: ${{ secrets.GPG_SUBKEY_FINGERPRINT }}
+	 Suggestions: [SUEY, SULKY, SMOKEY, SUBBED, SUBDEB]
+./.github/workflows/release.yaml:129:26    - Unknown word (signingkey)   -- git_user_signingkey: true
+	 Suggestions: [signing, signings, signing's]
+./.github/workflows/release.yaml:130:28    - Unknown word (gpgsign)      -- git_commit_gpgsign: true
+	 Suggestions: [opsign, gaging, gagging, gassing, gigging]
+./.github/workflows/release.yaml:131:25    - Unknown word (gpgsign)      -- git_tag_gpgsign: false
+	 Suggestions: [opsign, gaging, gagging, gassing, gigging]
+./.github/workflows/release.yaml:135:38    - Unknown word (keyid)        -- run: gpg --list-keys --keyid-format LONG
+	 Suggestions: [keyed, keio, kepi, keri, keys]
+./.github/workflows/release.yaml:139:21    - Unknown word (taiki)        -- uses: taiki-e/install-action@v2
+	 Suggestions: [tiki, tajik, takin, Tajik, tack]
+./.github/workflows/release.yaml:141:53    - Unknown word (SEMREL)       -- release-cargo@${{env.SEMREL_RUST_VERSION}}
+	 Suggestions: [SEMELE, SEMMLE, Semele, Semmle, SEEL]
+./.github/workflows/release.yaml:151:33    - Unknown word (aarch)        -- mv -v artifacts/aarch64-apple-darwin dist
+	 Suggestions: [arch, anarch, Arch, larch, march]
+./.github/workflows/release.yaml:152:33    - Unknown word (aarch)        -- mv -v artifacts/aarch64-unknown-linux-gnu
+	 Suggestions: [arch, anarch, Arch, larch, march]
+./.github/workflows/release.yaml:164:55    - Unknown word (conventionalcommits) -- conventional-changelog-conventionalcommits
+	 Suggestions: []
+./.github/workflows/release.yaml:166:21    - Unknown word (cycjimmy)            -- uses: cycjimmy/semantic-release-action
+	 Suggestions: [cyclicly]
+./.github/workflows/release.yaml:175:50    - Unknown word (SEMREL)              -- REGISTRY_TOKEN: ${{secrets.SEMREL_CRATES_IO}}
+	 Suggestions: [SEMELE, SEMMLE, Semele, Semmle, SEEL]
+./.gitignore:1:43      - Unknown word (Sajid)      -- opyrightText: 2023 - 2024 Ali Sajid Imami
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./.gitignore:1:49      - Unknown word (Imami)      -- 23 - 2024 Ali Sajid Imami
+	 Suggestions: [Miami, imam, Imam, Imams, Mimi]
+./.gitignore:18:39     - Unknown word (rustfmt)    -- backup files generated by rustfmt
+	 Suggestions: [rtfm, rust, rusts, rusty, russet]
+./.gitignore:21:3      - Unknown word (MSVC)       -- # MSVC Windows builds of rustc
+	 Suggestions: [MSEC, SVC, Svc, MACC, MARC]
+./.gitignore:21:26     - Unknown word (rustc)      -- MSVC Windows builds of rustc generate these, which
+	 Suggestions: [rust, rusts, rusty, rustic, Rusty]
+./.pre-commit-config.yaml:1:43      - Unknown word (Sajid)      -- opyrightText: 2023 - 2024 Ali Sajid Imami
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./.pre-commit-config.yaml:1:49      - Unknown word (Imami)      -- 23 - 2024 Ali Sajid Imami
+	 Suggestions: [Miami, imam, Imam, Imams, Mimi]
+./.pre-commit-config.yaml:14:13     - Unknown word (clippy)     -- - id: clippy
+	 Suggestions: [chippy, lippy, flippy, slippy, clip]
+./.pre-commit-config.yaml:15:19     - Unknown word (clippy)     -- name: Run clippy linter
+	 Suggestions: [chippy, lippy, flippy, slippy, clip]
+./.pre-commit-config.yaml:16:31     - Unknown word (clippy)     -- entry: cargo +nightly clippy --all-targets --all
+	 Suggestions: [chippy, lippy, flippy, slippy, clip]
+./.pre-commit-config.yaml:58:13     - Unknown word (commitizen) -- - id: commitizen
+	 Suggestions: [comities, commitid, committed, committee, committer]
+./.pre-commit-config.yaml:119:13    - Unknown word (yamlfmt)    -- - id: yamlfmt
+	 Suggestions: [yaml, yamllint]
+./.pre-commit-config.yaml:124:13    - Unknown word (markdownlint) -- - id: markdownlint
+	 Suggestions: []
+./.pre-commit-config.yaml:139:17    - Unknown word (smartquotes)  -- - id: fix-smartquotes
+	 Suggestions: [smartphones]
+./.pre-commit-config.yaml:142:20    - Unknown word (bidi)         -- - id: forbid-bidi-controls
+	 Suggestions: [bide, bids, bini, Bini, bid]
+./.vscode/settings.json:3:10      - Unknown word (automerge)  -- "automerge",
+	 Suggestions: [auberge, antimere, automake, automate, autowire]
+./.vscode/settings.json:4:10      - Unknown word (Bogdan)     -- "Bogdan",
+	 Suggestions: [Boga, Began, Bogon, Bagman, Borden]
+./.vscode/settings.json:5:10      - Unknown word (Cloudant)   -- "Cloudant",
+	 Suggestions: [Courant, Clouding, Cloudlet, Cloudland, Colorant]
+./.vscode/settings.json:6:10      - Unknown word (Krycho)     -- "Krycho",
+	 Suggestions: [ricoh, pyrrho, Pyrrho, Ricoh, Kayo]
+./.vscode/settings.json:7:10      - Unknown word (Michie)     -- "Michie",
+	 Suggestions: [mickie, Mickie, richie, Richie, Mice]
+./.vscode/settings.json:8:10      - Unknown word (NAMTAO)     -- "NAMTAO",
+	 Suggestions: [NAMTAR, Namtar, NAMATH, Namath, NAMA]
+./.vscode/settings.json:9:10      - Unknown word (Pshonyak)   -- "Pshonyak",
+	 Suggestions: [Phony, Phonal, Phony's]
+./.vscode/settings.json:10:10     - Unknown word (Rustacean)  -- "Rustacean",
+	 Suggestions: [rastaban, Rastaban, Rustical]
+./.vscode/settings.json:11:10     - Unknown word (serde)      -- "serde",
+	 Suggestions: [sered, sere, serge, serve, verde]
+./.vscode/settings.json:12:10     - Unknown word (tictactoe)  -- "tictactoe",
+	 Suggestions: [ticktacktoe, tictac, tictacs]
+./.vscode/settings.json:13:10     - Unknown word (tttm)       -- "tttm",
+	 Suggestions: [stmt, tam, tem, tim, tlm]
+./.vscode/settings.json:14:10     - Unknown word (valeignore) -- "valeignore"
+	 Suggestions: []
+./4c571fe4-cf41-47ec-83df-2d2de51df7ca-megalinter_file_names_cspell.txt:8:26      - Unknown word (mdbook)     -- github workflows deploy mdbook
+	 Suggestions: [book, ebook, mbox, mdoc, mock]
+./4c571fe4-cf41-47ec-83df-2d2de51df7ca-megalinter_file_names_cspell.txt:13:2      - Unknown word (markdownlint) -- markdownlint
+	 Suggestions: []
+./4c571fe4-cf41-47ec-83df-2d2de51df7ca-megalinter_file_names_cspell.txt:14:2      - Unknown word (markdownlintignore) -- markdownlintignore
+	 Suggestions: []
+./4c571fe4-cf41-47ec-83df-2d2de51df7ca-megalinter_file_names_cspell.txt:16:2      - Unknown word (releaserc)          -- releaserc
+	 Suggestions: [releaser, releasers, release, released, releases]
+./4c571fe4-cf41-47ec-83df-2d2de51df7ca-megalinter_file_names_cspell.txt:29:9      - Unknown word (tictacrustle)       -- src lib tictacrustle board
+	 Suggestions: []
+./4c571fe4-cf41-47ec-83df-2d2de51df7ca-megalinter_file_names_cspell.txt:30:9      - Unknown word (tictacrustle)       -- src lib tictacrustle game
+	 Suggestions: []
+./4c571fe4-cf41-47ec-83df-2d2de51df7ca-megalinter_file_names_cspell.txt:31:9      - Unknown word (tictacrustle)       -- src lib tictacrustle lib
+	 Suggestions: []
+./4c571fe4-cf41-47ec-83df-2d2de51df7ca-megalinter_file_names_cspell.txt:32:9      - Unknown word (tictacrustle)       -- src lib tictacrustle square
+	 Suggestions: []
+./4c571fe4-cf41-47ec-83df-2d2de51df7ca-megalinter_file_names_cspell.txt:33:9      - Unknown word (tictacrustle)       -- src lib tictacrustle square value
+	 Suggestions: []
+./4c571fe4-cf41-47ec-83df-2d2de51df7ca-megalinter_file_names_cspell.txt:34:5      - Unknown word (ttrustle)           -- src ttrustle components
+	 Suggestions: [trestle, trustee, throstle, turtle, trust]
+./4c571fe4-cf41-47ec-83df-2d2de51df7ca-megalinter_file_names_cspell.txt:35:5      - Unknown word (ttrustle)           -- src ttrustle components board
+	 Suggestions: [trestle, trustee, throstle, turtle, trust]
+./4c571fe4-cf41-47ec-83df-2d2de51df7ca-megalinter_file_names_cspell.txt:36:5      - Unknown word (ttrustle)           -- src ttrustle components square
+	 Suggestions: [trestle, trustee, throstle, turtle, trust]
+./4c571fe4-cf41-47ec-83df-2d2de51df7ca-megalinter_file_names_cspell.txt:37:5      - Unknown word (ttrustle)           -- src ttrustle components square value
+	 Suggestions: [trestle, trustee, throstle, turtle, trust]
+./4c571fe4-cf41-47ec-83df-2d2de51df7ca-megalinter_file_names_cspell.txt:38:5      - Unknown word (ttrustle)           -- src ttrustle gameplay
+	 Suggestions: [trestle, trustee, throstle, turtle, trust]
+./4c571fe4-cf41-47ec-83df-2d2de51df7ca-megalinter_file_names_cspell.txt:38:14     - Unknown word (gameplay)           -- src ttrustle gameplay
+	 Suggestions: [gamely, gamelan, gamay, gamey, gamily]
+./4c571fe4-cf41-47ec-83df-2d2de51df7ca-megalinter_file_names_cspell.txt:39:14     - Unknown word (gameplay)           -- src ttrustle gameplay errors
+	 Suggestions: [gamely, gamelan, gamay, gamey, gamily]
+./4c571fe4-cf41-47ec-83df-2d2de51df7ca-megalinter_file_names_cspell.txt:40:14     - Unknown word (gameplay)           -- src ttrustle gameplay game
+	 Suggestions: [gamely, gamelan, gamay, gamey, gamily]
+./4c571fe4-cf41-47ec-83df-2d2de51df7ca-megalinter_file_names_cspell.txt:41:14     - Unknown word (gameplay)           -- src ttrustle gameplay player
+	 Suggestions: [gamely, gamelan, gamay, gamey, gamily]
+./CODE_OF_CONDUCT.md:2:41      - Unknown word (Sajid)      -- opyrightText: 2022 - 2024 Ali Sajid Imami
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./CODE_OF_CONDUCT.md:2:47      - Unknown word (Imami)      -- 22 - 2024 Ali Sajid Imami
+	 Suggestions: [Miami, imam, Imam, Imams, Mimi]
+./CONTRIBUTING.md:2:41      - Unknown word (Sajid)      -- opyrightText: 2022 - 2024 Ali Sajid Imami
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./CONTRIBUTING.md:2:47      - Unknown word (Imami)      -- 22 - 2024 Ali Sajid Imami
+	 Suggestions: [Miami, imam, Imam, Imams, Mimi]
+./CONTRIBUTING.md:73:18     - Unknown word (Traceback)  -- - Stack trace (Traceback). We use RUST_BACKTRACE
+	 Suggestions: [Traceable, Traceably, Trackball, Trademark]
+./CONTRIBUTING.md:134:9     - Unknown word (rustfmt)    -- We use `rustfmt`, `clippy` and `cargo
+	 Suggestions: [rtfm, rust, rusts, rusty, russet]
+./CONTRIBUTING.md:134:20    - Unknown word (clippy)     -- We use `rustfmt`, `clippy` and `cargo check` to
+	 Suggestions: [chippy, lippy, flippy, slippy, clip]
+./CONTRIBUTING.md:134:167   - Unknown word (clippy)     -- not allow specific `clippy` lints without discussion
+	 Suggestions: [chippy, lippy, flippy, slippy, clip]
+./guide/src/chapter_1.md:2:41      - Unknown word (Sajid)      -- opyrightText: 2022 - 2024 Ali Sajid Imami
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./guide/src/chapter_1.md:2:47      - Unknown word (Imami)      -- 22 - 2024 Ali Sajid Imami
+	 Suggestions: [Miami, imam, Imam, Imams, Mimi]
+./guide/src/SUMMARY.md:2:41      - Unknown word (Sajid)      -- opyrightText: 2022 - 2024 Ali Sajid Imami
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./guide/src/SUMMARY.md:2:47      - Unknown word (Imami)      -- 22 - 2024 Ali Sajid Imami
+	 Suggestions: [Miami, imam, Imam, Imams, Mimi]
+./LICENSES/CC0-1.0.txt:85:46     - Unknown word (sublicensable) -- non transferable, non sublicensable, non exclusive,
+	 Suggestions: [sublicense, sublicensee]
+./README.md:2:41      - Unknown word (Sajid)      -- opyrightText: 2022 - 2024 Ali Sajid Imami
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./README.md:2:47      - Unknown word (Imami)      -- 22 - 2024 Ali Sajid Imami
+	 Suggestions: [Miami, imam, Imam, Imams, Mimi]
+./README.md:28:52     - Unknown word (MSRV)       -- <br/> nightly <br/> MSRV (1.64.0) | ![Ubuntu
+	 Suggestions: [mirv, MIRV, movr, MOVR, MRS]
+./README.md:28:578    - Unknown word (MSRV)       -- json) <br/> ![Ubuntu x MSRV Rust](https://img.shields
+	 Suggestions: [mirv, MIRV, movr, MOVR, MRS]
+./README.md:29:52     - Unknown word (MSRV)       -- <br/> nightly <br/> MSRV (1.64.0) | ![macos x
+	 Suggestions: [mirv, MIRV, movr, MOVR, MRS]
+./README.md:29:577    - Unknown word (MSRV)       -- json) <br/> ![macos x MSRV Rust](https://img.shields
+	 Suggestions: [mirv, MIRV, movr, MOVR, MRS]
+./README.md:30:52     - Unknown word (MSRV)       -- <br/> nightly <br/> MSRV (1.64.0) | ![Windows
+	 Suggestions: [mirv, MIRV, movr, MOVR, MRS]
+./README.md:35:8      - Unknown word (Michie)     -- Donald Michie in 1961. The original
+	 Suggestions: [mickie, Mickie, richie, Richie, Mice]
+./README.md:51:4      - Unknown word (tttm)       -- - `tttm`: This is a binary crate
+	 Suggestions: [stmt, tam, tem, tim, tlm]
+./README.md:52:8      - Unknown word (tictactoe)  -- - `lib_tictactoe_menace`: This is a library
+	 Suggestions: [ticktacktoe, tictac, tictacs]
+./README.md:53:4      - Unknown word (tictactoe)  -- - `tictactoe_menace_player`: This
+	 Suggestions: [ticktacktoe, tictac, tictacs]
+./README.md:54:4      - Unknown word (tictactoe)  -- - `tictactoe_menace_c`: This is a
+	 Suggestions: [ticktacktoe, tictac, tictacs]
+./README.md:54:158    - Unknown word (tictactoe)  -- interface defined in `tictactoe_menace_player`.
+	 Suggestions: [ticktacktoe, tictac, tictacs]
+./README.md:55:4      - Unknown word (tictactoe)  -- - `tictactoe_menace_s`: This is a
+	 Suggestions: [ticktacktoe, tictac, tictacs]
+./README.md:103:9     - Unknown word (Krycho)     -- - Chris Krycho and the [New Rustacean
+	 Suggestions: [ricoh, pyrrho, Pyrrho, Ricoh, Kayo]
+./README.md:103:29    - Unknown word (Rustacean)  -- Krycho and the [New Rustacean](https://newrustacean
+	 Suggestions: [rastaban, Rastaban, Rustical]
+./README.md:104:3     - Unknown word (Bogdan)     -- - Bogdan Pshonyak and the [Let
+	 Suggestions: [Boga, Began, Bogon, Bagman, Borden]
+./README.md:104:10    - Unknown word (Pshonyak)   -- - Bogdan Pshonyak and the [Let's Get Rusty
+	 Suggestions: [Phony, Phonal, Phony's]
+./README.md:105:3     - Unknown word (Tris)       -- - Tris Oaten (NAMTAO) and his
+	 Suggestions: [tais, Tais, This, Tres, Très]
+./README.md:105:15    - Unknown word (NAMTAO)     -- - Tris Oaten (NAMTAO) and his [No Boilerplate
+	 Suggestions: [NAMTAR, Namtar, NAMATH, Namath, NAMA]
+./renovate.json:4:13      - Unknown word (Sajid)      -- "AliSajid"
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./renovate.json:20:14     - Unknown word (automerge)  -- "automerge": true,
+	 Suggestions: [auberge, antimere, automake, automate, autowire]
+./renovate.json:38:27     - Unknown word (serde)      -- "groupName": "serde",
+	 Suggestions: [sered, sere, serge, serve, verde]
+./renovate.json:39:27     - Unknown word (serde)      -- "groupSlug": "serde",
+	 Suggestions: [sered, sere, serge, serve, verde]
+./renovate.json:41:18     - Unknown word (serde)      -- "serde-*"
+	 Suggestions: [sered, sere, serge, serve, verde]
+./renovate.json:49:14     - Unknown word (automerge)  -- "automerge": true,
+	 Suggestions: [auberge, antimere, automake, automate, autowire]
+./src/lib_tictacrustle/board.rs:1:44      - Unknown word (Sajid)      -- opyrightText: 2022 - 2024 Ali Sajid Imami
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./src/lib_tictacrustle/board.rs:1:50      - Unknown word (Imami)      -- 22 - 2024 Ali Sajid Imami
+	 Suggestions: [Miami, imam, Imam, Imams, Mimi]
+./src/lib_tictacrustle/game.rs:1:44      - Unknown word (Sajid)      -- opyrightText: 2022 - 2024 Ali Sajid Imami
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./src/lib_tictacrustle/game.rs:1:50      - Unknown word (Imami)      -- 22 - 2024 Ali Sajid Imami
+	 Suggestions: [Miami, imam, Imam, Imams, Mimi]
+./src/lib_tictacrustle/lib.rs:1:44      - Unknown word (Sajid)      -- opyrightText: 2022 - 2024 Ali Sajid Imami
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./src/lib_tictacrustle/lib.rs:1:50      - Unknown word (Imami)      -- 22 - 2024 Ali Sajid Imami
+	 Suggestions: [Miami, imam, Imam, Imams, Mimi]
+./src/lib_tictacrustle/square_value.rs:1:44      - Unknown word (Sajid)      -- opyrightText: 2022 - 2024 Ali Sajid Imami
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./src/lib_tictacrustle/square_value.rs:1:50      - Unknown word (Imami)      -- 22 - 2024 Ali Sajid Imami
+	 Suggestions: [Miami, imam, Imam, Imams, Mimi]
+./src/lib_tictacrustle/square.rs:1:44      - Unknown word (Sajid)      -- opyrightText: 2022 - 2024 Ali Sajid Imami
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./src/lib_tictacrustle/square.rs:1:50      - Unknown word (Imami)      -- 22 - 2024 Ali Sajid Imami
+	 Suggestions: [Miami, imam, Imam, Imams, Mimi]
+./src/ttrustle/components.rs:1:44      - Unknown word (Sajid)      -- opyrightText: 2022 - 2024 Ali Sajid Imami
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./src/ttrustle/components.rs:1:50      - Unknown word (Imami)      -- 22 - 2024 Ali Sajid Imami
+	 Suggestions: [Miami, imam, Imam, Imams, Mimi]
+./src/ttrustle/components/board.rs:1:44      - Unknown word (Sajid)      -- opyrightText: 2022 - 2024 Ali Sajid Imami
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./src/ttrustle/components/board.rs:1:50      - Unknown word (Imami)      -- 22 - 2024 Ali Sajid Imami
+	 Suggestions: [Miami, imam, Imam, Imams, Mimi]
+./src/ttrustle/components/square_value.rs:1:44      - Unknown word (Sajid)      -- opyrightText: 2022 - 2024 Ali Sajid Imami
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./src/ttrustle/components/square_value.rs:1:50      - Unknown word (Imami)      -- 22 - 2024 Ali Sajid Imami
+	 Suggestions: [Miami, imam, Imam, Imams, Mimi]
+./src/ttrustle/components/square.rs:1:44      - Unknown word (Sajid)      -- opyrightText: 2022 - 2024 Ali Sajid Imami
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./src/ttrustle/components/square.rs:1:50      - Unknown word (Imami)      -- 22 - 2024 Ali Sajid Imami
+	 Suggestions: [Miami, imam, Imam, Imams, Mimi]
+./src/ttrustle/components/square.rs:6:12      - Unknown word (gameplay)   -- use crate::gameplay::Symbol;
+	 Suggestions: [gamely, gamelan, gamay, gamey, gamily]
+./src/ttrustle/gameplay.rs:1:44      - Unknown word (Sajid)      -- opyrightText: 2022 - 2024 Ali Sajid Imami
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./src/ttrustle/gameplay.rs:1:50      - Unknown word (Imami)      -- 22 - 2024 Ali Sajid Imami
+	 Suggestions: [Miami, imam, Imam, Imams, Mimi]
+./src/ttrustle/gameplay/errors.rs:1:44      - Unknown word (Sajid)      -- opyrightText: 2022 - 2024 Ali Sajid Imami
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./src/ttrustle/gameplay/errors.rs:1:50      - Unknown word (Imami)      -- 22 - 2024 Ali Sajid Imami
+	 Suggestions: [Miami, imam, Imam, Imams, Mimi]
+./src/ttrustle/gameplay/game.rs:1:44      - Unknown word (Sajid)      -- opyrightText: 2022 - 2024 Ali Sajid Imami
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./src/ttrustle/gameplay/game.rs:1:50      - Unknown word (Imami)      -- 22 - 2024 Ali Sajid Imami
+	 Suggestions: [Miami, imam, Imam, Imams, Mimi]
+./src/ttrustle/gameplay/player.rs:1:44      - Unknown word (Sajid)      -- opyrightText: 2022 - 2024 Ali Sajid Imami
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./src/ttrustle/gameplay/player.rs:1:50      - Unknown word (Imami)      -- 22 - 2024 Ali Sajid Imami
+	 Suggestions: [Miami, imam, Imam, Imams, Mimi]
+./src/ttrustle/main.rs:1:44      - Unknown word (Sajid)      -- opyrightText: 2022 - 2024 Ali Sajid Imami
+	 Suggestions: [Said, Sapid, sadi, Sadi, Saadi]
+./src/ttrustle/main.rs:1:50      - Unknown word (Imami)      -- 22 - 2024 Ali Sajid Imami
+	 Suggestions: [Miami, imam, Imam, Imams, Mimi]
+CSpell: Files checked: 42, Issues found: 191 in 33 files.
+
+
+You can skip this misspellings by defining the following .cspell.json file at the root of your repository
+Of course, please correct real typos before :)
+
+{
+    "version": "0.2",
+    "language": "en",
+    "ignorePaths": [
+        "**/node_modules/**",
+        "**/vscode-extension/**",
+        "**/.git/**",
+        "**/.pnpm-lock.json",
+        ".vscode",
+        "package-lock.json",
+        "megalinter-reports"
+    ],
+    "words": [
+        "Bogdan",
+        "Cloudant",
+        "Imami",
+        "Krycho",
+        "MSRV",
+        "MSVC",
+        "Michie",
+        "NAMTAO",
+        "Pshonyak",
+        "Rustacean",
+        "SEMREL",
+        "SUBKEY",
+        "Sajid",
+        "Swatinem",
+        "Traceback",
+        "Tris",
+        "VERCEL",
+        "Vercel",
+        "aarch",
+        "alphabatized",
+        "automerge",
+        "bidi",
+        "binstall",
+        "clippy",
+        "commitizen",
+        "conventionalcommits",
+        "cycjimmy",
+        "doctests",
+        "dtolnay",
+        "gameplay",
+        "ghaction",
+        "gpgsign",
+        "keyid",
+        "markdownlint",
+        "markdownlintignore",
+        "mdbook",
+        "msrv",
+        "nextest",
+        "plantuml",
+        "releaserc",
+        "rustc",
+        "rustfmt",
+        "schneegans",
+        "seccomp",
+        "serde",
+        "signingkey",
+        "smartquotes",
+        "sublicensable",
+        "tactix",
+        "taiki",
+        "tictacrustle",
+        "tictactoe",
+        "ttrustle",
+        "tttm",
+        "valeignore",
+        "vercel",
+        "yamlfmt"
+    ]
+}
+
+
+You can also copy-paste megalinter-reports/.cspell.json at the root of your repository

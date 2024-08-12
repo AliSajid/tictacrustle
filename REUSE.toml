@@ -32,15 +32,6 @@ path = [
     ".vale.ini",
     ".gitpod.yml",
     ".releaserc.yml",
-<<<<<<< HEAD
-    ".gitpod.Dockerfile",
-    ".cspell.json",
-    ".jscpd.json",
-    ".mega-linter.yml"
-||||||| parent of 2c18534 (build: update the project structure)
-=======
-    ".gitpod.Dockerfile"
->>>>>>> 2c18534 (build: update the project structure)
 ]
 precedence = "override"
 SPDX-FileCopyrightText = "2022 - 2024 Ali Sajid Imami"
