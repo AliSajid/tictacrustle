@@ -1,0 +1,38 @@
+Results of trivy linter (version 0.53.0)
+See documentation on https://megalinter.io/7.13.0/descriptors/repository_trivy/
+-----------------------------------------------
+
+❌ [ERROR] for workspace /tmp/lint
+Linter raw log:
+2024-08-12T13:36:42Z	INFO	Need to update DB
+2024-08-12T13:36:42Z	INFO	Downloading DB...	repository="ghcr.io/aquasecurity/trivy-db:2"
+5.88 MiB / 51.24 MiB [------->______________________________________________________] 11.48% ? p/s ?8.70 MiB / 51.24 MiB [---------->___________________________________________________] 16.97% ? p/s ?12.82 MiB / 51.24 MiB [--------------->_____________________________________________] 25.02% ? p/s ?14.49 MiB / 51.24 MiB [------------->__________________________________] 28.29% 14.37 MiB p/s ETA 2s17.71 MiB / 51.24 MiB [---------------->_______________________________] 34.57% 14.37 MiB p/s ETA 2s22.53 MiB / 51.24 MiB [--------------------->__________________________] 43.96% 14.37 MiB p/s ETA 1s24.10 MiB / 51.24 MiB [---------------------->_________________________] 47.04% 14.48 MiB p/s ETA 1s27.62 MiB / 51.24 MiB [------------------------->______________________] 53.90% 14.48 MiB p/s ETA 1s31.95 MiB / 51.24 MiB [----------------------------->__________________] 62.35% 14.48 MiB p/s ETA 1s38.23 MiB / 51.24 MiB [----------------------------------->____________] 74.61% 15.06 MiB p/s ETA 0s38.23 MiB / 51.24 MiB [----------------------------------->____________] 74.61% 15.06 MiB p/s ETA 0s44.01 MiB / 51.24 MiB [----------------------------------------->______] 85.89% 15.06 MiB p/s ETA 0s45.43 MiB / 51.24 MiB [------------------------------------------>_____] 88.67% 14.86 MiB p/s ETA 0s46.56 MiB / 51.24 MiB [------------------------------------------->____] 90.86% 14.86 MiB p/s ETA 0s51.18 MiB / 51.24 MiB [----------------------------------------------->] 99.89% 14.86 MiB p/s ETA 0s51.24 MiB / 51.24 MiB [---------------------------------------------->] 100.00% 14.53 MiB p/s ETA 0s51.24 MiB / 51.24 MiB [---------------------------------------------->] 100.00% 14.53 MiB p/s ETA 0s51.24 MiB / 51.24 MiB [---------------------------------------------->] 100.00% 14.53 MiB p/s ETA 0s51.24 MiB / 51.24 MiB [---------------------------------------------->] 100.00% 13.59 MiB p/s ETA 0s51.24 MiB / 51.24 MiB [---------------------------------------------->] 100.00% 13.59 MiB p/s ETA 0s51.24 MiB / 51.24 MiB [---------------------------------------------->] 100.00% 13.59 MiB p/s ETA 0s51.24 MiB / 51.24 MiB [---------------------------------------------->] 100.00% 12.71 MiB p/s ETA 0s51.24 MiB / 51.24 MiB [---------------------------------------------->] 100.00% 12.71 MiB p/s ETA 0s51.24 MiB / 51.24 MiB [-------------------------------------------------] 100.00% 11.58 MiB p/s 4.6s2024-08-12T13:36:47Z	INFO	Vulnerability scanning is enabled
+2024-08-12T13:36:47Z	INFO	Misconfiguration scanning is enabled
+2024-08-12T13:36:47Z	INFO	Need to update the built-in policies
+2024-08-12T13:36:47Z	INFO	Downloading the built-in policies...
+74.86 KiB / 74.86 KiB [--------------------------------------------------------] 100.00% ? p/s 100ms2024-08-12T13:37:16Z	INFO	Number of language-specific files	num=1
+2024-08-12T13:37:16Z	INFO	[cargo] Detecting vulnerabilities...
+2024-08-12T13:37:16Z	INFO	Detected config files	num=1
+
+.gitpod.Dockerfile (dockerfile)
+===============================
+Tests: 27 (SUCCESSES: 25, FAILURES: 2, EXCEPTIONS: 0)
+Failures: 2 (UNKNOWN: 0, LOW: 1, MEDIUM: 0, HIGH: 1, CRITICAL: 0)
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+────────────────────────────────────────
+
+
+

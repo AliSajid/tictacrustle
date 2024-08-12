@@ -1,0 +1,30 @@
+Results of lychee linter (version 0.15.1)
+See documentation on https://megalinter.io/7.13.0/descriptors/spell_lychee/
+-----------------------------------------------
+
+❌ [ERROR] for workspace /tmp/lint
+Linter raw log:
+✗ [ERR] file://LICENSE-MIT | Failed: Cannot find file
+✗ [ERR] file://LICENSE-APACHE | Failed: Cannot find file
+✗ [ERR] file://LICENSE-MIT | Failed: Cannot find file
+✗ [ERR] file://LICENSE-APACHE | Failed: Cannot find file
+✗ [404] https://github.com/GNOME/byzanz | Failed: Network error: Not Found
+📝 Summary
+---------------------
+🔍 Total...........85
+✅ Successful......78
+⏳ Timeouts.........0
+🔀 Redirected.......0
+👻 Excluded.........2
+❓ Unknown..........0
+🚫 Errors...........5
+
+Errors in README.md
+✗ [ERR] file://LICENSE-APACHE | Failed: Cannot find file
+✗ [ERR] file://LICENSE-MIT | Failed: Cannot find file
+
+Errors in CONTRIBUTING.md
+✗ [ERR] file://LICENSE-APACHE | Failed: Cannot find file
+✗ [ERR] file://LICENSE-MIT | Failed: Cannot find file
+✗ [404] https://github.com/GNOME/byzanz | Failed: Network error: Not Found
+💡 There were issues with GitHub URLs. You could try setting a GitHub token and running lychee again.
