@@ -1,0 +1,16 @@
+Results of prettier linter (version 3.3.2)
+See documentation on https://megalinter.io/7.13.0/descriptors/yaml_prettier/
+-----------------------------------------------
+
+❌ [ERROR] for workspace /tmp/lint
+Linter raw log:
+Checking formatting...
+[warn] .github/workflows/audit.yaml
+[warn] .github/workflows/ci.yaml
+[warn] .github/workflows/code_coverage.yaml
+[warn] .github/workflows/deploy_mdbook.yaml
+[warn] .github/workflows/get_next_version.yaml
+[warn] .github/workflows/release.yaml
+[warn] .releaserc.yml
+[warn] Code style issues found in 7 files. Run Prettier with --write to fix.
+

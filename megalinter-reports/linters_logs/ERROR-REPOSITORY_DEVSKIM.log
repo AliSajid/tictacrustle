@@ -1,0 +1,8 @@
+Results of devskim linter (version 1.0.33)
+See documentation on https://megalinter.io/7.13.0/descriptors/repository_devskim/
+-----------------------------------------------
+
+❌ [ERROR] for workspace /tmp/lint
+Linter raw log:
+terminate called after throwing an instance of 'PAL_SEHException'
+

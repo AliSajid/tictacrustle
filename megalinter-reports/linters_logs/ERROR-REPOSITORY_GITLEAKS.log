@@ -1,0 +1,41 @@
+Results of gitleaks linter (version 8.18.4)
+See documentation on https://megalinter.io/7.13.0/descriptors/repository_gitleaks/
+-----------------------------------------------
+
+❌ [ERROR] for workspace /tmp/lint
+Linter raw log:
+
+    ○
+    │╲
+    │ ○
+    ○ ░
+    ░    gitleaks
+
+Finding:     GIST_KEY: REDACTED # pragma: allowlist...
+Secret:      REDACTED
+RuleID:      generic-api-key
+Entropy:     3.616729
+File:        .github/workflows/workflows/ci.yaml
+Line:        16
+Commit:      aed0ee1cbcd4c33997bca6e8eaca780f7b04e9da
+Author:      Ali Sajid Imami
+Email:       395482+AliSajid@users.noreply.github.com
+Date:        2024-02-25T00:07:51Z
+Fingerprint: aed0ee1cbcd4c33997bca6e8eaca780f7b04e9da:.github/workflows/workflows/ci.yaml:generic-api-key:16
+
+Finding:     GIST_KEY: REDACTED # pragma: allowlist...
+Secret:      REDACTED
+RuleID:      generic-api-key
+Entropy:     3.616729
+File:        .github/workflows/ci.yaml
+Line:        20
+Commit:      6a4947efb7a85339458d5da0e27970f457bde263
+Author:      Ali Sajid Imami
+Email:       395482+AliSajid@users.noreply.github.com
+Date:        2022-12-26T05:12:32Z
+Fingerprint: 6a4947efb7a85339458d5da0e27970f457bde263:.github/workflows/ci.yaml:generic-api-key:20
+
+1:37PM INF 186 commits scanned.
+1:37PM INF scan completed in 23.6s
+1:37PM WRN leaks found: 2
+
