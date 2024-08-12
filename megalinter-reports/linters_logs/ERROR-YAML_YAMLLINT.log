@@ -1,0 +1,58 @@
+Results of yamllint linter (version 1.35.1)
+See documentation on https://megalinter.io/7.13.0/descriptors/yaml_yamllint/
+-----------------------------------------------
+
+❌ [ERROR] for workspace /tmp/lint
+Linter raw log:
+.github/workflows/audit.yaml
+  3:1       warning  truthy value should be one of [false, true]  (truthy)
+  23:17     error    wrong indentation: expected 18 but found 16  (indentation)
+
+.github/workflows/ci.yaml
+  3:1       warning  truthy value should be one of [false, true]  (truthy)
+  58:17     error    wrong indentation: expected 18 but found 16  (indentation)
+  63:17     error    wrong indentation: expected 18 but found 16  (indentation)
+  78:17     error    wrong indentation: expected 18 but found 16  (indentation)
+  84:17     error    wrong indentation: expected 18 but found 16  (indentation)
+  95:17     error    wrong indentation: expected 18 but found 16  (indentation)
+
+.github/workflows/code_coverage.yaml
+  3:1       warning  truthy value should be one of [false, true]  (truthy)
+  18:17     error    wrong indentation: expected 18 but found 16  (indentation)
+  29:17     error    wrong indentation: expected 18 but found 16  (indentation)
+  31:17     error    wrong indentation: expected 18 but found 16  (indentation)
+
+.github/workflows/deploy_mdbook.yaml
+  1:1       warning  missing document start "---"  (document-start)
+  2:1       warning  truthy value should be one of [false, true]  (truthy)
+
+.github/workflows/get_next_version.yaml
+  3:1       warning  truthy value should be one of [false, true]  (truthy)
+  19:17     error    wrong indentation: expected 18 but found 16  (indentation)
+  24:17     error    wrong indentation: expected 18 but found 16  (indentation)
+  29:17     error    wrong indentation: expected 18 but found 16  (indentation)
+  40:17     error    wrong indentation: expected 18 but found 16  (indentation)
+
+.github/workflows/release.yaml
+  2:1       warning  truthy value should be one of [false, true]  (truthy)
+  67:17     error    wrong indentation: expected 18 but found 16  (indentation)
+  74:17     error    wrong indentation: expected 18 but found 16  (indentation)
+  101:17    error    wrong indentation: expected 18 but found 16  (indentation)
+  120:17    error    wrong indentation: expected 18 but found 16  (indentation)
+  125:17    error    wrong indentation: expected 18 but found 16  (indentation)
+  141:17    error    wrong indentation: expected 18 but found 16  (indentation)
+  145:17    error    wrong indentation: expected 18 but found 16  (indentation)
+  169:17    error    wrong indentation: expected 18 but found 16  (indentation)
+  174:17    error    wrong indentation: expected 18 but found 16  (indentation)
+
+.gitpod.yml
+  1:1       warning  missing document start "---"  (document-start)
+
+.pre-commit-config.yaml
+  4:1       warning  missing document start "---"  (document-start)
+
+.releaserc.yml
+  1:1       warning  missing document start "---"  (document-start)
+  12:5      error    wrong indentation: expected 2 but found 4  (indentation)
+
+

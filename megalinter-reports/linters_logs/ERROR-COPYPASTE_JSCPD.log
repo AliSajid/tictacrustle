@@ -1,0 +1,59 @@
+Results of jscpd linter (version 4.0.5)
+See documentation on https://megalinter.io/7.13.0/descriptors/copypaste_jscpd/
+-----------------------------------------------
+
+❌ [ERROR] for workspace /tmp/lint
+Linter raw log:
+Clone found (rust):
+ - src/lib_tictacrustle/square_value.rs [1:1 - 43:2] (42 lines, 309 tokens)
+   src/ttrustle/components/square_value.rs [1:1 - 43:2]
+
+Clone found (rust):
+ - src/lib_tictacrustle/square.rs [6:1 - 44:2] (38 lines, 286 tokens)
+   src/ttrustle/components/square.rs [8:1 - 46:7]
+
+Clone found (rust):
+ - src/lib_tictacrustle/square.rs [48:6 - 111:4] (63 lines, 440 tokens)
+   src/ttrustle/components/square.rs [49:2 - 112:7]
+
+Clone found (rust):
+ - src/lib_tictacrustle/square.rs [111:4 - 156:2] (45 lines, 364 tokens)
+   src/ttrustle/components/square.rs [112:2 - 157:2]
+
+Clone found (rust):
+ - src/lib_tictacrustle/game.rs [17:1 - 37:23] (20 lines, 155 tokens)
+   src/ttrustle/gameplay/game.rs [11:1 - 31:20]
+
+Clone found (rust):
+ - src/lib_tictacrustle/board.rs [1:1 - 73:5] (72 lines, 545 tokens)
+   src/ttrustle/components/board.rs [1:1 - 73:13]
+
+Clone found (rust):
+ - src/lib_tictacrustle/board.rs [76:5 - 129:2] (53 lines, 459 tokens)
+   src/ttrustle/components/board.rs [70:5 - 123:2]
+
+Clone found (markdown):
+ - LICENSES/CC0-1.0.txt [87:2 - 92:12] (5 lines, 102 tokens)
+   LICENSES/CC0-1.0.txt [68:2 - 73:11]
+
+┌──────────┬────────────────┬─────────────┬──────────────┬──────────────┬──────────────────┬───────────────────┐
+│ Format   │ Files analyzed │ Total lines │ Total tokens │ Clones found │ Duplicated lines │ Duplicated tokens │
+├──────────┼────────────────┼─────────────┼──────────────┼──────────────┼──────────────────┼───────────────────┤
+│ rust     │ 14             │ 845         │ 6257         │ 7            │ 333 (39.41%)     │ 2558 (40.88%)     │
+├──────────┼────────────────┼─────────────┼──────────────┼──────────────┼──────────────────┼───────────────────┤
+│ markdown │ 4              │ 241         │ 4927         │ 1            │ 5 (2.07%)        │ 102 (2.07%)       │
+├──────────┼────────────────┼─────────────┼──────────────┼──────────────┼──────────────────┼───────────────────┤
+│ ini      │ 1              │ 28          │ 108          │ 0            │ 0 (0%)           │ 0 (0%)            │
+├──────────┼────────────────┼─────────────┼──────────────┼──────────────┼──────────────────┼───────────────────┤
+│ Total:   │ 19             │ 1114        │ 11292        │ 8            │ 338 (30.34%)     │ 2660 (23.56%)     │
+└──────────┴────────────────┴─────────────┴──────────────┴──────────────┴──────────────────┴───────────────────┘
+Found 8 clones.
+HTML report saved to megalinter-reports/copy-paste/html/
+ERROR: jscpd found too many duplicates (30.34%) over threshold (0%)
+Error: ERROR: jscpd found too many duplicates (30.34%) over threshold (0%)
+    at ThresholdReporter.report (/node-deps/node_modules/@jscpd/finder/dist/index.js:612:13)
+    at /node-deps/node_modules/@jscpd/finder/dist/index.js:110:18
+    at Array.forEach (<anonymous>)
+    at /node-deps/node_modules/@jscpd/finder/dist/index.js:109:22
+    at async /node-deps/node_modules/jscpd/dist/jscpd.js:351:5
+

@@ -1,0 +1,586 @@
+{
+  "statistics": {
+    "detectionDate": "2024-08-12T13:36:43.343Z",
+    "formats": {
+      "rust": {
+        "sources": {
+          "src/ttrustle/gameplay/player.rs": {
+            "lines": 42,
+            "tokens": 315,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/ttrustle/gameplay/game.rs": {
+            "lines": 44,
+            "tokens": 329,
+            "sources": 1,
+            "clones": 1,
+            "duplicatedLines": 20,
+            "duplicatedTokens": 155,
+            "percentage": 45.45,
+            "percentageTokens": 47.11,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/ttrustle/gameplay/errors.rs": {
+            "lines": 23,
+            "tokens": 165,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/ttrustle/components/square_value.rs": {
+            "lines": 42,
+            "tokens": 309,
+            "sources": 1,
+            "clones": 1,
+            "duplicatedLines": 42,
+            "duplicatedTokens": 309,
+            "percentage": 100,
+            "percentageTokens": 100,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/ttrustle/components/square.rs": {
+            "lines": 156,
+            "tokens": 1165,
+            "sources": 1,
+            "clones": 3,
+            "duplicatedLines": 146,
+            "duplicatedTokens": 1090,
+            "percentage": 93.59,
+            "percentageTokens": 93.56,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/ttrustle/components/board.rs": {
+            "lines": 122,
+            "tokens": 999,
+            "sources": 1,
+            "clones": 2,
+            "duplicatedLines": 125,
+            "duplicatedTokens": 1004,
+            "percentage": 102.46,
+            "percentageTokens": 100.5,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/ttrustle/main.rs": {
+            "lines": 7,
+            "tokens": 24,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/ttrustle/gameplay.rs": {
+            "lines": 11,
+            "tokens": 62,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/ttrustle/components.rs": {
+            "lines": 10,
+            "tokens": 49,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/lib_tictacrustle/square_value.rs": {
+            "lines": 42,
+            "tokens": 309,
+            "sources": 1,
+            "clones": 1,
+            "duplicatedLines": 42,
+            "duplicatedTokens": 309,
+            "percentage": 100,
+            "percentageTokens": 100,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/lib_tictacrustle/square.rs": {
+            "lines": 155,
+            "tokens": 1162,
+            "sources": 1,
+            "clones": 3,
+            "duplicatedLines": 146,
+            "duplicatedTokens": 1090,
+            "percentage": 94.19,
+            "percentageTokens": 93.8,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/lib_tictacrustle/lib.rs": {
+            "lines": 13,
+            "tokens": 68,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/lib_tictacrustle/game.rs": {
+            "lines": 50,
+            "tokens": 265,
+            "sources": 1,
+            "clones": 1,
+            "duplicatedLines": 20,
+            "duplicatedTokens": 155,
+            "percentage": 40,
+            "percentageTokens": 58.49,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/lib_tictacrustle/board.rs": {
+            "lines": 128,
+            "tokens": 1036,
+            "sources": 1,
+            "clones": 2,
+            "duplicatedLines": 125,
+            "duplicatedTokens": 1004,
+            "percentage": 97.66,
+            "percentageTokens": 96.91,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          }
+        },
+        "total": {
+          "lines": 845,
+          "tokens": 6257,
+          "sources": 14,
+          "clones": 7,
+          "duplicatedLines": 333,
+          "duplicatedTokens": 2558,
+          "percentage": 39.41,
+          "percentageTokens": 40.88,
+          "newDuplicatedLines": 0,
+          "newClones": 0
+        }
+      },
+      "markdown": {
+        "sources": {
+          "LICENSES/MIT.txt": {
+            "lines": 8,
+            "tokens": 344,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "LICENSES/CC0-1.0.txt": {
+            "lines": 120,
+            "tokens": 1695,
+            "sources": 1,
+            "clones": 2,
+            "duplicatedLines": 10,
+            "duplicatedTokens": 204,
+            "percentage": 8.33,
+            "percentageTokens": 12.04,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "LICENSES/Apache-2.0.txt": {
+            "lines": 72,
+            "tokens": 2616,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "4c571fe4-cf41-47ec-83df-2d2de51df7ca-megalinter_file_names_cspell.txt": {
+            "lines": 41,
+            "tokens": 272,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          }
+        },
+        "total": {
+          "lines": 241,
+          "tokens": 4927,
+          "sources": 4,
+          "clones": 1,
+          "duplicatedLines": 5,
+          "duplicatedTokens": 102,
+          "percentage": 2.07,
+          "percentageTokens": 2.07,
+          "newDuplicatedLines": 0,
+          "newClones": 0
+        }
+      },
+      "ini": {
+        "sources": {
+          ".vale.ini": {
+            "lines": 28,
+            "tokens": 108,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          }
+        },
+        "total": {
+          "lines": 28,
+          "tokens": 108,
+          "sources": 1,
+          "clones": 0,
+          "duplicatedLines": 0,
+          "duplicatedTokens": 0,
+          "percentage": 0,
+          "percentageTokens": 0,
+          "newDuplicatedLines": 0,
+          "newClones": 0
+        }
+      }
+    },
+    "total": {
+      "lines": 1114,
+      "tokens": 11292,
+      "sources": 19,
+      "clones": 8,
+      "duplicatedLines": 338,
+      "duplicatedTokens": 2660,
+      "percentage": 30.34,
+      "percentageTokens": 23.56,
+      "newDuplicatedLines": 0,
+      "newClones": 0
+    }
+  },
+  "duplicates": [
+    {
+      "format": "rust",
+      "lines": 43,
+      "fragment": "// SPDX-FileCopyrightText: 2022 - 2024 Ali Sajid Imami\n//\n// SPDX-License-Identifier: Apache-2.0\n// SPDX-License-Identifier: MIT\n\nuse std::fmt;\n\n#[allow(dead_code)]\n#[derive(Debug, PartialEq, Eq, Clone, Copy)]\npub enum SquareValue {\n    Empty,\n    X,\n    O,\n}\n\nimpl fmt::Display for SquareValue {\n    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {\n        match self {\n            SquareValue::X => write!(f, \" X \"),\n            SquareValue::O => write!(f, \" O \"),\n            SquareValue::Empty => write!(f, \"   \"),\n        }\n    }\n}\n\n#[cfg(test)]\nmod tests {\n    use super::*;\n\n    #[test]\n    fn test_display() {\n        assert_eq!(format!(\"{}\", SquareValue::X), \" X \");\n        assert_eq!(format!(\"{}\", SquareValue::O), \" O \");\n        assert_eq!(format!(\"{}\", SquareValue::Empty), \"   \");\n    }\n\n    #[test]\n    fn test_eq() {\n        assert_eq!(SquareValue::X, SquareValue::X);\n        assert_eq!(SquareValue::O, SquareValue::O);\n        assert_eq!(SquareValue::Empty, SquareValue::Empty);\n    }\n}",
+      "tokens": 0,
+      "firstFile": {
+        "name": "src/lib_tictacrustle/square_value.rs",
+        "start": 1,
+        "end": 43,
+        "startLoc": {
+          "line": 1,
+          "column": 1,
+          "position": 0
+        },
+        "endLoc": {
+          "line": 43,
+          "column": 2,
+          "position": 309
+        }
+      },
+      "secondFile": {
+        "name": "src/ttrustle/components/square_value.rs",
+        "start": 1,
+        "end": 43,
+        "startLoc": {
+          "line": 1,
+          "column": 1,
+          "position": 0
+        },
+        "endLoc": {
+          "line": 43,
+          "column": 2,
+          "position": 309
+        }
+      }
+    },
+    {
+      "format": "rust",
+      "lines": 39,
+      "fragment": "use super::square_value::SquareValue;\nuse std::fmt::{self, Display, Formatter};\n\n#[derive(Debug, PartialEq, Eq, Clone, Copy)]\npub struct Square {\n    value: SquareValue,\n}\n\nimpl Display for Square {\n    fn fmt(&self, f: &mut Formatter) -> fmt::Result {\n        write!(f, \"{}\", self.value)\n    }\n}\n\n#[allow(dead_code)]\nimpl Square {\n    pub fn new() -> Square {\n        Square {\n            value: SquareValue::Empty,\n        }\n    }\n\n    fn is_empty(&self) -> bool {\n        self.value == SquareValue::Empty\n    }\n\n    fn is_x(&self) -> bool {\n        self.value == SquareValue::X\n    }\n\n    fn is_o(&self) -> bool {\n        self.value == SquareValue::O\n    }\n\n    fn get_value(&self) -> SquareValue {\n        self.value\n    }\n\n    pub fn set_value(&mut self, value: &",
+      "tokens": 0,
+      "firstFile": {
+        "name": "src/lib_tictacrustle/square.rs",
+        "start": 6,
+        "end": 44,
+        "startLoc": {
+          "line": 6,
+          "column": 1,
+          "position": 9
+        },
+        "endLoc": {
+          "line": 44,
+          "column": 2,
+          "position": 295
+        }
+      },
+      "secondFile": {
+        "name": "src/ttrustle/components/square.rs",
+        "start": 8,
+        "end": 46,
+        "startLoc": {
+          "line": 8,
+          "column": 1,
+          "position": 21
+        },
+        "endLoc": {
+          "line": 46,
+          "column": 7,
+          "position": 307
+        }
+      }
+    },
+    {
+      "format": "rust",
+      "lines": 64,
+      "fragment": ",\n        }\n    }\n\n    fn set_x(&mut self) {\n        self.value = SquareValue::X;\n    }\n\n    fn set_o(&mut self) {\n        self.value = SquareValue::O;\n    }\n\n    fn set_empty(&mut self) {\n        self.value = SquareValue::Empty;\n    }\n}\n\nimpl Default for Square {\n    fn default() -> Self {\n        Square::new()\n    }\n}\n\n#[cfg(test)]\nmod tests {\n    use super::*;\n\n    #[test]\n    fn test_new() {\n        let square = Square::new();\n        assert_eq!(square.value, SquareValue::Empty);\n    }\n\n    #[test]\n    fn test_is_empty() {\n        let square = Square::new();\n        assert!(square.is_empty());\n    }\n\n    #[test]\n    fn test_is_x() {\n        let mut square = Square::new();\n        square.set_x();\n        assert!(square.is_x());\n    }\n\n    #[test]\n    fn test_is_o() {\n        let mut square = Square::new();\n        square.set_o();\n        assert!(square.is_o());\n    }\n\n    #[test]\n    fn test_get_value() {\n        let mut square = Square::new();\n        square.set_x();\n        assert_eq!(square.get_value(), SquareValue::X);\n    }\n\n    #[test]\n    fn test_set_value() {\n        let mut square = Square::new();\n        square.set_value(\"X\"",
+      "tokens": 0,
+      "firstFile": {
+        "name": "src/lib_tictacrustle/square.rs",
+        "start": 48,
+        "end": 111,
+        "startLoc": {
+          "line": 48,
+          "column": 6,
+          "position": 357
+        },
+        "endLoc": {
+          "line": 111,
+          "column": 4,
+          "position": 797
+        }
+      },
+      "secondFile": {
+        "name": "src/ttrustle/components/square.rs",
+        "start": 49,
+        "end": 112,
+        "startLoc": {
+          "line": 49,
+          "column": 2,
+          "position": 357
+        },
+        "endLoc": {
+          "line": 112,
+          "column": 7,
+          "position": 797
+        }
+      }
+    },
+    {
+      "format": "rust",
+      "lines": 46,
+      "fragment": ");\n        assert_eq!(square.get_value(), SquareValue::X);\n    }\n\n    #[test]\n    fn test_set_x() {\n        let mut square = Square::new();\n        square.set_x();\n        assert_eq!(square.get_value(), SquareValue::X);\n    }\n\n    #[test]\n    fn test_set_o() {\n        let mut square = Square::new();\n        square.set_o();\n        assert_eq!(square.get_value(), SquareValue::O);\n    }\n\n    #[test]\n    fn test_set_empty() {\n        let mut square = Square::new();\n        square.set_x();\n        square.set_empty();\n        assert_eq!(square.get_value(), SquareValue::Empty);\n    }\n\n    #[test]\n    fn test_display() {\n        let mut square = Square::new();\n        square.set_x();\n        assert_eq!(format!(\"{}\", square), \" X \");\n    }\n\n    #[test]\n    fn test_default() {\n        let square = Square::default();\n        assert_eq!(square.value, SquareValue::Empty);\n    }\n\n    #[test]\n    fn test_eq() {\n        let square1 = Square::new();\n        let square2 = Square::new();\n        assert_eq!(square1, square2);\n    }\n}",
+      "tokens": 0,
+      "firstFile": {
+        "name": "src/lib_tictacrustle/square.rs",
+        "start": 111,
+        "end": 156,
+        "startLoc": {
+          "line": 111,
+          "column": 4,
+          "position": 798
+        },
+        "endLoc": {
+          "line": 156,
+          "column": 2,
+          "position": 1162
+        }
+      },
+      "secondFile": {
+        "name": "src/ttrustle/components/square.rs",
+        "start": 112,
+        "end": 157,
+        "startLoc": {
+          "line": 112,
+          "column": 2,
+          "position": 801
+        },
+        "endLoc": {
+          "line": 157,
+          "column": 2,
+          "position": 1165
+        }
+      }
+    },
+    {
+      "format": "rust",
+      "lines": 21,
+      "fragment": "#[allow(dead_code)]\npub struct Game {\n    player_x: Player,\n    player_o: Player,\n    board: Board,\n    winner: Option<Player>,\n}\n\nimpl Game {\n    pub fn new() -> Self {\n        let current_player = Player { symbol: Symbol::X };\n        let other_player = Player { symbol: Symbol::O };\n        Self {\n            player_x: current_player,\n            player_o: other_player,\n            board: Board::new(),\n            winner: None,\n        }\n    }\n\n    // #[allow(dead_code)]",
+      "tokens": 0,
+      "firstFile": {
+        "name": "src/lib_tictacrustle/game.rs",
+        "start": 17,
+        "end": 37,
+        "startLoc": {
+          "line": 17,
+          "column": 1,
+          "position": 55
+        },
+        "endLoc": {
+          "line": 37,
+          "column": 23,
+          "position": 210
+        }
+      },
+      "secondFile": {
+        "name": "src/ttrustle/gameplay/game.rs",
+        "start": 11,
+        "end": 31,
+        "startLoc": {
+          "line": 11,
+          "column": 1,
+          "position": 54
+        },
+        "endLoc": {
+          "line": 31,
+          "column": 20,
+          "position": 209
+        }
+      }
+    },
+    {
+      "format": "rust",
+      "lines": 73,
+      "fragment": "// SPDX-FileCopyrightText: 2022 - 2024 Ali Sajid Imami\n//\n// SPDX-License-Identifier: Apache-2.0\n// SPDX-License-Identifier: MIT\n\nuse super::square::Square;\n\n#[derive(Debug, PartialEq, Eq)]\n\npub struct Board {\n    squares: [[Square; 3]; 3],\n}\n\n#[allow(dead_code)]\nimpl Board {\n    pub fn new() -> Board {\n        Board {\n            squares: [[Square::new(); 3]; 3],\n        }\n    }\n\n    fn get_row(&self, row: usize) -> [Square; 3] {\n        [\n            self.get_square(row, 0),\n            self.get_square(row, 1),\n            self.get_square(row, 2),\n        ]\n    }\n\n    fn get_column(&self, column: usize) -> [Square; 3] {\n        [\n            self.get_square(0, column),\n            self.get_square(1, column),\n            self.get_square(2, column),\n        ]\n    }\n\n    fn get_diagonal(&self, diagonal: usize) -> [Square; 3] {\n        match diagonal {\n            0 => [\n                self.get_square(0, 0),\n                self.get_square(1, 1),\n                self.get_square(2, 2),\n            ],\n            1 => [\n                self.get_square(0, 2),\n                self.get_square(1, 1),\n                self.get_square(2, 0),\n            ],\n            _ => panic!(\"Invalid diagonal\"),\n        }\n    }\n\n    pub fn get_square(&self, row: usize, column: usize) -> Square {\n        self.squares[row][column]\n    }\n\n    pub fn print(&self) {\n        for row in 0..3 {\n            println!(\n                \"{}|{}|{}\",\n                self.get_square(row, 0),\n                self.get_square(row, 1),\n                self.get_square(row, 2)\n            );\n            if row < 2 {\n                println!(\"-----------\");\n            }\n        }\n    }\n}\n\nimpl",
+      "tokens": 0,
+      "firstFile": {
+        "name": "src/lib_tictacrustle/board.rs",
+        "start": 1,
+        "end": 73,
+        "startLoc": {
+          "line": 1,
+          "column": 1,
+          "position": 0
+        },
+        "endLoc": {
+          "line": 73,
+          "column": 5,
+          "position": 545
+        }
+      },
+      "secondFile": {
+        "name": "src/ttrustle/components/board.rs",
+        "start": 1,
+        "end": 73,
+        "startLoc": {
+          "line": 1,
+          "column": 1,
+          "position": 0
+        },
+        "endLoc": {
+          "line": 73,
+          "column": 13,
+          "position": 545
+        }
+      }
+    },
+    {
+      "format": "rust",
+      "lines": 54,
+      "fragment": "}\n}\n\n#[cfg(test)]\nmod tests {\n    use super::*;\n\n    #[test]\n    fn test_get_row() {\n        let board = Board::new();\n        assert_eq!(\n            board.get_row(0),\n            [Square::new(), Square::new(), Square::new()]\n        );\n        assert_eq!(\n            board.get_row(1),\n            [Square::new(), Square::new(), Square::new()]\n        );\n        assert_eq!(\n            board.get_row(2),\n            [Square::new(), Square::new(), Square::new()]\n        );\n    }\n\n    #[test]\n    fn test_get_column() {\n        let board = Board::new();\n        assert_eq!(\n            board.get_column(0),\n            [Square::new(), Square::new(), Square::new()]\n        );\n        assert_eq!(\n            board.get_column(1),\n            [Square::new(), Square::new(), Square::new()]\n        );\n        assert_eq!(\n            board.get_column(2),\n            [Square::new(), Square::new(), Square::new()]\n        );\n    }\n\n    #[test]\n    fn test_get_diagonal() {\n        let board = Board::new();\n        assert_eq!(\n            board.get_diagonal(0),\n            [Square::new(), Square::new(), Square::new()]\n        );\n        assert_eq!(\n            board.get_diagonal(1),\n            [Square::new(), Square::new(), Square::new()]\n        );\n    }\n}",
+      "tokens": 0,
+      "firstFile": {
+        "name": "src/lib_tictacrustle/board.rs",
+        "start": 76,
+        "end": 129,
+        "startLoc": {
+          "line": 76,
+          "column": 5,
+          "position": 577
+        },
+        "endLoc": {
+          "line": 129,
+          "column": 2,
+          "position": 1036
+        }
+      },
+      "secondFile": {
+        "name": "src/ttrustle/components/board.rs",
+        "start": 70,
+        "end": 123,
+        "startLoc": {
+          "line": 70,
+          "column": 5,
+          "position": 540
+        },
+        "endLoc": {
+          "line": 123,
+          "column": 2,
+          "position": 999
+        }
+      }
+    },
+    {
+      "format": "markdown",
+      "lines": 6,
+      "fragment": "in the Work (i) in all territories worldwide, (ii) for the\nmaximum duration provided by applicable law or treaty (including future\ntime extensions), (iii) in any current or future medium and for any number\nof copies, and (iv) for any purpose whatsoever, including without\nlimitation commercial, advertising or promotional purposes (the\n\"License\").",
+      "tokens": 0,
+      "firstFile": {
+        "name": "LICENSES/CC0-1.0.txt",
+        "start": 87,
+        "end": 92,
+        "startLoc": {
+          "line": 87,
+          "column": 2,
+          "position": 1259
+        },
+        "endLoc": {
+          "line": 92,
+          "column": 12,
+          "position": 1361
+        }
+      },
+      "secondFile": {
+        "name": "LICENSES/CC0-1.0.txt",
+        "start": 68,
+        "end": 73,
+        "startLoc": {
+          "line": 68,
+          "column": 2,
+          "position": 872
+        },
+        "endLoc": {
+          "line": 73,
+          "column": 11,
+          "position": 974
+        }
+      }
+    }
+  ],
+  "filename": "/node-deps/node_modules/@jscpd/html-reporter/dist/templates/main.pug"
+}

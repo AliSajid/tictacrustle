@@ -1,4 +1,6 @@
-/target
+# SPDX-FileCopyrightText: 2022 - 2024 Ali Sajid Imami
+#
+# SPDX-License-Identifier: CC0-1.0
 
 # General
 .DS_Store
@@ -61,5 +63,3 @@ meta/vale-styles/**/*
 
 # Special Ignore File
 package_version_to_delete
-
-megalinter-reports/
