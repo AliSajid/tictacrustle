@@ -3,6 +3,10 @@
         "automerge",
         "Bogdan",
 <<<<<<< HEAD
+<<<<<<< HEAD
+||||||| parent of 058c1bd (build: update the project structure)
+=======
+>>>>>>> 058c1bd (build: update the project structure)
         "Cloudant",
         "Gameplay",
         "Krycho",
@@ -10,6 +14,7 @@
         "NAMTAO",
         "Pshonyak",
         "Rustacean",
+        "serde",
         "Slint",
         "struct",
         "structfield",

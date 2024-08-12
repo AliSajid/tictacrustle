@@ -32,6 +32,10 @@ path = [
     ".vale.ini",
     ".gitpod.yml",
     ".releaserc.yml",
+    ".gitpod.Dockerfile",
+    ".cspell.json",
+    ".jscpd.json",
+    ".mega-linter.yml"
 ]
 precedence = "override"
 SPDX-FileCopyrightText = "2022 - 2024 Ali Sajid Imami"
