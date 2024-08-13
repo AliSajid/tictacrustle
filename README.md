@@ -1,12 +1,5 @@
 <!--
 SPDX-FileCopyrightText: 2022 - 2024 Ali Sajid Imami
-<<<<<<< HEAD
-||||||| parent of dfd8585 (build: update the project structure)
-=======
-
-SPDX-License-Identifier: CC0-1.0
--->
->>>>>>> dfd8585 (build: update the project structure)
 
 SPDX-License-Identifier: Apache-2.0
 SPDX-License-Identifier: MIT
