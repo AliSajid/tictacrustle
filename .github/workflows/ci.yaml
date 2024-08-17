@@ -55,7 +55,7 @@ jobs:
                     - rust: nightly
                       label: nightly
         steps:
-            - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+            - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
             - name: Install Rust
               uses: dtolnay/rust-toolchain@master
               with:
@@ -77,7 +77,7 @@ jobs:
             - name: Cargo Lint
               run: cargo clippy -- -D warnings
             - name: Wait before badge creation
-              uses: AliSajid/random-wait-action@3033f0d9277d6c9fd543d2e645c43765604dc4ef # v1.2.0
+              uses: AliSajid/random-wait-action@16528b80b171bd27277c01e391f54deececa959d # v1.4.0
               with:
                 minimum: ${{env.MINIMUM_WAIT}}
                 maximum: ${{env.MAXIMUM_WAIT}}
