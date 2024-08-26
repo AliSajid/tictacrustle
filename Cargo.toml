@@ -8,13 +8,13 @@ name = "tictacrustle"
 authors = ["Ali Sajid Imami <395482+AliSajid@users.noreply.github.com>"]
 categories = ["game", "ai", "tictactoe", "menace"]
 description = "Tic Tac Toe game with a Menace[ing] AI"
-documentation = "https://docs.rs/crate/ttt_menace"
+documentation = "https://docs.rs/crate/tictacrustle"
 edition = "2021"
-homepage = "https://aliimami.com/ttt_menace"
+homepage = "https://aliimami.com/tictacrustle"
 keywords = ["tictactoe", "menace", "rust"]
 license = "MIT OR Apache-2.0"
 readme = "README.md"
-repository = "https://github.com/AliSajid/tictactoe"
+repository = "https://github.com/AliSajid/tictacrustle"
 version = "1.0.0-next.2"
 
 [lib]
