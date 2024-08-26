@@ -26,7 +26,7 @@ This project develops a Tic-Tac-Toe game in Rust with MENACE AI. It offers a ser
 
 ## [MENACE](https://en.wikipedia.org/wiki/MENACE)
 
-Machine Educable Noughts and Crosses Engine (MENACE) is one of the first implementations of a machine learning system. Donald Michie developed it in 1961 while working at University of Edinburgh. The original system used a stack of matchboxes labeled with possible game states, along with a reinforcement learning algorithm, to learn the optimal strategy over a certain number of games. Michie called this system Matchbox Educable Noughts and Crosses Engine (MENACE).
+Machine Educable Naughts and Crosses Engine (MENACE) is one of the first implementations of a machine learning system. Donald Michie developed it in 1961 while working at University of Edinburgh. The original system used a stack of matchboxes labeled with possible game states, along with a reinforcement learning algorithm, to learn the optimal strategy over a certain number of games. Michie called this system Matchbox Educable Naughts and Crosses Engine (MENACE).
 
 This was one of the first systems to use reinforcement learning to learn how to play a game and the first to prove that a machine could learn how to play a game without being explicitly programmed to do so.
 

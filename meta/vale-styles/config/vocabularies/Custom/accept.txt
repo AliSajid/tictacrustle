@@ -21,3 +21,6 @@ MIT
 [Ee]num
 [Ss]truct
 [Gg]ameplay
+(?i)backtrace
+(?i)traceback
+(?i)config
