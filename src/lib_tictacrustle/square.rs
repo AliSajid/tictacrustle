@@ -67,7 +67,7 @@ impl Square {
     /// };
     ///
     /// // Create a new square
-    /// let square = Square::new();
+    /// let square = Square::new(0, 0);
     //# assert_eq!(square.value, SquareValue::Empty);
     /// ```
     /// # Returns
