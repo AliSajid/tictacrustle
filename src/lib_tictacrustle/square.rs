@@ -9,12 +9,7 @@ use std::fmt::{
     Formatter,
 };
 
-use anyhow::{
-    Error,
-    Result,
-};
-
-use super::square_value::SquareValue;
+use crate::SquareValue;
 
 /// `Square` is a struct that represents a square in a Tic-Tac-Toe game.
 ///

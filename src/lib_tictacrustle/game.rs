@@ -3,16 +3,12 @@
 // SPDX-License-Identifier: Apache-2.0
 // SPDX-License-Identifier: MIT
 
-use crate::Board;
-
-pub enum Symbol {
-    X,
-    O,
-}
-
-pub struct Player {
-    symbol: Symbol,
-}
+use crate::{
+    Board,
+    GameError,
+    Player,
+    Symbol,
+};
 
 #[allow(dead_code)]
 pub struct Game {
@@ -23,6 +19,7 @@ pub struct Game {
 }
 
 impl Game {
+    #[must_use]
     pub fn new() -> Self {
         let current_player = Player { symbol: Symbol::X };
         let other_player = Player { symbol: Symbol::O };
@@ -34,18 +31,26 @@ impl Game {
         }
     }
 
-    // #[allow(dead_code)]
-    // pub fn play(&mut self) -> Result<(), Error> {
-    //     self.board.get_square(2, 2).set_x();
-    //     Ok(())
-    // }
+    #[allow(dead_code)]
+    pub fn play(&mut self) -> Result<(), GameError> {
+        self.board.get_square_mut(2, 2).set_value("X");
+        Ok(())
+    }
 
-    // #[allow(dead_code)]
-    // pub fn winner(&self) -> Option<Player> {
-    //     &self.winner
-    // }
+    #[allow(dead_code)]
+    #[must_use]
+    pub const fn winner(&self) -> Option<Player> {
+        self.winner
+    }
 
-    pub fn board(&self) -> &Board {
+    #[must_use]
+    pub const fn board(&self) -> &Board {
         &self.board
+    }
+}
+
+impl Default for Game {
+    fn default() -> Self {
+        Self::new()
     }
 }

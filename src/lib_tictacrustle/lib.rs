@@ -13,6 +13,9 @@ mod square_value;
 pub use board::Board;
 pub use errors::GameError;
 pub use game::Game;
-pub use player::Player;
+pub use player::{
+    Player,
+    Symbol,
+};
 pub use square::Square;
 pub use square_value::SquareValue;

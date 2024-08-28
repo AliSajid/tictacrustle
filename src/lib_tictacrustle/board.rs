@@ -7,7 +7,7 @@ use std::fmt::Display;
 
 use crate::Square;
 
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Debug)]
 pub struct Board {
     squares: [Square; 9],
 }

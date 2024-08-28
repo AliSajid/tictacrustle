@@ -12,6 +12,7 @@ pub struct Player {
 
 #[allow(dead_code)]
 impl Player {
+    #[must_use]
     pub fn new(symbol: &str) -> Self {
         match symbol {
             "X" => Self { symbol: Symbol::X },
@@ -36,8 +37,8 @@ pub enum Symbol {
 impl fmt::Display for Symbol {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
-            Symbol::X => write!(f, "X"),
-            Symbol::O => write!(f, "O"),
+            Self::X => write!(f, "X"),
+            Self::O => write!(f, "O"),
         }
     }
 }
