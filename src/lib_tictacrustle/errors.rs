@@ -15,7 +15,6 @@ pub enum GameError {
     SquareAlreadyX,
     SquareAlreadyO,
     SquareNotEmpty,
-    SquareAlreadyPlayed,
     InvalidSquare,
     GameAlreadyWon,
     InvalidTriple,
@@ -24,7 +23,6 @@ pub enum GameError {
 impl Display for GameError {
     fn fmt(&self, f: &mut Formatter<'_>) -> Result<(), Error> {
         match &self {
-            Self::SquareAlreadyPlayed => write!(f, "Square already played"),
             Self::InvalidSquare => write!(f, "Invalid square"),
             Self::GameAlreadyWon => write!(f, "Game already won"),
             Self::SquareAlreadyX => write!(f, "Square already X"),
