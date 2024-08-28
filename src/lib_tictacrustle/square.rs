@@ -67,7 +67,7 @@ impl Square {
     /// };
     ///
     /// // Create a new square
-    /// let square = Square::new();
+    /// let square = Square::new(0, 0);
     //# assert_eq!(square.value, SquareValue::Empty);
     /// ```
     /// # Returns
@@ -396,6 +396,47 @@ impl Square {
     /// square.set_o();
     /// assert_eq!(square.get_value(), &SquareValue::O);
     /// ```
+    pub fn set_o(&mut self) -> Result<()> {
+        match self.value {
+            SquareValue::Empty => {
+                self.value = SquareValue::O;
+                Ok(())
+            }
+            SquareValue::X => Err(Error::msg("Square is not empty")),
+            SquareValue::O => Err(Error::msg("Square is already O")),
+        }
+    }
+
+    /// Gets the `Square`'s value.
+    ///
+    /// This method returns the `Square`'s value as a `SquareValue` enum.
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// use tictacrustle::{
+    ///     Square,
+    ///     SquareValue,
+    /// };
+    ///
+    /// // Create a new square
+    /// let square = Square::new();
+    /// assert_eq!(square.get_value(), SquareValue::Empty);
+    /// // Create a square with an 'X'
+    /// let mut x_square = Square::new();
+    /// x_square.set_x();
+    /// assert_eq!(x_square.get_value(), SquareValue::X);
+    /// // Create a square with an 'O'
+    /// let mut o_square = Square::new();
+    /// o_square.set_o();
+    /// assert_eq!(o_square.get_value(), SquareValue::O);
+    /// ```
+    /// # Returns
+    ///
+    /// The `Square`'s value as a `SquareValue` enum.
+    #[must_use]
+    pub const fn get_value(&self) -> SquareValue {
+        self.value
     pub fn set_o(&mut self) {
         self.set_value("O");
     }
