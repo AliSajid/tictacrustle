@@ -3,6 +3,9 @@
 // SPDX-License-Identifier: Apache-2.0
 // SPDX-License-Identifier: MIT
 
+/// The `TicTacRustle` library
+///
+/// This library provides the necessary components to create a Tic-Tac-Toe game.
 mod board;
 mod errors;
 mod game;

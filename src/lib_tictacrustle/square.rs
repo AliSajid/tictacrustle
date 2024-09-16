@@ -67,7 +67,7 @@ impl Square {
     /// };
     ///
     /// // Create a new square
-    /// let square = Square::new(0, 0);
+    /// let square = Square::new();
     //# assert_eq!(square.value, SquareValue::Empty);
     /// ```
     /// # Returns
@@ -288,11 +288,16 @@ impl Square {
     /// // Create a square with an 'X'
     /// let mut x_square = Square::new();
     /// x_square.set_x();
-    /// assert_eq!(x_square.get_value(), SquareValue::X);
+    /// assert_eq!(x_square.get_value(), &SquareValue::X);
+    ///
     /// // Create a square with an 'O'
     /// let mut o_square = Square::new();
     /// o_square.set_o();
-    /// assert_eq!(o_square.get_value(), SquareValue::O);
+    /// assert_eq!(o_square.get_value(), &SquareValue::O);
+    ///
+    /// // Create an empty square
+    /// let empty_square = Square::new();
+    /// assert_eq!(empty_square.get_value(), &SquareValue::Empty);
     /// ```
     /// # Returns
     ///
@@ -317,20 +322,17 @@ impl Square {
     ///     SquareValue,
     /// };
     ///
-    /// // Create an empty square
-    /// let mut square = Square::new();
+    /// // Create empty squares
+    /// let mut x_square = Square::new();
+    /// let mut o_square = Square::new();
     ///
     /// // Set the square's value to 'X'
-    /// square.set_value("X");
-    /// assert_eq!(square.get_value(), SquareValue::X);
+    /// x_square.set_value("X");
+    /// assert_eq!(x_square.get_value(), &SquareValue::X);
     ///
     /// // Set the square's value to 'O'
-    /// square.set_value("O");
-    /// assert_eq!(square.get_value(), SquareValue::O);
-    ///
-    /// // Set the square's value to 'Empty'
-    /// square.set_value(" ");
-    /// assert_eq!(square.get_value(), SquareValue::Empty);
+    /// o_square.set_value("O");
+    /// assert_eq!(o_square.get_value(), &SquareValue::O);
     /// ```
     ///
     /// # Panics
@@ -368,7 +370,7 @@ impl Square {
     ///
     /// // Set the square's value to 'X'
     /// square.set_x();
-    /// assert_eq!(square.get_value(), SquareValue::X);
+    /// assert_eq!(square.get_value(), &SquareValue::X);
     /// ```
     pub fn set_x(&mut self) {
         self.set_value("X");
@@ -392,7 +394,7 @@ impl Square {
     ///
     /// // Set the square's value to 'O'
     /// square.set_o();
-    /// assert_eq!(square.get_value(), SquareValue::O);
+    /// assert_eq!(square.get_value(), &SquareValue::O);
     /// ```
     pub fn set_o(&mut self) {
         self.set_value("O");
@@ -498,12 +500,15 @@ mod tests {
     }
 
     #[rstest]
-    #[should_panic(expected = "Square is already")]
-    #[case(x_square(), "X")]
-    #[case(x_square(), "O")]
-    #[case(o_square(), "X")]
-    #[case(o_square(), "O")]
-    fn test_set_value_x(#[case] mut square: Square, #[case] set_value: &str) {
+    #[should_panic(expected = "Square is already X")]
+    #[case::x_x(x_square(), "X")]
+    #[should_panic(expected = "Square is already X")]
+    #[case::x_o(x_square(), "O")]
+    #[should_panic(expected = "Square is already O")]
+    #[case::o_x(o_square(), "X")]
+    #[should_panic(expected = "Square is already O")]
+    #[case::o_o(o_square(), "O")]
+    fn test_set_value_twice(#[case] mut square: Square, #[case] set_value: &str) {
         square.set_value(set_value);
     }
 
@@ -524,9 +529,9 @@ mod tests {
     }
 
     #[rstest]
-    #[case(empty_square(), " ")]
-    #[case(x_square(), "X")]
-    #[case(o_square(), "O")]
+    #[case(empty_square(), "   ")]
+    #[case(x_square(), " X ")]
+    #[case(o_square(), " O ")]
     fn test_display(#[case] square: Square, #[case] expected: &str) {
         assert_eq!(format!("{square}"), expected);
     }

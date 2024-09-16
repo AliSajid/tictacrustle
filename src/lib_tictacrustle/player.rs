@@ -5,13 +5,16 @@
 
 use std::fmt;
 
+/// The Player
 #[derive(Debug, Clone, Copy)]
 pub struct Player {
+    /// The symbol of the player
     pub symbol: Symbol,
 }
 
 #[allow(dead_code)]
 impl Player {
+    /// Create a new player
     #[must_use]
     pub fn new(symbol: &str) -> Self {
         match symbol {
@@ -28,9 +31,12 @@ impl fmt::Display for Player {
     }
 }
 
+/// The Symbol
 #[derive(Debug, Clone, Copy)]
 pub enum Symbol {
+    /// The X symbol
     X,
+    /// The O symbol
     O,
 }
 
