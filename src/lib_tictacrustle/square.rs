@@ -67,7 +67,7 @@ impl Square {
     /// };
     ///
     /// // Create a new square
-    /// let square = Square::new(0, 0);
+    /// let square = Square::new();
     //# assert_eq!(square.value, SquareValue::Empty);
     /// ```
     /// # Returns
@@ -459,20 +459,17 @@ impl Square {
     ///     SquareValue,
     /// };
     ///
-    /// // Create an empty square
-    /// let mut square = Square::new();
+    /// // Create empty squares
+    /// let mut x_square = Square::new();
+    /// let mut o_square = Square::new();
     ///
     /// // Set the square's value to 'X'
-    /// square.set_value("X");
-    /// assert_eq!(square.get_value(), SquareValue::X);
+    /// x_square.set_value("X");
+    /// assert_eq!(x_square.get_value(), &SquareValue::X);
     ///
     /// // Set the square's value to 'O'
-    /// square.set_value("O");
-    /// assert_eq!(square.get_value(), SquareValue::O);
-    ///
-    /// // Set the square's value to 'Empty'
-    /// square.set_value(" ");
-    /// assert_eq!(square.get_value(), SquareValue::Empty);
+    /// o_square.set_value("O");
+    /// assert_eq!(o_square.get_value(), &SquareValue::O);
     /// ```
     ///
     /// # Panics
@@ -510,7 +507,7 @@ impl Square {
     ///
     /// // Set the square's value to 'X'
     /// square.set_x();
-    /// assert_eq!(square.get_value(), SquareValue::X);
+    /// assert_eq!(square.get_value(), &SquareValue::X);
     /// ```
     pub fn set_x(&mut self) {
         self.set_value("X");
@@ -534,7 +531,7 @@ impl Square {
     ///
     /// // Set the square's value to 'O'
     /// square.set_o();
-    /// assert_eq!(square.get_value(), SquareValue::O);
+    /// assert_eq!(square.get_value(), &SquareValue::O);
     /// ```
     pub fn set_o(&mut self) {
         self.set_value("O");
