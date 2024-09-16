@@ -67,7 +67,7 @@ impl Square {
     /// };
     ///
     /// // Create a new square
-    /// let square = Square::new(0, 0);
+    /// let square = Square::new();
     //# assert_eq!(square.value, SquareValue::Empty);
     /// ```
     /// # Returns
@@ -206,16 +206,16 @@ impl Square {
     /// // Create a square with an 'X'
     /// let mut x_square = Square::new();
     /// x_square.set_x();
-    /// assert_eq!(x_square.get_value(), SquareValue::X);
+    /// assert_eq!(x_square.get_value(), &SquareValue::X);
     ///
     /// // Create a square with an 'O'
     /// let mut o_square = Square::new();
     /// o_square.set_o();
-    /// assert_eq!(o_square.get_value(), SquareValue::O);
+    /// assert_eq!(o_square.get_value(), &SquareValue::O);
     ///
     /// // Create an empty square
     /// let empty_square = Square::new();
-    /// assert_eq!(empty_square.get_value(), SquareValue::Empty);
+    /// assert_eq!(empty_square.get_value(), &SquareValue::Empty);
     /// ```
     ///
     /// # Returns
@@ -234,6 +234,45 @@ impl Square {
         self.value
     }
 
+    /// Sets the value of the `Square`.
+    ///
+    /// This method sets the `SquareValue` of the `Square` instance based on the provided string.
+    /// The string can be either `"X"`, `"O"`, or `" "` (for `Empty`).
+    ///
+    /// If an invalid string is provided, the method will panic with the message "Invalid value".
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// use tictacrustle::{
+    ///     Square,
+    ///     SquareValue,
+    /// };
+    ///
+    /// // Create an empty square
+    /// let mut square = Square::new();
+    ///
+    /// // Set the square's value to 'X'
+    /// square.set_value("X");
+    /// assert_eq!(square.get_value(), SquareValue::X);
+    ///
+    /// // Set the square's value to 'O'
+    /// square.set_value("O");
+    /// assert_eq!(square.get_value(), SquareValue::O);
+    ///
+    /// // Set the square's value to 'Empty'
+    /// square.set_value(" ");
+    /// assert_eq!(square.get_value(), SquareValue::Empty);
+    /// ```
+    ///
+    /// # Panics
+    ///
+    /// This method will panic if the provided string is not `"X"`, `"O"`, or `" "`.
+    ///
+    /// # Arguments
+    ///
+    /// * `value` - A string that represents the new `SquareValue`. It should be either `"X"`,
+    ///   `"O"`, or `" "`.
     pub fn set_value(&mut self, value: &str) {
         match value {
             "X" => self.value = SquareValue::X,
@@ -242,16 +281,52 @@ impl Square {
         }
     }
 
-    fn set_x(&mut self) {
-        self.value = SquareValue::X;
+    /// Sets the `Square`'s value to `X`.
+    ///
+    /// This method calls the `set_value` method with the argument `"X"`, which sets the `Square`'s
+    /// value to `SquareValue::X`.
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// use tictacrustle::{
+    ///     Square,
+    ///     SquareValue,
+    /// };
+    ///
+    /// // Create an empty square
+    /// let mut square = Square::new();
+    ///
+    /// // Set the square's value to 'X'
+    /// square.set_x();
+    /// assert_eq!(square.get_value(), SquareValue::X);
+    /// ```
+    pub fn set_x(&mut self) {
+        self.set_value("X");
     }
 
-    fn set_o(&mut self) {
-        self.value = SquareValue::O;
-    }
-
-    fn set_empty(&mut self) {
-        self.value = SquareValue::Empty;
+    /// Sets the `Square`'s value to `O`.
+    ///
+    /// This method calls the `set_value` method with the argument `"O"`, which sets the `Square`'s
+    /// value to `SquareValue::O`.
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// use tictacrustle::{
+    ///     Square,
+    ///     SquareValue,
+    /// };
+    ///
+    /// // Create an empty square
+    /// let mut square = Square::new();
+    ///
+    /// // Set the square's value to 'O'
+    /// square.set_o();
+    /// assert_eq!(square.get_value(), SquareValue::O);
+    /// ```
+    pub fn set_o(&mut self) {
+        self.set_value("O");
     }
 }
 
@@ -375,20 +450,14 @@ mod tests {
         square.set_value("invalid");
     }
 
-    #[test]
-    fn test_set_x() {
-        let mut square = Square::new();
-        let res = square.set_x();
-        assert!(square.is_x());
-        assert!(!square.is_o());
-        assert!(!square.is_empty());
-        assert!(res.is_ok());
-        let res = square.set_o();
-        assert!(res.is_err());
-        assert_eq!(res.unwrap_err().to_string(), "Square is not empty");
-        let res: Result<()> = square.set_x();
-        assert!(res.is_err());
-        assert_eq!(res.unwrap_err().to_string(), "Square is already X");
+    #[rstest]
+    #[should_panic(expected = "Square is already")]
+    #[case(x_square(), "X")]
+    #[case(x_square(), "O")]
+    #[case(o_square(), "X")]
+    #[case(o_square(), "O")]
+    fn test_set_value_x(#[case] mut square: Square, #[case] set_value: &str) {
+        square.set_value(set_value);
     }
 
     #[rstest]
@@ -399,15 +468,20 @@ mod tests {
         assert!(!empty_square.is_empty());
     }
 
-    #[test]
-    fn test_display() {
-        let mut square = Square::new();
-        square.set_x();
-        assert_eq!(format!("{}", square), " X ");
-        square.set_o();
-        assert_eq!(format!("{}", square), " O ");
-        square.set_value(" ");
-        assert_eq!(format!("{}", square), "   ");
+    #[rstest]
+    fn test_set_o(mut empty_square: Square) {
+        empty_square.set_o();
+        assert!(empty_square.is_o());
+        assert!(!empty_square.is_x());
+        assert!(!empty_square.is_empty());
+    }
+
+    #[rstest]
+    #[case(empty_square(), " ")]
+    #[case(x_square(), "X")]
+    #[case(o_square(), "O")]
+    fn test_display(#[case] square: Square, #[case] expected: &str) {
+        assert_eq!(format!("{square}"), expected);
     }
 
     #[test]
