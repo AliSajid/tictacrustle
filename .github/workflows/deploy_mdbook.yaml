@@ -38,7 +38,7 @@ jobs:
             echo "PROJECT_ENVIRONMENT=preview" >> $GITHUB_ENV
           fi
       - name: Setup NodeJS
-        uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4.1.0
+        uses: actions/setup-node@1d0ff469b7ec7b3cb9d8673fde0c81c44821de2a # v4.2.0
         with:
           node-version: '18'
       - name: Install pnpm
@@ -65,7 +65,7 @@ jobs:
       - name: Cache dependencies
         uses: Swatinem/rust-cache@f0deed1e0edfc6a9be95417288c0e1099b1eeec3 # v2.7.7
       - name: Install cargo-binstall
-        uses: taiki-e/install-action@a86da1a3cb51967612c80d6dc98c5cac03a73025 # v2.47.7
+        uses: taiki-e/install-action@510b3ecd7915856b6909305605afa7a8a57c1b04 # v2.48.1
         with:
           tool: cargo-binstall
       - name: Install dependencies
