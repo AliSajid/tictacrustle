@@ -35,7 +35,7 @@ serde = "1.0.152"
 serde_json = "1.0.91"
 
 [dev-dependencies]
-rstest = "=0.24.0"
+rstest = "=0.25.0"
 
 [lints.rust]
 missing_docs = "allow" # Ensure that all public items have documentation
