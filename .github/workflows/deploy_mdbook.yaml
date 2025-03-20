@@ -50,7 +50,7 @@ jobs:
         shell: bash
         run: |
           echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-      - uses: actions/cache@d4323d4df104b026a6aa633fdb11d772146be0bf # v4.2.2
+      - uses: actions/cache@5a3ec84eff668545956fd18022155c47e93e2684 # v4.2.3
         name: Setup pnpm cache
         with:
           path: ${{ env.STORE_PATH }}
@@ -63,9 +63,9 @@ jobs:
         with:
           toolchain: stable
       - name: Cache dependencies
-        uses: Swatinem/rust-cache@f0deed1e0edfc6a9be95417288c0e1099b1eeec3 # v2.7.7
+        uses: Swatinem/rust-cache@9d47c6ad4b02e050fd481d890b2ea34778fd09d6 # v2.7.8
       - name: Install cargo-binstall
-        uses: taiki-e/install-action@37bdc826eaedac215f638a96472df572feab0f9b # v2.49.30
+        uses: taiki-e/install-action@351cce3d3afa3dbd66bbe6d30df1d481b1448522 # v2.49.32
         with:
           tool: cargo-binstall
       - name: Install dependencies
