@@ -11,7 +11,7 @@ path = [
     ".secrets.baseline",
     ".markdownlintignore",
     ".vscode/*",
-    "guide/.gitignore"
+    "guide/.gitignore",
 ]
 precedence = "override"
 SPDX-FileCopyrightText = "2022 - 2024 Ali Sajid Imami"
@@ -35,7 +35,7 @@ path = [
     ".gitpod.Dockerfile",
     ".cspell.json",
     ".jscpd.json",
-    ".mega-linter.yml"
+    ".mega-linter.yml",
 ]
 precedence = "override"
 SPDX-FileCopyrightText = "2022 - 2024 Ali Sajid Imami"
@@ -48,10 +48,7 @@ SPDX-FileCopyrightText = "2022 - 2024 Ali Sajid Imami"
 SPDX-License-Identifier = "CC0-1.0"
 
 [[annotations]]
-path = [
-    ".github/ISSUE_TEMPLATE/*",
-    ".github/PULL_REQUEST_TEMPLATE.md"
-]
+path = [".github/ISSUE_TEMPLATE/*.md", ".github/PULL_REQUEST_TEMPLATE.md"]
 precedence = "override"
 SPDX-FileCopyrightText = "2022 - 2024 Ali Sajid Imami"
 SPDX-License-Identifier = "CC0-1.0"

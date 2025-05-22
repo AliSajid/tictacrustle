@@ -63,3 +63,5 @@ meta/vale-styles/**/*
 
 # Special Ignore File
 package_version_to_delete
+
+megalinter-reports
