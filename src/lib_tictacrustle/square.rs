@@ -73,8 +73,9 @@ impl Square {
     /// # Returns
     ///
     /// A new `Square` instance with an `Empty` value.
-    pub fn new() -> Square {
-        Square {
+    #[must_use]
+    pub const fn new() -> Self {
+        Self {
             value: SquareValue::Empty,
         }
     }
@@ -112,6 +113,7 @@ impl Square {
     ///
     /// - [`is_x`](struct.Square.html#method.is_x)
     /// - [`is_o`](struct.Square.html#method.is_o)
+    #[must_use]
     pub fn is_empty(&self) -> bool {
         self.value == SquareValue::Empty
     }
@@ -149,6 +151,7 @@ impl Square {
     ///
     /// - [`is_empty`](struct.Square.html#method.is_empty)
     /// - [`is_o`](struct.Square.html#method.is_o)
+    #[must_use]
     pub fn is_x(&self) -> bool {
         self.value == SquareValue::X
     }
@@ -186,6 +189,7 @@ impl Square {
     ///
     /// - [`is_empty`](struct.Square.html#method.is_empty)
     /// - [`is_x`](struct.Square.html#method.is_x)
+    #[must_use]
     pub fn is_o(&self) -> bool {
         self.value == SquareValue::O
     }
@@ -230,11 +234,12 @@ impl Square {
     /// - [`is_empty`](struct.Square.html#method.is_empty)
     /// - [`is_x`](struct.Square.html#method.is_x)
     /// - [`is_o`](struct.Square.html#method.is_o)
-    pub fn get_value(&self) -> SquareValue {
+    #[must_use]
+    pub const fn get_value(&self) -> SquareValue {
         self.value
     }
 
-    pub fn set_value(&mut self, value: &str) {
+    fn set_value(&mut self, value: &str) {
         match value {
             "X" => self.value = SquareValue::X,
             "O" => self.value = SquareValue::O,
@@ -242,15 +247,15 @@ impl Square {
         }
     }
 
-    fn set_x(&mut self) {
+    pub const fn set_x(&mut self) {
         self.value = SquareValue::X;
     }
 
-    fn set_o(&mut self) {
+    pub const fn set_o(&mut self) {
         self.value = SquareValue::O;
     }
 
-    fn set_empty(&mut self) {
+    pub const fn set_empty(&mut self) {
         self.value = SquareValue::Empty;
     }
 }
@@ -258,12 +263,6 @@ impl Square {
 impl Default for Square {
     fn default() -> Self {
         Self::new()
-    }
-}
-
-impl Display for Square {
-    fn fmt(&self, f: &mut Formatter) -> fmt::Result {
-        write!(f, "{}", self.value)
     }
 }
 
@@ -301,13 +300,9 @@ mod tests {
         square
     }
 
-    #[test]
-    fn test_new() {
-        let square = Square::new();
-        assert_eq!(square.get_value(), SquareValue::Empty);
-    }
-
-        assert_eq!(square.value, SquareValue::Empty);
+    #[rstest]
+    fn test_new(empty_square: Square) {
+        assert_eq!(empty_square.get_value(), SquareValue::Empty);
     }
 
     #[test]
@@ -370,7 +365,7 @@ mod tests {
     fn test_display() {
         let mut square = Square::new();
         square.set_x();
-        assert_eq!(format!("{}", square), " X ");
+        assert_eq!(format!("{square}"), " X ");
     }
 
     #[test]
