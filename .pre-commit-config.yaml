@@ -25,17 +25,10 @@ repos:
           types: [rust]
           files: \.rs$
           pass_filenames: false
-        - id: cargo-about-json
-          name: Generate list of licenses in JSON
-          entry: scripts/generate_about_json.sh
-          language: script
-          types_or: [file, rust]
-          files: "Cargo.toml$"
-          pass_filenames: false
-        - id: cargo-about-md
-          name: Generate list of licenses in Markdown
-          entry: scripts/generate_about_md.sh meta/licenses.hbs
-          language: script
+        - id: cargo-about
+          name: Generate list of licenses in JSON and Markdown
+          entry: mise run utils:generate-about
+          language: system
           types_or: [file, rust]
           files: "Cargo.toml$"
           pass_filenames: false
@@ -46,21 +39,14 @@ repos:
           types_or: [file, rust]
           files: "Cargo.toml$"
           pass_filenames: true
-        - id: vale-lint
-          name: Run Vale linter
-          entry: vale
-          language: system
-          types: [markdown]
-          files: "^(README.md|CONTRIBUTING.md|CODE_OF_CONDUCT.md|guide/src/.*.md)$"
     - repo: https://github.com/commitizen-tools/commitizen
-      rev: v3.29.0
+      rev: v4.7.2
       hooks:
         - id: commitizen
     - repo: https://github.com/pre-commit/pre-commit-hooks
-      rev: v4.6.0
+      rev: v5.0.0
       hooks:
         - id: check-json
-          exclude: ".vscode/.*json"
         - id: check-merge-conflict
         - id: no-commit-to-branch
           args:
@@ -88,7 +74,7 @@ repos:
           args:
             - --markdown-linebreak-ext=md
     - repo: https://github.com/compilerla/conventional-pre-commit
-      rev: v3.4.0
+      rev: v4.2.0
       hooks:
         - args:
             - build
@@ -114,12 +100,12 @@ repos:
         - id: forbid-tabs
         - id: remove-tabs
     - repo: https://github.com/google/yamlfmt
-      rev: v0.13.0
+      rev: v0.16.0
       hooks:
         - id: yamlfmt
           exclude: ".github/workflows/.*\\.ya?ml"
     - repo: https://github.com/igorshubovych/markdownlint-cli
-      rev: v0.41.0
+      rev: v0.45.0
       hooks:
         - id: markdownlint
           args:
@@ -134,16 +120,21 @@ repos:
             - ".secrets.baseline"
           exclude: "meta/licenses.*"
     - repo: https://github.com/sirosen/texthooks
-      rev: 0.6.7
+      rev: 0.6.8
       hooks:
         - id: fix-smartquotes
         - id: fix-ligatures
         - id: forbid-bidi-controls
     - repo: https://github.com/zricethezav/gitleaks
-      rev: v8.18.4
+      rev: v8.26.0
       hooks:
         - id: gitleaks
     - repo: https://github.com/fsfe/reuse-tool
-      rev: v4.0.3
+      rev: v5.0.2
       hooks:
-        - id: reuse
+        - id: reuse-lint-file
+    - repo: https://github.com/renovatebot/pre-commit-hooks
+      rev: 40.14.4
+      hooks:
+        - id: renovate-config-validator
+          args: [--strict]
