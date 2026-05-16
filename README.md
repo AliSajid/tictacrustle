@@ -1,11 +1,11 @@
 <!--
-SPDX-FileCopyrightText: 2022 - 2024 Ali Sajid Imami
+SPDX-FileCopyrightText: 2022 - 2026 Ali Sajid Imami
 
 SPDX-License-Identifier: Apache-2.0
 SPDX-License-Identifier: MIT
 -->
 
-# Tic-Tac-Rustle - A Tic-Tac-Toe Game with MENACE
+# Tic-Tac-Rustle - A Tic-tac-toe Game with MENACE
 
 ![GitHub Release (w/pre-release)](https://img.shields.io/github/v/release/AliSajid/tictacrustle?include_prereleases&logo=semantic-release)
 ![GitHub Release](https://img.shields.io/github/v/release/AliSajid/tictacrustle?logo=semantic-release)
@@ -14,20 +14,15 @@ SPDX-License-Identifier: MIT
 ![GitHub issues](https://img.shields.io/github/issues/AliSajid/tictacrustle)
 ![REUSE Compliance](https://img.shields.io/reuse/compliance/github.com%2FAliSajid%2Ftictacrustle)
 
-This project develops a Tic-Tac-Toe game in Rust with MENACE AI. It offers a server-client setup where users can play against a cloud-hosted MENACE AI or deploy their own locally.
+This project develops a Tic-tac-toe game in Rust with MENACE AI. It offers a server-client setup where users can play against a cloud-hosted MENACE AI or deploy their own locally.
 
 ## Builds
 
-|         | Stable | Beta | Nightly | MSRV (1.72.0) |
-| ------- | ------ | ---- | ------- | ---- |
-| Linux   | ![Ubuntu x Stable Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/ubuntu-stable.json) | ![Ubuntu x Beta Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/ubuntu-beta.json) | ![Ubuntu x Nightly Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/ubuntu-nightly.json) | ![Ubuntu x MSRV Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/ubuntu-msrv.json) |
-| Windows | ![Windows x Stable Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/windows-stable.json) | ![Windows x Beta Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/windows-beta.json) | ![Windows x Nightly Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/windows-nightly.json) | ![Windows x MSRV Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/windows-msrv.json) |
-| macos   | ![macos x Stable Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/macos-stable.json) | ![macos x Beta Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/macos-beta.json) | ![macos x Nightly Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/macos-nightly.json) | ![macos x MSRV Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/macos-msrv.json) |
-| Platform | Rust Version |Status |
-| -------- | ------ | ------ |
-| Linux    | stable <br/> beta <br/> nightly <br/> MSRV (1.64.0) | ![Ubuntu x Stable Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/ubuntu-stable.json) <br/> ![Ubuntu x Beta Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/ubuntu-beta.json) <br/> ![Ubuntu x Nightly Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/ubuntu-nightly.json) <br/> ![Ubuntu x MSRV Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/ubuntu-msrv.json) |
-| Windows  | stable <br/> beta <br/> nightly <br/> MSRV (1.64.0) | ![macos x Stable Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/windows-stable.json) <br/> ![macos x Beta Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/windows-beta.json) <br/> ![macos x Nightly Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/windows-nightly.json) <br/> ![macos x MSRV Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/windows-msrv.json) |
-| macos    | stable <br/> beta <br/> nightly <br/> MSRV (1.64.0) | ![Windows x Stable Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/macos-stable.json) <br/> ![Windows x Beta Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/macos-beta.json) <br/> ![Windows x Nightly Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/macos-nightly.json) <br/> ![Windows x MSRV Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/macos-msrv.json) |
+|         | Stable                                                                                                                                                             | Beta                                                                                                                                                           | Nightly                                                                                                                                                              | MSRV (1.72.0)                                                                                                                                                        |
+| ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------   | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Linux   | ![Ubuntu x Stable Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/ubuntu-stable.json)   | ![Ubuntu x Beta Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/ubuntu-beta.json)   | ![Ubuntu x Nightly Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/ubuntu-nightly.json)   | ![Ubuntu x MSRV Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/ubuntu-msrv.json)         |
+| Windows | ![Windows x Stable Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/windows-stable.json) | ![Windows x Beta Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/windows-beta.json) | ![Windows x Nightly Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/windows-nightly.json) | ![Windows x MSRV Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/windows-msrv.json)       |
+| macos   | ![macos x Stable Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/macos-stable.json)     | ![macos x Beta Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/macos-beta.json)     | ![macos x Nightly Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/macos-nightly.json)     | ![macos x MSRV Rust](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AliSajid/185618f862b98debb8b034c34e83173d/raw/macos-msrv.json)           |
 
 ## [MENACE](https://en.wikipedia.org/wiki/MENACE)
 
@@ -37,7 +32,7 @@ This was one of the first systems to use reinforcement learning to learn how to 
 
 The classical MENACE system consisted of 304 matchboxes. Each matchbox represented a possible state of the game. Each matchbox had up to nine colored beads inside, with the number and color of beads representing the next move on the 3 X 3 board. The player would make the first move, and then draw a random bead from the matchbox matching the state of the game. This represents the move that MENACE _has chosen_ to make. The process continues until the player or MENACE wins the game. If MENACE wins, the player returns the beads to the matchbox, along with extra beads for the winning move. If the player wins, the player does not return the beads to the matchbox. This process repeats until MENACE achieves the optimal strategy.
 
-More information on MENACE is available [here](https://en.wikipedia.org/wiki/MENACE).
+[More information on MENACE is available here](https://en.wikipedia.org/wiki/MENACE).
 
 ## Project Structure
 
@@ -84,7 +79,7 @@ This project is Gitpod-enabled. You can use Gitpod to contribute to the project 
 
 This project is dual-licensed under the [MIT License](LICENSES/MIT.txt) and the [Apache License (Version 2.0)](LICENSES/Apache-2.0.txt). You may choose to use this project under either license, at your discretion. Other, insignificant files are under the [CC0 License](LICENSES/CC0-1.0.txt). Please see the [LICENSES](LICENSES) directory for more information.
 
-This project is REUSE compliant. You can find more information about REUSE [here](https://reuse.software/).
+This project is REUSE compliant. [You can find more information about REUSE here](https://reuse.software/).
 
 ## Code of Conduct
 

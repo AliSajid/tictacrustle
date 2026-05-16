@@ -1,5 +1,5 @@
 <!--
-SPDX-FileCopyrightText: 2022 - 2024 Ali Sajid Imami
+SPDX-FileCopyrightText: 2022 - 2026 Ali Sajid Imami
 
 SPDX-License-Identifier: Apache-2.0
 SPDX-License-Identifier: MIT
@@ -120,7 +120,7 @@ Enhancement suggestions are tracked as [GitHub issues](https://github.com/AliSaj
 
 ### Your First Code Contribution
 
-The repository includes most config files that are needed to build and run the project. You will need a recent version of Rust and Cargo to build the project. You can find the latest version of Rust and Cargo [here](https://www.rust-lang.org/tools/install).
+The repository includes most config files that are needed to build and run the project. You will need a recent version of Rust and Cargo to build the project. [You can find the latest version of Rust and Cargo here](https://www.rust-lang.org/tools/install).
 
 In addition, You need the following tools (available as cargo packages):
 
