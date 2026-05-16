@@ -80,10 +80,10 @@ local security_linters = new Mapping<String, Step> {
     }
 
     // Note: detect-secrets not available as builtin, requires vendored repo
-    ["detect-secrets"] {
-        exclude = Regex(#"meta/licenses.*|^\.hk/"#)
-        check = "detect-secrets scan --baseline .secrets.baseline"
-    }
+    // ["detect-secrets"] {
+    //     exclude = Regex(#"meta/licenses.*|^\.hk/"#)
+    //     check = "detect-secrets scan --baseline .secrets.baseline"
+    // }
 }
 
 // ============================================================================
@@ -163,20 +163,20 @@ local rust_linters = new Mapping<String, Step> {
     ["fmt"] {
         glob = List("**/*.rs")
         exclude = Regex(#"^\.hk/"#)
-        check = "cargo +nightly fmt --all --check"
-        fix = "cargo +nightly fmt --all"
+        check = "cargo fmt --all --check"
+        fix = "cargo fmt --all"
     }
     // Run clippy linter
     ["clippy"] {
         glob = List("**/*.rs")
         exclude = Regex(#"^\.hk/"#)
-        check = "cargo +nightly clippy --all-targets --all-features -- -D warnings"
+        check = "cargo clippy --all-targets --all-features -- -D warnings"
     }
     // Run cargo check
     ["cargo-check"] {
         glob = List("**/*.rs")
         exclude = Regex(#"^\.hk/"#)
-        check = "cargo +nightly check --all-targets --all-features"
+        check = "cargo check --all-targets --all-features"
     }
     // Check Cargo.toml
     ["cargo-toml-lint"] {
