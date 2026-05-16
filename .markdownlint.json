@@ -12,5 +12,8 @@
     "default": true,
     "link-fragments": false,
     "no-hard-tabs": true,
+    "table-column-style": {
+        "style": "aligned"
+    },
     "whitespace": false
 }
