@@ -25,13 +25,10 @@ local format_linters = new Mapping<String, Step> {
 // STRUCTURED DATA LINTERS (JSON, YAML, TOML)
 // ============================================================================
 local structured_data_linters = new Mapping<String, Step> {
-    ["check-json"] = (Builtins.jq) {
+    ["check-json"] = (Builtins.prettier) {
         exclude = Regex(#"^\.hk/"#)
     }
     ["check-toml"] = (Builtins.taplo) {
-        exclude = Regex(#"^\.hk/"#)
-    }
-    ["check-yaml"] = (Builtins.yamllint) {
         exclude = Regex(#"^\.hk/"#)
     }
     ["yamlfmt"] {
