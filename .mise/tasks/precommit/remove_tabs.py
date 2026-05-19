@@ -29,9 +29,9 @@ def removes_tabs_in_file(filename, whitespaces_count):
 def main(argv=None):
     parser = argparse.ArgumentParser()
     parser.add_argument(
+        "-w",
         "--whitespaces-count",
         type=int,
-        required=True,
         default=4,
         help="number of whitespaces to substitute tabs with",
     )

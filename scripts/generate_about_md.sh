@@ -21,24 +21,24 @@
 
 if ! command -v rustc &>/dev/null; then
     echo "rustc could not be found"
-    exit
+    exit 1
 fi
 
 if ! command -v cargo &>/dev/null; then
     echo "cargo could not be found"
-    exit
+    exit 1
 fi
 
 ## Step 2: Check that cargo-about is installed
 
 if ! command -v cargo-about &>/dev/null; then
     echo "cargo-about could not be found"
-    exit
+    exit 1
 fi
 
 if ! command -v dos2unix &>/dev/null; then
     echo "dos2unix could not be found"
-    exit
+    exit 1
 fi
 
 ## Step 3: Generate the html file

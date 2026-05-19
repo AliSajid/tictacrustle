@@ -18,26 +18,26 @@
 
 if ! command -v rustc &>/dev/null; then
     echo "rustc could not be found"
-    exit
+    exit 1
 fi
 
 if ! command -v cargo &>/dev/null; then
     echo "cargo could not be found"
-    exit
+    exit 1
 fi
 
 ## Step 2: Check that cargo-about is installed
 
 if ! command -v cargo-about &>/dev/null; then
     echo "cargo-about could not be installed"
-    exit
+    exit 1
 fi
 
 ## Step 3: Check that jq is installed
 
 if ! command -v jq &>/dev/null; then
     echo "jq could not be found"
-    exit
+    exit 1
 fi
 
 ## Step 4: Generate the JSON file
