@@ -68,8 +68,7 @@ local security_linters = new Mapping<String, Step> {
     ["detect-private-key"] = (Builtins.detect_private_key) {
         exclude = Regex(#"meta/licenses.*|^\.hk/"#)
     }
-    // Note: gitleaks available as builtin but not installed via mise in this project
-    // Uncomment if gitleaks is added to mise.toml
+
     ["gitleaks"] {
         glob = List("**/*")
         exclude = Regex(#"^\.hk/"#)
@@ -193,28 +192,6 @@ local mise_tasks = new Mapping<String, Step> {
         exclude = Regex(#"^\.hk/"#)
         check = "mise run utils:generate-about"
     }
-}
-
-// ============================================================================
-// CUSTOM STEPS (Not available as builtins)
-// ============================================================================
-local custom_steps = new Mapping<String, Step> {
-    // Note: These steps don't have builtin equivalents
-    // Would need custom scripts or additional tool installations
-
-    // ["check-shebang-scripts-are-executable"] {
-    //     exclude = Regex(#"^\.hk/"#)
-    //     check = "check-shebang-scripts-are-executable {{files}}"
-    // }
-    // ["check-xml"] {
-    //     exclude = Regex(#"^\.hk/"#)
-    //     check = "xmllint --noout {{files}}"
-    // }
-    // ["pretty-format-json"] {
-    //     exclude = Regex(#".vscode/.*json|^\.hk/"#)
-    //     check = "jq --indent 4 . {{files}} | diff - {{files}}"
-    //     fix = "jq --indent 4 --no-ensure-ascii . {{files}} | sponge {{files}}"
-    // }
 }
 
 // ============================================================================
