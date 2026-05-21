@@ -5,7 +5,8 @@
 line_ending: "lf"
 doublestar: true
 include:
-    - .github/**/*.ya?ml
+    - .github/**/*.yaml
+    - .github/**/*.yml
     - .yamlfmt
 formatter:
     type: basic

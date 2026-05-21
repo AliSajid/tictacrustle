@@ -34,7 +34,7 @@ local structured_data_linters = new Mapping<String, Step> {
   }
   ["yamlfmt"] {
     glob = List("**/*.yml", "**/*.yaml")
-    exclude = Regex(#".github/workflows/.*\.ya?ml|^\.hk/"#)
+    exclude = Regex(#"^\.hk/"#)
     check = "yamlfmt -lint {{files}}"
     fix = "yamlfmt {{files}}"
   }
