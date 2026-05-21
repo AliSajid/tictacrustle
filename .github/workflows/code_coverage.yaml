@@ -2,39 +2,38 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 # SPDX-License-Identifier: MIT
-
 ---
 name: Code Coverage
 on:
-    workflow_call:
+  workflow_call:
 jobs:
-    test:
-        name: Generate Coverage
-        runs-on: ubuntu-latest
-        container:
-            image: xd009642/tarpaulin:develop-nightly@sha256:9b72c425ab000793f5bc6582059cee418342c65779238a4f921f5032aa3be41a
-            options: --security-opt seccomp=unconfined
-        steps:
-            - name: Checkout repository
-              uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
-            # Nightly Rust is required for cargo llvm-cov --doc.
-            - uses: dtolnay/rust-toolchain@nightly
-              with:
-                components: llvm-tools-preview
-            - uses: taiki-e/install-action@e43a5023a747770bfcb71ae048541a681714b951 # v2.62.33
-              with:
-                tool: cargo-llvm-cov
-            - uses: taiki-e/install-action@e43a5023a747770bfcb71ae048541a681714b951 # v2.62.33
-              with:
-                tool: nextest
-            - name: Collect coverage data (including doctests)
-              run: |
-                cargo llvm-cov --no-report nextest --config-file nextest.toml
-                cargo llvm-cov --no-report --doc
-                cargo llvm-cov report --doctests --lcov --output-path lcov.info
-            - name: Upload to codecov.io
-              uses: codecov/codecov-action@5a1091511ad55cbe89839c7260b706298ca349f7 # v5.5.1
-              with:
-                file: lcov.info
-              env:
-                CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+  test:
+    name: Generate Coverage
+    runs-on: ubuntu-latest
+    container:
+      image: xd009642/tarpaulin:develop-nightly@sha256:9b72c425ab000793f5bc6582059cee418342c65779238a4f921f5032aa3be41a
+      options: --security-opt seccomp=unconfined
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
+      # Nightly Rust is required for cargo llvm-cov --doc.
+      - uses: dtolnay/rust-toolchain@nightly
+        with:
+          components: llvm-tools-preview
+      - uses: taiki-e/install-action@e43a5023a747770bfcb71ae048541a681714b951 # v2.62.33
+        with:
+          tool: cargo-llvm-cov
+      - uses: taiki-e/install-action@e43a5023a747770bfcb71ae048541a681714b951 # v2.62.33
+        with:
+          tool: nextest
+      - name: Collect coverage data (including doctests)
+        run: |
+          cargo llvm-cov --no-report nextest --config-file nextest.toml
+          cargo llvm-cov --no-report --doc
+          cargo llvm-cov report --doctests --lcov --output-path lcov.info
+      - name: Upload to codecov.io
+        uses: codecov/codecov-action@5a1091511ad55cbe89839c7260b706298ca349f7 # v5.5.1
+        with:
+          file: lcov.info
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}

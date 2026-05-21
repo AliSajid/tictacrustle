@@ -2,29 +2,28 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 # SPDX-License-Identifier: MIT
-
 ---
 name: Security Audit
 on:
-    schedule:
-        - cron: 0 0 1,15 * *
-    push:
-        paths:
-            - '**/Cargo.toml'
-            - '**/Cargo.lock'
-    workflow_dispatch:
+  schedule:
+    - cron: 0 0 1,15 * *
+  push:
+    paths:
+      - "**/Cargo.toml"
+      - "**/Cargo.lock"
+  workflow_dispatch:
 jobs:
-    security_audit:
-        if: ${{ !contains(github.event.head_commit.message, '[skip ci]') }}
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout
-              uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
-            - name: Install Rust
-              uses: dtolnay/rust-toolchain@stable
-            - name: Install cargo-audit
-              uses: taiki-e/install-action@e43a5023a747770bfcb71ae048541a681714b951 # v2.62.33
-              with:
-                tool: cargo-audit
-            - name: Security Audit
-              run: cargo audit
+  security_audit:
+    if: ${{ !contains(github.event.head_commit.message, '[skip ci]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+      - name: Install cargo-audit
+        uses: taiki-e/install-action@e43a5023a747770bfcb71ae048541a681714b951 # v2.62.33
+        with:
+          tool: cargo-audit
+      - name: Security Audit
+        run: cargo audit

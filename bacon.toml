@@ -25,7 +25,6 @@ need_stdout = false
 [jobs.clippy]
 command = [
     "cargo",
-    "+nightly",
     "clippy",
     "--color",
     "always",

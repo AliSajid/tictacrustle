@@ -10,105 +10,102 @@ import "package://github.com/jdx/hk/releases/download/v1.35.0/hk@1.35.0#/Builtin
 // FILE FORMAT & WHITESPACE LINTERS
 // ============================================================================
 local format_linters = new Mapping<String, Step> {
-    ["end-of-file-fixer"] = (Builtins.newlines) {
-        exclude = Regex(#".*licenses.*\.(md|hbs)|^\.hk/"#)
-    }
-    ["mixed-line-ending"] = (Builtins.mixed_line_ending) {
-        exclude = Regex(#"^\.hk/"#)
-    }
-    ["trailing-whitespace"] = (Builtins.trailing_whitespace) {
-        exclude = Regex(#"licenses_report.md|^\.hk/"#)
-    }
+  ["end-of-file-fixer"] = (Builtins.newlines) {
+    exclude = Regex(#".*licenses.*\.(md|hbs)|^\.hk/"#)
+  }
+  ["mixed-line-ending"] = (Builtins.mixed_line_ending) {
+    exclude = Regex(#"^\.hk/"#)
+  }
+  ["trailing-whitespace"] = (Builtins.trailing_whitespace) {
+    exclude = Regex(#"licenses_report.md|^\.hk/"#)
+  }
 }
 
 // ============================================================================
 // STRUCTURED DATA LINTERS (JSON, YAML, TOML)
 // ============================================================================
 local structured_data_linters = new Mapping<String, Step> {
-    ["check-json"] = (Builtins.jq) {
-        exclude = Regex(#"^\.hk/"#)
-    }
-    ["check-toml"] = (Builtins.taplo) {
-        exclude = Regex(#"^\.hk/"#)
-    }
-    ["check-yaml"] = (Builtins.yamllint) {
-        exclude = Regex(#"^\.hk/"#)
-    }
-    ["yamlfmt"] {
-        glob = List("**/*.yml", "**/*.yaml")
-        exclude = Regex(#".github/workflows/.*\.ya?ml|^\.hk/"#)
-        check = "yamlfmt -lint {{files}}"
-        fix = "yamlfmt {{files}}"
-    }
+  ["check-json"] = (Builtins.prettier) {
+    types = List("json")
+    exclude = Regex(#"^\.hk/"#)
+  }
+  ["check-toml"] = (Builtins.taplo) {
+    exclude = Regex(#"^\.hk/"#)
+  }
+  ["yamlfmt"] {
+    glob = List("**/*.yml", "**/*.yaml")
+    exclude = Regex(#"^\.hk/"#)
+    check = "yamlfmt -lint {{files}}"
+    fix = "yamlfmt {{files}}"
+  }
 }
 
 // ============================================================================
 // MARKDOWN LINTERS
 // ============================================================================
 local markdown_linters = new Mapping<String, Step> {
-    ["markdownlint"] = (Builtins.markdown_lint) {
-        exclude = Regex(#"CHANGELOG.md|^\.hk/"#)
-    }
+  ["markdownlint"] = (Builtins.markdown_lint) {
+    exclude = Regex(#"CHANGELOG.md|^\.hk/"#)
+  }
 }
 
 // ============================================================================
 // GIT & VCS LINTERS
 // ============================================================================
 local git_linters = new Mapping<String, Step> {
-    ["check-merge-conflict"] = (Builtins.check_merge_conflict) {
-        exclude = Regex(#"^\.hk/"#)
-    }
-    ["no-commit-to-branch"] = (Builtins.no_commit_to_branch) {
-        exclude = Regex(#"^\.hk/"#)
-        check = "hk util no-commit-to-branch --branch main --branch next"
-    }
+  ["check-merge-conflict"] = (Builtins.check_merge_conflict) {
+    exclude = Regex(#"^\.hk/"#)
+  }
+  ["no-commit-to-branch"] = (Builtins.no_commit_to_branch) {
+    exclude = Regex(#"^\.hk/"#)
+    check = "hk util no-commit-to-branch --branch main --branch next"
+  }
 }
 
 // ============================================================================
 // SECURITY & SECRETS LINTERS
 // ============================================================================
 local security_linters = new Mapping<String, Step> {
-    ["detect-private-key"] = (Builtins.detect_private_key) {
-        exclude = Regex(#"meta/licenses.*|^\.hk/"#)
-    }
-    // Note: gitleaks available as builtin but not installed via mise in this project
-    // Uncomment if gitleaks is added to mise.toml
-    ["gitleaks"] {
-        glob = List("**/*")
-        exclude = Regex(#"^\.hk/"#)
-        check = "gitleaks detect --no-banner --baseline-path .gitleaks_baseline.json --log-level warn"
-    }
+  ["detect-private-key"] = (Builtins.detect_private_key) {
+    exclude = Regex(#"meta/licenses.*|^\.hk/"#)
+  }
 
-    // Note: detect-secrets not available as builtin, requires vendored repo
-    // ["detect-secrets"] {
-    //     exclude = Regex(#"meta/licenses.*|^\.hk/"#)
-    //     check = "detect-secrets scan --baseline .secrets.baseline"
-    // }
+  ["gitleaks"] {
+    glob = List("**/*")
+    exclude = Regex(#"^\.hk/"#)
+    check = "gitleaks detect --no-banner --baseline-path .gitleaks_baseline.json --log-level warn"
+  }
+
+  // Note: detect-secrets not available as builtin, requires vendored repo
+  // ["detect-secrets"] {
+  //     exclude = Regex(#"meta/licenses.*|^\.hk/"#)
+  //     check = "detect-secrets scan --baseline .secrets.baseline"
+  // }
 }
 
 // ============================================================================
 // TEXT ENCODING & CHARACTER LINTERS
 // ============================================================================
 local encoding_linters = new Mapping<String, Step> {
-    ["fix-smart-quotes"] = (Builtins.fix_smart_quotes) {
-        exclude = Regex(#"^\.hk/"#)
-    }
-    ["check-byte-order-marker"] = (Builtins.check_byte_order_marker) {
-        exclude = Regex(#"^\.hk/"#)
-    }
+  ["fix-smart-quotes"] = (Builtins.fix_smart_quotes) {
+    exclude = Regex(#"^\.hk/"#)
+  }
+  ["check-byte-order-marker"] = (Builtins.check_byte_order_marker) {
+    exclude = Regex(#"^\.hk/"#)
+  }
 
-    // Note: The following are not available as builtins
-    ["fix-ligatures"] {
-        glob = List("**/*")
-        exclude = Regex(#"^\.hk/"#)
-        check = "fix-ligatures {{files}}"
-        fix = "fix-ligatures {{files}}"
-    }
-    ["forbid-bidi-controls"] {
-        glob = List("**/*")
-        exclude = Regex(#"^\.hk/"#)
-        check = "forbid-bidi-controls {{files}}"
-    }
+  // Note: The following are not available as builtins
+  ["fix-ligatures"] {
+    glob = List("**/*")
+    exclude = Regex(#"^\.hk/"#)
+    check = "fix-ligatures {{files}}"
+    fix = "fix-ligatures {{files}}"
+  }
+  ["forbid-bidi-controls"] {
+    glob = List("**/*")
+    exclude = Regex(#"^\.hk/"#)
+    check = "forbid-bidi-controls {{files}}"
+  }
 }
 
 // ============================================================================
@@ -117,148 +114,124 @@ local encoding_linters = new Mapping<String, Step> {
 // Note: These linters are not available as builtins
 // They would require custom implementation or vendored repos
 local line_ending_linters = new Mapping<String, Step> {
-    ["check-crlf"] {
-        glob = List("**/*")
-        exclude = Regex(#"^\.hk/"#)
-        check = "mise run precommit:forbid_crlf {{files}}"
-        fix = "mise run precommit:remove_crlf {{files}}"
-    }
-    ["check-tabs"] {
-        glob = List("**/*")
-        exclude = Regex(#"^\.hk/"#)
-        check = "mise run precommit:forbid_tabs {{files}}"
-        fix = "mise run precommit:remove_tabs {{files}}"
-    }
+  ["check-crlf"] {
+    glob = List("**/*")
+    exclude = Regex(#"^\.hk/"#)
+    check = "mise run precommit:forbid_crlf {{files}}"
+    fix = "mise run precommit:remove_crlf {{files}}"
+  }
+  ["check-tabs"] {
+    glob = List("**/*")
+    exclude = Regex(#"^\.hk/"#)
+    check = "mise run precommit:forbid_tabs {{files}}"
+    fix = "mise run precommit:remove_tabs {{files}}"
+  }
 }
 
 // ============================================================================
 // LICENSING & COMPLIANCE LINTERS
 // ============================================================================
 local license_linters = new Mapping<String, Step> {
-    // Note: REUSE not available as builtin, would need mise task
-    ["reuse-lint-file"] {
-        glob = List("**/*")
-        exclude = Regex(#"^\.hk/"#)
-        check = "reuse lint"
-    }
+  // Note: REUSE not available as builtin, would need mise task
+  ["reuse-lint-file"] {
+    glob = List("**/*")
+    exclude = Regex(#"^\.hk/"#)
+    check = "reuse lint"
+  }
 }
 
 // ============================================================================
 // CONFIGURATION VALIDATION LINTERS
 // ============================================================================
 local config_validation_linters = new Mapping<String, Step> {
-    // Note: Renovate validator not available as builtin
-    ["renovate-config-validator"] {
-        glob = List("renovate.json", ".github/renovate.json")
-        exclude = Regex(#"^\.hk/"#)
-        check = "renovate-config-validator --strict"
-    }
+  // Note: Renovate validator not available as builtin
+  ["renovate-config-validator"] {
+    glob = List("renovate.json", ".github/renovate.json")
+    exclude = Regex(#"^\.hk/"#)
+    check = "renovate-config-validator --strict"
+  }
 }
 
 // ============================================================================
 // RUST LINTERS
 // ============================================================================
 local rust_linters = new Mapping<String, Step> {
-    // Rust format
-    ["fmt"] {
-        glob = List("**/*.rs")
-        exclude = Regex(#"^\.hk/"#)
-        check = "cargo fmt --all --check"
-        fix = "cargo fmt --all"
-    }
-    // Run clippy linter
-    ["clippy"] {
-        glob = List("**/*.rs")
-        exclude = Regex(#"^\.hk/"#)
-        check = "cargo clippy --all-targets --all-features -- -D warnings"
-    }
-    // Run cargo check
-    ["cargo-check"] {
-        glob = List("**/*.rs")
-        exclude = Regex(#"^\.hk/"#)
-        check = "cargo check --all-targets --all-features"
-    }
-    // Check Cargo.toml
-    ["cargo-toml-lint"] {
-        glob = List("Cargo.toml")
-        exclude = Regex(#"^\.hk/"#)
-        check = "cargo-toml-lint {{files}}"
-    }
+  // Rust format
+  ["fmt"] {
+    glob = List("**/*.rs")
+    exclude = Regex(#"^\.hk/"#)
+    check = "cargo fmt --all --check"
+    fix = "cargo fmt --all"
+  }
+  // Run clippy linter
+  ["clippy"] {
+    glob = List("**/*.rs")
+    exclude = Regex(#"^\.hk/"#)
+    check = "cargo clippy --all-targets --all-features -- -D warnings"
+  }
+  // Run cargo check
+  ["cargo-check"] {
+    glob = List("**/*.rs")
+    exclude = Regex(#"^\.hk/"#)
+    check = "cargo check --all-targets --all-features"
+  }
+  // Check Cargo.toml
+  ["cargo-toml-lint"] {
+    glob = List("Cargo.toml")
+    exclude = Regex(#"^\.hk/"#)
+    check = "cargo-toml-lint {{files}}"
+  }
 }
 
 // ============================================================================
 // PROJECT-SPECIFIC MISE TASKS
 // ============================================================================
 local mise_tasks = new Mapping<String, Step> {
-    // Generate list of licenses in JSON and Markdown
-    ["cargo-about"] {
-        glob = List("Cargo.toml")
-        exclude = Regex(#"^\.hk/"#)
-        check = "mise run utils:generate-about"
-    }
-}
-
-// ============================================================================
-// CUSTOM STEPS (Not available as builtins)
-// ============================================================================
-local custom_steps = new Mapping<String, Step> {
-    // Note: These steps don't have builtin equivalents
-    // Would need custom scripts or additional tool installations
-
-    // ["check-shebang-scripts-are-executable"] {
-    //     exclude = Regex(#"^\.hk/"#)
-    //     check = "check-shebang-scripts-are-executable {{files}}"
-    // }
-    // ["check-xml"] {
-    //     exclude = Regex(#"^\.hk/"#)
-    //     check = "xmllint --noout {{files}}"
-    // }
-    // ["pretty-format-json"] {
-    //     exclude = Regex(#".vscode/.*json|^\.hk/"#)
-    //     check = "jq --indent 4 . {{files}} | diff - {{files}}"
-    //     fix = "jq --indent 4 --no-ensure-ascii . {{files}} | sponge {{files}}"
-    // }
+  // Generate list of licenses in JSON and Markdown
+  ["cargo-about"] {
+    glob = List("Cargo.toml")
+    exclude = Regex(#"^\.hk/"#)
+    check = "mise run utils:generate-about"
+  }
 }
 
 // ============================================================================
 // COMBINED LINTERS
 // ============================================================================
 local all_linters = new Mapping<String, Step> {
-    ...format_linters
-    ...structured_data_linters
-    ...markdown_linters
-    ...git_linters
-    ...security_linters
-    ...encoding_linters
-    ...rust_linters
-    ...mise_tasks
+  ...format_linters
+  ...structured_data_linters
+  ...markdown_linters
+  ...git_linters
+  ...security_linters
+  ...encoding_linters
+  ...rust_linters
+  ...mise_tasks
+  ...line_ending_linters
 }
 
 hooks {
-    ["commit-msg"] {
-        steps {
-            ...all_linters
-        }
+  ["commit-msg"] {
+    steps {
+      ...all_linters
     }
-    ["pre-commit"] {
-        fix = true
-        stash = "git"
-        steps {
-            ...all_linters
-            ...custom_steps
-        }
+  }
+  ["pre-commit"] {
+    fix = true
+    stash = "git"
+    steps {
+      ...all_linters
     }
-    ["check"] {
-        steps {
-            ...all_linters
-            ...custom_steps
-        }
+  }
+  ["check"] {
+    steps {
+      ...all_linters
     }
-    ["fix"] {
-        fix = true
-        steps {
-            ...all_linters
-            ...custom_steps
-        }
+  }
+  ["fix"] {
+    fix = true
+    steps {
+      ...all_linters
     }
+  }
 }
