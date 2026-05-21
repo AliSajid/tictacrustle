@@ -41,3 +41,9 @@ run = [
     "cargo llvm-cov --no-report --doc",
     "cargo llvm-cov report --doctests --lcov --output-path lcov.info",
 ]
+
+[env]
+# Add Anthropic Variables
+ANTHROPIC_AUTH_TOKEN = "ollama"
+ANTHROPIC_API_KEY = ""
+ANTHROPIC_BASE_URL = "http://localhost:11434"
