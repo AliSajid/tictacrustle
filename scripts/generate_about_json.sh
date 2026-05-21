@@ -29,7 +29,7 @@ fi
 ## Step 2: Check that cargo-about is installed
 
 if ! command -v cargo-about &>/dev/null; then
-    echo "cargo-about could not be installed"
+    echo "cargo-about could not be found"
     exit 1
 fi
 
