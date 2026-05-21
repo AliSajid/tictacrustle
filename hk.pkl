@@ -207,6 +207,7 @@ local all_linters = new Mapping<String, Step> {
   ...encoding_linters
   ...rust_linters
   ...mise_tasks
+  ...line_ending_linters
 }
 
 hooks {
