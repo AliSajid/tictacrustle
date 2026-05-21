@@ -33,6 +33,7 @@ yamllint = "1.38.0"
 hk = "1.45.0"
 pkl = "0.31.1"
 prettier = "3.8.3"
+java = "26.0.1"
 
 [tasks.coverage]
 description = "Generate test coverage information"
