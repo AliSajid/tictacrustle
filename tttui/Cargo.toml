@@ -1,0 +1,48 @@
+# SPDX-FileCopyrightText: 2022 - 2026 Ali Sajid Imami
+#
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: MIT
+
+[package]
+name = "tttui"
+authors.workspace = true
+categories.workspace = true
+description.workspace = true
+documentation.workspace = true
+edition.workspace = true
+homepage.workspace = true
+keywords.workspace = true
+license.workspace = true
+readme.workspace = true
+repository.workspace = true
+version.workspace = true
+rust-version.workspace = true
+
+# Per-crate settings for tttui
+# Terminal UI using crossterm/ratatui
+
+[[bin]]
+name = "tttui"
+path = "src/main.rs"
+
+[dependencies]
+# Core workspace dependencies
+anyhow.workspace = true
+ttrustle-lib = { path = "../ttrustle-lib" }
+
+# Terminal UI dependencies
+crossterm = "0.28"
+ratatui = "0.29"
+
+[lints]
+rust.missing_docs = "allow"
+rustdoc.broken_intra_doc_links = "deny"
+rustdoc.invalid_rust_codeblocks = "deny"
+rustdoc.redundant_explicit_links = "deny"
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = "symbols"

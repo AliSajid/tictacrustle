@@ -1,0 +1,33 @@
+# SPDX-FileCopyrightText: 2022 - 2026 Ali Sajid Imami
+#
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: MIT
+
+[package]
+name = "ttrustle-lib"
+authors.workspace = true
+categories.workspace = true
+description.workspace = true
+documentation.workspace = true
+edition.workspace = true
+homepage.workspace = true
+keywords.workspace = true
+license.workspace = true
+readme.workspace = true
+repository.workspace = true
+version.workspace = true
+rust-version.workspace = true
+
+# Per-crate settings for ttrustle-lib
+# This is a core library with no external dependencies
+
+[lib]
+name = "ttrustle_lib"
+path = "src/lib.rs"
+
+[lints]
+# Library crate: strict but allow missing_docs for internal items
+rust.missing_docs = "allow"
+rustdoc.broken_intra_doc_links = "deny"
+rustdoc.invalid_rust_codeblocks = "deny"
+rustdoc.redundant_explicit_links = "deny"

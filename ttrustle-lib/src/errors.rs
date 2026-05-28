@@ -3,17 +3,16 @@
 // SPDX-License-Identifier: Apache-2.0
 // SPDX-License-Identifier: MIT
 
-use std::fmt::{
-    Display,
-    Error,
-    Formatter,
-};
+use std::fmt::{Display, Error, Formatter};
 
-#[allow(dead_code)]
+/// Errors that can occur during game play.
 #[derive(Debug)]
 pub enum GameError {
+    /// Attempting to play on a square that already has a piece.
     SquareAlreadyPlayed,
+    /// Attempting to access an invalid square coordinate.
     InvalidSquare,
+    /// The game has already ended (win or draw).
     GameAlreadyWon,
 }
 

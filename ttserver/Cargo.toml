@@ -1,0 +1,45 @@
+# SPDX-FileCopyrightText: 2022 - 2026 Ali Sajid Imami
+#
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: MIT
+
+[package]
+name = "ttserver"
+authors.workspace = true
+categories.workspace = true
+description.workspace = true
+documentation.workspace = true
+edition.workspace = true
+homepage.workspace = true
+keywords.workspace = true
+license.workspace = true
+readme.workspace = true
+repository.workspace = true
+version.workspace = true
+rust-version.workspace = true
+
+# Per-crate settings for ttserver
+# HTTP API server using tokio/axum
+
+[[bin]]
+name = "ttserver"
+path = "src/main.rs"
+
+[dependencies]
+# Core workspace dependencies
+anyhow.workspace = true
+ttrustle-lib = { path = "../ttrustle-lib" }
+serde.workspace = true
+serde_json.workspace = true
+
+# HTTP server dependencies
+tokio = { version = "1.41", features = ["full"] }
+axum = "0.8"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+[lints]
+rust.missing_docs = "allow"
+rustdoc.broken_intra_doc_links = "deny"
+rustdoc.invalid_rust_codeblocks = "deny"
+rustdoc.redundant_explicit_links = "deny"

@@ -1,0 +1,47 @@
+# SPDX-FileCopyrightText: 2022 - 2026 Ali Sajid Imami
+#
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: MIT
+
+[package]
+name = "ttrustle"
+authors.workspace = true
+categories.workspace = true
+description.workspace = true
+documentation.workspace = true
+edition.workspace = true
+homepage.workspace = true
+keywords.workspace = true
+license.workspace = true
+readme.workspace = true
+repository.workspace = true
+version.workspace = true
+rust-version.workspace = true
+
+# Per-crate settings for ttrustle binary
+# Example binary that demonstrates the library API
+
+[[bin]]
+name = "ttrustle"
+path = "src/main.rs"
+
+[dependencies]
+# Core workspace dependencies
+anyhow.workspace = true
+color-eyre.workspace = true
+env_logger.workspace = true
+log.workspace = true
+rand.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+
+# Use the ttrustle-lib from the workspace
+ttrustle-lib = { path = "../ttrustle-lib" }
+
+[lints]
+# Binary crate: stricter, but allow unused_must_use for const return values
+rust.missing_docs = "allow"
+rust.unused_must_use = "allow"
+rustdoc.broken_intra_doc_links = "deny"
+rustdoc.invalid_rust_codeblocks = "deny"
+rustdoc.redundant_explicit_links = "deny"
