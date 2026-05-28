@@ -3,8 +3,9 @@
 // SPDX-License-Identifier: Apache-2.0
 // SPDX-License-Identifier: MIT
 
-use tictacrustle::Board;
+use ttrustle_lib::Board;
 
+#[allow(unused_must_use)]
 fn main() {
     let mut board = Board::default();
     println!("{board}");

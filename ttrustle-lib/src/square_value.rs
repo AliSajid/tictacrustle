@@ -4,14 +4,33 @@
 // SPDX-License-Identifier: MIT
 
 use std::fmt;
+use std::cmp::{Eq, PartialEq};
 
-#[allow(dead_code)]
-#[derive(Debug, PartialEq, Eq, Clone, Copy)]
+/// The possible values for a square on the board.
+///
+/// This enum represents the state of a single square: empty, X, or O.
+#[derive(Debug, Clone, Copy)]
 pub enum SquareValue {
+    /// An empty square with no piece.
     Empty,
+    /// A square occupied by X.
     X,
+    /// A square occupied by O.
     O,
 }
+
+impl PartialEq for SquareValue {
+    fn eq(&self, other: &Self) -> bool {
+        match (self, other) {
+            (SquareValue::X, SquareValue::X) => true,
+            (SquareValue::O, SquareValue::O) => true,
+            (SquareValue::Empty, SquareValue::Empty) => true,
+            _ => false,
+        }
+    }
+}
+
+impl Eq for SquareValue {}
 
 impl fmt::Display for SquareValue {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
@@ -32,12 +51,5 @@ mod tests {
         assert_eq!(format!("{}", SquareValue::X), " X ");
         assert_eq!(format!("{}", SquareValue::O), " O ");
         assert_eq!(format!("{}", SquareValue::Empty), "   ");
-    }
-
-    #[test]
-    fn test_eq() {
-        assert_eq!(SquareValue::X, SquareValue::X);
-        assert_eq!(SquareValue::O, SquareValue::O);
-        assert_eq!(SquareValue::Empty, SquareValue::Empty);
     }
 }

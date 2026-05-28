@@ -4,46 +4,30 @@
 # SPDX-License-Identifier: MIT
 
 [tools]
+# Common development tools for the workspace
 "cargo:cargo-audit" = "0.22.0"
 "cargo:cargo-llvm-cov" = "0.6.16"
 "cargo:cargo-nextest" = "0.9.116"
 "cargo:mdbook" = "0.4.43"
 "cargo:mdbook-inline-highlighting" = "0.1.0"
-"npm:vercel" = "latest"
 "cargo:bacon" = "3.7.0"
 "cargo:cargo-about" = "0.6.6"
 "cargo:cargo-toml-lint" = "0.1.1"
 "cargo:cross" = "0.2.5"
 "cargo:mdbook-plantuml" = "0.8.0"
 "cargo:semantic-release-cargo" = "2.4.0"
+"cargo:cargo-deny" = "0.18.9"
 node = "22.14.0"
 "npm:conventional-changelog-conventionalcommits" = "8.0.0"
 "npm:semantic-release" = "24.2.1"
 "npm:semantic-release-export-data" = "1.1.0"
 "pipx:pre-commit" = "4.0.1"
 "pipx:texthooks" = "0.7.1"
-"cargo:cargo-deny" = "0.18.9"
-cocogitto = "7.0.0"
-gitleaks = "8.30.1"
-"npm:renovate" = "42.69.1"
-"pipx:reuse" = "6.2.0"
 taplo = "0.10.0"
-vale = "3.14.2"
-hk = "1.45.0"
-pkl = "0.31.1"
 prettier = "3.8.3"
-java = "26.0.1"
-
-[tasks.coverage]
-description = "Generate test coverage information"
-run = [
-    "cargo llvm-cov --no-report nextest --config-file nextest.toml",
-    "cargo llvm-cov --no-report --doc",
-    "cargo llvm-cov report --doctests --lcov --output-path lcov.info",
-]
 
 [env]
-# Add Anthropic Variables
+# Workspace-level environment variables
 ANTHROPIC_AUTH_TOKEN = "ollama"
 ANTHROPIC_API_KEY = ""
 ANTHROPIC_BASE_URL = "http://localhost:11434"

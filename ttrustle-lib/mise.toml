@@ -1,0 +1,16 @@
+# SPDX-FileCopyrightText: 2022 - 2026 Ali Sajid Imami
+#
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: MIT
+
+# Per-crate mise settings for ttrustle-lib
+# This crate is the core library with no external dependencies
+
+[settings]
+# Per-crate settings
+rust-version = "1.85.1"
+
+[env]
+# Library crate: minimal warnings, no dead_code
+RUSTFLAGS = "-A dead_code -Wmissing_docs"
+
