@@ -60,6 +60,8 @@ guide/book
 meta/vale-styles/**/*
 !meta/vale-styles/config
 
-
 # Special Ignore File
 package_version_to_delete
+
+# Exclude claude settings and metadata
+.claude/

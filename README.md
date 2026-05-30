@@ -1,119 +1,139 @@
 <!--
 SPDX-FileCopyrightText: 2022 - 2026 Ali Sajid Imami
-
 SPDX-License-Identifier: Apache-2.0
 SPDX-License-Identifier: MIT
 -->
 
-# Tic-Tac-Rustle
-
 <!-- badges -->
-![GitHub Release (w/pre-release)](https://img.shields.io/github/v/release/AliSajid/tictacrustle?include_prereleases&logo=semantic-release)
-![GitHub Release](https://img.shields.io/github/v/release/AliSajid/tictacrustle?logo=semantic-release)
-[![Continuous integration](https://github.com/AliSajid/tictacrustle/actions/workflows/ci.yaml/badge.svg)](https://github.com/AliSajid/tictacrustle/actions/workflows/ci.yaml)
-![GitHub issues](https://img.shields.io/github/issues/AliSajid/tictacrustle)
+![GitHub Release](https://img.shields.io/github/v/tag/AliSajid/tictacrustle?label=version&logo=github)
+![Continuous integration](https://github.com/AliSajid/tictacrustle/actions/workflows/ci.yaml/badge.svg)
+![GitHub issues](https://img.shields.io/github/issues/AliSajid/tictacrustle?label=issues)
 ![REUSE Compliance](https://img.shields.io/reuse/compliance/github.com%2FAliSajid%2Ftictacrustle)
 
 <!-- description -->
-An ambitious historical tribute and modern engineering exercise replicating Donald Michie's 1961 **MENACE** (Matchbox Educable Noughts and Crosses Engine) using a high-performance, decoupled polyglot monorepo architecture built in Rust and SvelteKit.
 
-## Project Vision
+An historical reinforcement learning implementation of **MENACE** (Matchbox Educable Noughts and Crosses Engine) using a polyglot monorepo with Rust crates and SvelteKit frontend.
 
-`tic tac rustle` explores the bridge between historical reinforcement learning models and modern software patterns. Instead of training an AI live or relying on standard minimax brute-forcing during runtime, this project implements a highly optimized, read-only compile-time matrix of the entire valid Tic-Tac-Toe game tree.
+## What Is This Project?
 
-Our goal is to build an unbeatable core engine alongside a series of chronological "evolutionary snapshots" (epochs) that demonstrate how the system physically alters its decision weights ("beads") as it learns. This entire experience is wrapped in a beautiful web visualization interface allowing users to peek straight into the AI's "brain" as they play.
+This project replicates Donald Michie's 1961 **MENACE** system — one of the first practical implementations of reinforcement learning — using modern Rust and a modular workspace architecture.
 
-## What to Expect
+Instead of physical matchboxes and colored beads, this project uses:
+- A **static matrix** pre-calculated at compile time
+- **Decision weights** stored in memory (the "beads")
+- **Training simulations** that adjust weights through gameplay
 
-* **Static, Pre-Calculated Decision Space:** The entire legal board space (5,478 states) is evaluated, pruned of impossible permutations, and mapped to ternary values at compile time.
-* **Granular Difficulty Scale:** 11 distinct pre-trained brains (from completely random to flawless tactical mastery) to test human capabilities across various stages of AI evolution.
-* **Deep Brain Visualization:** An interactive web frontend that parses training analytics to display real-time decision weight graphs, heatmaps, and state trajectory lines.
-* **Zero-Overhead Server Core:** A read-only API backend with lookups running at native memory speeds, fortified against application-layer threats.
+## Quick Start
+
+```bash
+# Install mise and toolchain
+mise use -t ttrustle
+
+# Build the project
+cargo build --workspace
+
+# Run the CLI
+cargo run --bin ttrustle -- help
+
+# Train a new brain
+cargo run --bin tttraining -- train --iterations 100000
+
+# Play against the trained AI
+cargo run --bin ttrustle -- play --brain standard
+```
 
 ## Project Structure
 
-This project has three parts:
-
-* `lib_tictacrustle`: This is the library crate that contains the core logic of the game. This crate manages the game logic, the game state, and the game rules. This crate is also responsible for the MENACE system.
-* `ttrustle`: This is a binary crate tasked with actually running the game. This crate hosts the player interactions with the GUI[^1] and TUI[^2], as it progresses.
-* `ttserver`: This is a binary crate that hosts the MENACE AI. This crate handles running the MENACE system and providing an API for the `ttrustle` binary to interact with.
-
-## Monorepo Environment Setup
-
-This project uses `mise` for polyglot toolchain management and task orchestration.
-
-### Prerequisites
-
-Ensure you have `mise` installed on your machine.
-
-### Quick Start
-
-To spin up the entire development environment (both the Rust API backend and the SvelteKit frontend concurrently), run:
-
-```bash
-mise run dev
+```
+ttrustle/
+├── Cargo.toml                    # Workspace root
+├── mise.toml                     # Common tools and profiles
+├── PROJECT_OVERVIEW.md           # High-level overview
+├── ARCHITECTURE.md               # System design
+├── TRAINING.md                   # Training guide
+├── WORKSPACE.md                  # Workspace structure
+├── guide/                        # User documentation
+│   └── src/
+└── [crates]
+    ├── ttrustle-lib/             # Core game logic
+    ├── ttrustle/                 # CLI binary
+    ├── tttraining/               # Training crate
+    ├── tttui/                    # Terminal UI
+    ├── ttgui/                    # Desktop GUI
+    ├── ttserver/                 # API server
+    └── ttweb/                    # SvelteKit frontend
 ```
 
-## MENACE
+## Core Features
 
-Machine Educable Naughts and Crosses Engine (MENACE) is one of the first implementations of a machine learning system. Donald Michie developed it in 1961 while working at University of Edinburgh. The original system used a stack of matchboxes labeled with possible game states, along with a reinforcement learning algorithm, to learn the optimal strategy over a certain number of games. Michie called this system Matchbox Educable Naughts and Crosses Engine (MENACE).
+- **Static, Pre-Calculated Decision Space**: 5,478 legal states pruned at compile time
+- **Granular Difficulty Scale**: 11 pre-trained "brains" from random to perfect play
+- **Deep Brain Visualization**: Interactive frontend showing decision weights and state trajectories
+- **Offline-First**: All weights embedded at compile time, no runtime dependencies
 
-This was one of the first systems to use reinforcement learning to learn how to play a game and the first to prove that a machine could learn how to play a game without being explicitly programmed to do so.
+## Crates Overview
 
-The classical MENACE system consisted of 304 matchboxes. Each matchbox represented a possible state of the game. Each matchbox had up to nine colored beads inside, with the number and color of beads representing the next move on the 3 X 3 board. The player would make the first move, and then draw a random bead from the matchbox matching the state of the game. This represents the move that MENACE _has chosen_ to make. The process continues until the player or MENACE wins the game. If MENACE wins, the player returns the beads to the matchbox, along with extra beads for the winning move. If the player wins, the player does not return the beads to the matchbox. This process repeats until MENACE achieves the optimal strategy.
+| Crate | Purpose |
+|-------|--------|
+| **ttrustle-lib** | Core game logic, board state, win conditions |
+| **ttrustle** | CLI for offline simulation and checkpoint generation |
+| **tttraining** | Training crate (runs MENACE simulations, generates weights) |
+| **ttserver** | Stateless Axum API server |
+| **ttui** | Terminal UI (Ratatui-based) |
+| **ttgui** | Desktop GUI (GTK-based) |
+| **ttweb** | SvelteKit web frontend |
 
-[More information on MENACE is available here](https://en.wikipedia.org/wiki/MENACE).
+## Documentation
 
-## MENACE Implementation
+- [Project Overview](./PROJECT_OVERVIEW.md) - High-level explanation
+- [Architecture](./ARCHITECTURE.md) - System design and data flow
+- [Training](./TRAINING.md) - How to train and use the training crate
+- [MENACE](./MENACE.md) - What MENACE is and how it works
+- [Development](./DEVELOPMENT.md) - Developer onboarding guide
+- [Guide](./guide/) - User-facing documentation
 
-Since MENACE predates both the internet and consumer computers, the original implementation was purely matchbox-based. In translating that system to a modern incarnation, we adhere to the following principles:
+## How It Works
 
-* A static compile-time matrix replaces the matchboxes used in the original implementation.
-* The game runs as a client-server system that has independent clients and servers.
-* The server along with the database and API is usable both locally and in the cloud.
+### The Game
 
-The original MENACE implementation used a manually curated list of possible game states that treated the rotational and reflection symmetries in board states as identical. Since this implementation is not constrained by the number of virtual matchboxes, we build the MENACE system in two flavors:
+Tic-Tac-Toe played between a human and MENACE AI:
 
-1. **MENACE-C**: This is the classic MENACE system that treats the rotational and reflective symmetries in board states as equivalent.
-2. **MENACE-S**: This is the MENACE system that treats the rotational and reflective symmetries in board states as distinct.
+```
+  8 ┌───┬───┬───┐
+    │ X │ O │ - │
+  7 ├───┼───┼───┤
+    │ - │ X │ O │
+  6 ├───┼───┼───┤
+    │ O │ - │ X │
+  5 └───┴───┴───┘
+```
 
-## Roadmap
+### The AI
 
-The project is in its initial stages of development. The following list includes features that we plan to add in the future:
+MENACE uses a matchbox-inspired system:
+- Each possible game state has a "matchbox" with decision weights
+- Weights increase when used successfully
+- Over time, the system learns optimal strategy
 
-* [ ] Add the base game logic
-* [ ] Add the human player
-* [ ] Add the MENACE-C system
-* [ ] Add the MENACE-S system
-* [ ] Add the Command-line Interface (CLI)
-* [ ] Add a Terminal User Interface (TUI)
-* [ ] Add a Graphical User Interface (GUI)
+### Training
 
-## Contributing
+The `tttraining` crate runs simulations where MENACE plays against itself (or random), adjusting weights based on outcomes. These weights are embedded in the final binary for offline operation.
 
-Contributions to the project are welcome. Please see the [Contributing Guidelines](CONTRIBUTING.md) for more information.
+## Requirements
+
+- Rust 1.85.1 or later
+- `mise` for toolchain management
+- For UI crates:
+  - TUI: No additional dependencies
+  - GUI: GTK installed
+  - Web: Node.js 20.x
 
 ## License
 
-This project is dual-licensed under the [MIT License](LICENSES/MIT.txt) and the [Apache License (Version 2.0)](LICENSES/Apache-2.0.txt). You may choose to use this project under either license, at your discretion. Other, insignificant files are under the [CC0 License](LICENSES/CC0-1.0.txt). Please see the [LICENSES](LICENSES) directory for more information.
-
-This project is REUSE compliant. [You can find more information about REUSE here](https://reuse.software/).
-
-## Code of Conduct
-
-This project adheres to the [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md). By participating, You are expected to uphold this code.
+Dual-licensed under [MIT](LICENSES/MIT.txt) and [Apache-2.0](LICENSES/Apache-2.0.txt).
 
 ## Acknowledgements
 
-This project would not be possible without the efforts of the Rust Community for outreach and training.
-
-Specific people and projects worth mentioning:
-
-* Chris Krycho and the [New Rustacean](https://newrustacean.com/) Podcast.
-* Bogdan Pshonyak and the [Let's Get Rusty](https://www.youtube.com/c/letsgetrusty) YouTube Channel.
-* Tris Oaten (NAMTAO) and the [No Boilerplate](https://www.youtube.com/c/NoBoilerplate) YouTube Channel.
-* My loving family for their support and encouragement.
-
-[^1]: Graphical User Interface
-
-[^2]: Terminal User Interface
+- Donald Michie and the original MENACE system
+- The Rust community for outreach and training
+- The [New Rustacean](https://newrustacean.com/) podcast

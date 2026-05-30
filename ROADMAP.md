@@ -1,53 +1,180 @@
-# Project Roadmap & Release Milestones
+# Roadmap & Release Milestones
 
-This document marks our current progression trajectory and outlines what remains before reaching a stable production release.
+This document outlines the current progression and future plans for Tic-Tac-Rustle.
 
 ---
 
-## Where We Are Right Now (Current Status)
+## Current Status
 
-* [ ] **Project Establishment**: Initial setup is done
-* [ ] **Automation Setup**: Automation for testing and building are in place
+**Version:** 1.0.0-next.2
+
+**Architecture:** Workspace with modular crates
+
+**Features Implemented:**
+
+- [x] Monorepo setup with `mise` workflow
+- [x] Core game logic in `ttrustle-lib`
+- [x] CLI in `ttrustle`
+- [x] Training crate `tttraining` (NEW)
+- [x] API server `ttserver`
+- [x] Terminal UI `ttui`
+- [x] Desktop GUI `ttgui` (in progress)
+- [x] Web frontend `ttweb` (SvelteKit)
+- [x] REUSE compliance for licenses
+
+**Pending:**
+
+- [ ] Complete GUI `ttgui`
+- [ ] Static asset bundler `ttstatic`
+- [ ] CI/CD pipeline for training artifacts
+- [ ] Documentation completion
 
 ---
 
 ## Upcoming Milestones
 
-### Phase 1: Infrastructure Building
+### Phase 1: Infrastructure (Current)
 
-* [ ] **Monorepo Architecture Setup:** `mise` workflow orchestrated and verified for both Node.js and Rust environments.
-* [ ] **Core Domain Engine Finished:** Ternary calculation routines, array mapping filters, and win/loss logic locked down inside `lib_tictacrustle`.
-* [ ] **Compile-Time Pruning Logic:** Automated pruning in `build.rs` reducing the search tree down from 19,683 states down to the legal 5,478 elements.
+- [x] Workspace structure finalized
+- [x] Training crate implemented
+- [ ] CI/CD for training artifacts
+- [ ] Automated asset generation pipeline
 
-### Phase 2: The Training CLI & Artifact Pipeline (`traintrustle`)
+**ETA:** In progress (current sprint)
 
-* [ ] Implement the automated simulation loop runner.
-* [ ] Integrate the step-by-step analytics tracker to export delta metrics into `ttweb/static/learning_history.json`.
-* [ ] Build the Base64 ASCII output encoder for GitHub-friendly version control.
+### Phase 2: Frontend Integration
 
-### Phase 3: The High-Performance Network Server (`ttserver`)
+- [ ] `ttstatic` crate for static asset bundling
+- [ ] SvelteKit SPA bundled into `ttweb`
+- [ ] Zero-dependency deployment profile
+- [ ] Production API integration
 
-* [ ] Establish the Axum asynchronous routing skeleton.
-* [ ] Implement macro compilation boundaries utilizing `include_str!` to bind all 11 milestone brains into static thread-safe memory arrays.
-* [ ] Integrate request size constraints, `tower-governor` rate limiters, and CORS access control lists.
+**ETA:** 4-6 weeks
 
-### Phase 4: Desktop Interface (`tttui`)
+### Phase 3: GUI Completion
 
-* [ ] Implement a lightweight local terminal wrapper leveraging the `ratatui` crate using the exact same embedded asset arrays for local offline matches.
+- [ ] Complete `ttgui` with GTK bindings
+- [ ] Settings and preferences panel
+- [ ] Game visualization with animations
+- [ ] Statistics and history tracking
 
-### Phase 5: Frontend Visualization Studio (`ttweb`)
+**ETA:** 6-8 weeks
 
-* [ ] Set up the core interactive SvelteKit Tic-Tac-Toe arena board.
-* [ ] Integrate an Evolution Slider tied to the 11 evolutionary checkpoints.
-* [ ] Build graph visualization dashboards using D3.js/LayerCake to display weight curves and decision trajectories utilizing the generated log history.
+### Phase 4: Documentation
+
+- [ ] User guide completion
+- [ ] API reference documentation
+- [ ] Example projects and tutorials
+- [ ] Migration guides
+
+**ETA:** Ongoing
+
+### Phase 5: Beta Release
+
+- [ ] All major features implemented
+- [ ] Performance benchmarks documented
+- [ ] Security audit completed
+- [ ] Public testing enabled
+
+**ETA:** 10-12 weeks from project start
+
+### Phase 6: V1.0.0 Release
+
+- [ ] Single-executable deployment profile
+- [ ] Complete documentation suite
+- [ ] Release notes and changelog
+- [ ] Community onboarding complete
+
+**ETA:** 12 weeks from project start
 
 ---
 
-## Anticipated Full Release Target
+## Feature Backlog
 
-We're tracking towards a highly stable, completely self-contained deployment release. 
+### Core Engine
 
-* **Alpha Release (Internal Integration testing):** Expected mid-horizon (4–6 weeks out), featuring complete local server routing connectivity to the baseline SvelteKit views.
-* **Beta Release (Open-source optimization phase):** Expected 8–10 weeks out, allowing public testing, performance validation, and security fuzzing of the API routes.
-* **V1.0.0 Full Release:** Target completion within **12 weeks**. This final build will provide a single-executable compilation profile where `ttserver` serves the pre-compiled static SPA frontend assets natively on a single port for seamless zero-dependency deployment.
+- [ ] MENACE-S variant implementation
+- [ ] Custom loss functions
+- [ ] Multi-agent simulation mode
+- [ ] Statistical analysis export
 
+### Training Pipeline
+
+- [ ] Auto-training daemon
+- [ ] Cloud-based distributed training
+- [ ] Training progress visualization
+- [ ] Model comparison tools
+
+### UI Enhancements
+
+- [ ] Undo/redo support
+- [ ] Game history tracking
+- [ ] Statistics dashboard
+- [ ] Custom brain editor
+
+### Server Features
+
+- [ ] WebSocket support for real-time games
+- [ ] Game replay endpoints
+- [ ] Admin dashboard
+- [ ] Usage analytics
+
+### Developer Tools
+
+- [ ] Benchmark suite
+- [ ] Debug visualization tools
+- [ ] Test fixtures library
+- [ ] Example templates
+
+---
+
+## Release Timeline
+
+| Phase | Target | Deliverables |
+|-------|--------|----|
+| Alpha | Mid-sprint | Internal integration |
+| Beta | 8-10 weeks | Public testing |
+| V1.0 | 12 weeks | Full release |
+
+---
+
+## Changelog
+
+See [CHANGELOG.md](./CHANGELOG.md) for version history.
+
+---
+
+## How to Contribute
+
+Looking for issues to work on? Check these tags:
+
+- `help wanted` - Good for beginners
+- `good first issue` - Simple tasks
+- `enhancement` - Feature requests
+- `bug` - Issues to fix
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
+
+---
+
+## Architecture Evolution
+
+The project has evolved through several phases:
+
+1. **Monolithic** (2022-2024): Single crate, hard to maintain
+2. **Workspace** (2024-present): Modular crates, clear separation
+
+The workspace split enables:
+- Parallel development
+- Independent testing
+- Clear responsibility boundaries
+
+See [WORKSPACE.md](./WORKSPACE.md) for details.
+
+---
+
+## Community
+
+- **GitHub**: https://github.com/AliSajid/tictacrustle
+- **Issues**: https://github.com/AliSajid/tictacrustle/issues
+- **Documentation**: https://docs.rs/tictacrustle
