@@ -1,120 +1,262 @@
-# tic tac rustle Architecture
+# Architecture
 
-`t tic tac rustle` is a polyglot monorepo that packs a multi-crate **Cargo Workspace** for backend logic and an independent **SvelteKit** app for the frontend. Everything talks to each other cleanly with strict type contracts.
+This document describes the system architecture of Tic-Tac-Rustle.
 
-## Structure
-
-```text
-tic_tac_rustle/
-├── mise.toml                    # Orchestration and task dependencies
-├── Cargo.toml                   # Root Cargo Workspace definition
-├── assets/                      # Pre-trained model weights (baked in)
-├── tttui/                       # Terminal-based UI (Rust + TUI crate)
-├── ttgui/                       # Desktop GUI (GTK-based frontend)
-├── ttserver/                    # Fast Axum API server (read-only, stateless)
-├── ttweb/                       # SvelteKit/Vite web frontend
-├── ttrustle-lib/                # Shared library crate (core engine logic)
-└── ttrustle/                    # CLI for offline simulation + checkpoint generation
-```
-
-## Core Systems
-
-### Ternary Board Representation
-The board is a flattened 9-digit base-3 number stored in a u16 register. Each cell can be:
-
-- 0 (Empty)
-- 1 (X)
-- 2 (O)
-
-Maximum theoretical states: 19,683 (3⁹).  
-Legal achievable states: 5,478 (pruned by compile-time rules in `build.rs`).
-
-### Strict Architectural Contracts (`ttrustle-lib`)
-Two traits govern the engine:
-
-- **GameScanner**: Encapsulates pure, stateless domain rules (valid states, legal moves, outcomes). Designed to be verifiable with property-based tests.
-- **EducableEngine**: Defines interfaces for move selection, reinforcement backpropagation, and binary blob serialization for model export.
-
-### Offline Compilation Pipeline
-`traintrustle` runs offline simulations to train the AI across 11 evolutionary epochs. The trained models are written to `/assets/*.txt` in base64 format. `ttserver` and `ttui` compile these into binary during build time.
-
-## Dataflow Diagram
+## System Overview
 
 ```
-┌────────────────────────────────────────────────────────────────────────────────┐
-│                        TIC TAC RUSTLE ECOSYSTEM                                 │
-├────────────────────────────────────────────────────────────────────────────────┤
-│                                                                                  │
-│  ┌──────────┐     ┌──────────┐     ┌──────────┐     ┌──────────┐              │
-│  │  ttweb   │────▶│ ttserver │────▶│ttrustle- │────▶│  assets  │              │
-│  │ (Web)    │     │ (Axum)   │     │   lib     │     │ (Weights) │              │
-│  └──────────┘     │          │     │   Engine  │     │ (Baked-in)│              │
-│                   └──────────┘     └──────────┘     └──────────┘              │
-│                        ▲               ▲                                      │
-│                        │               │                                       │
-│                   ┌────┴─────┐  ┌──────┴──────┐                                │
-│                   │ tttui    │  │  ttgui      │                                │
-│                   │ (TUI)    │  │  (GTK GUI)  │                                │
-│                   └──────────┘  └─────────────┘                                │
-│                                                                                  │
-│  All components are offline-first: no external lookups, no network dependencies│
-│  Models are baked into binaries at compile time                                  │
-└────────────────────────────────────────────────────────────────────────────────┘
+┌───────────────────────────────────────────────────────────────┐
+│                    TIC TAC RUSTLE SYSTEM                      │
+├───────────────────────────────────────────────────────────────┤
+│                                                               │
+│  ┌─────────┐     ┌─────────┐     ┌─────────┐                  │
+│  │ ttweb   │────▶│ ttserver│────▶│ttrustle-│                  │
+│  │ (Web)   │     │ (API)   │     │  lib    │                  │
+│  └─────────┘     └─────────┘     └─────────┘                  │
+│                        ▲           ▲                          │
+│                        │           │                          │
+│                   ┌────┴─────┐   ┌─┴─────┐                    │
+│                   │ tttui    │   │ ttgui │                    │
+│                   └──────────┘   └───────┘                    │
+│                        │           │                          │
+│                   ┌────┴─────┐   ┌───────┐                    │
+│                   │tttraining│   │assets │                    │
+│                   └──────────┘   └───────┘                    │
+│                                                               │
+│  All components operate offline: no external dependencies     │
+│  Models are embedded at compile time                          │
+└───────────────────────────────────────────────────────────────┘
 ```
 
-### Component Responsibilities
+## Component Catalog
 
-- **ttweb**: Browser-based frontend (SvelteKit) for web clients
-- **tttui**: Terminal-based UI (Rust TUI crate) for CLI users
-- **ttgui**: Desktop graphical UI (GTK-based) for advanced users
-- **ttserver**: Stateless Axum API that routes requests to `ttrustle-lib`
-- **tttrustle-lib**: Core engine library with ternary encoding, GameScanner, and EducableEngine traits
-- **assets**: Model weights embedded in binaries (no runtime network calls)
+### Core Crates
 
-## Offline-First Data Integrity
+| Crate | Path | Role |
+|-------|------|------|
+| **ttrustle-lib** | `./ttrustle-lib/` | Core game logic, board state, win conditions |
+| **ttrustle** | `./ttrustle/` | CLI for simulation and checkpoint generation |
+| **tttraining** | `./tttraining/` | Training crate (new) |
+| **ttserver** | `./ttserver/` | Stateless Axum API server |
+| **ttui** | `./ttui/` | Terminal UI (Ratatui) |
+| **ttgui** | `./ttgui/` | Desktop GUI (GTK) |
 
-`t tic tac rustle` operates in an **offline-first** architecture:
+### Frontend Crates
 
-1. **Baked-in Weights**: All trained model weights are compiled directly into the binary at build time. No external model files or runtime downloads are required.
+| Crate | Path | Role |
+|-------|------|------|
+| **ttweb** | `./ttweb/` | SvelteKit web frontend |
 
-2. **No Network Lookups**: The engine never performs HTTP requests to fetch models or configuration. Every component is self-contained.
+## Crate Responsibilities
 
-3. **Air-Gappable Deployment**: Deploy the binary to any machine and it works immediately, even on isolated networks.
+### ttrustle-lib (Library)
 
-4. **Deterministic Behavior**: With all weights embedded, the engine produces identical outputs across different machines and times.
+The core domain logic crate:
 
-## Stateless Server Architecture
+- **Board representation**: Ternary state encoding (base-3)
+- **Game rules**: Valid states, legal moves, win detection
+- **MENACE system**: Matchbox structure, reinforcement learning
+- **GameScanner**: Pure domain rules for verification
 
-The **ttserver** component maintains a strictly stateless design:
-
-- **No Session State**: No user sessions or game state are persisted on the server
-- **Shared Model Pool**: Model weights are loaded once at startup and shared across threads
-- **Read-Only API**: The server never modifies weights or configuration at runtime
-- **Scale-Friendly**: Add more server instances behind a load balancer without coordination overhead
-- **Fast Startup**: On each restart, only the embedded weights need to be deserialized
-
-## API & Network Contract
-The API between `ttweb` and `ttserver` is stateless, avoiding session-locking overhead.
-
-**Move Request (POST /api/move)**  
-JSON body:
-```json
-{
-  "current_state": 163,
-  "brain_tier": 4
+```rust
+pub trait GameScanner {
+    fn is_valid_state(&self, state: u32) -> bool;
+    fn legal_moves(&self, state: u32) -> Vec<u8>;
+    fn outcome(&self, state: u32, move_idx: u8) -> Result<Outcome>;
 }
 ```
 
-**Move Response (200 OK)**  
-JSON body:
-```json
-{
-  "next_move": 4
+### ttrustle (Binary)
+
+The CLI interface crate:
+
+- **Offline simulation**: Run games without network
+- **Checkpoint generation**: Generate training artifacts
+- **Brain listing**: Show available pre-trained brains
+
+```bash
+# List available brains
+ttrustle list-brains
+
+# Play against a specific brain
+ttrustle play --brain standard
+
+# Generate training checkpoint
+ttrustle train-checkpoint --name my-brain
+```
+
+### tttraining (Binary - New)
+
+The training crate:
+
+- **Simulation runner**: Run MENACE against itself/random
+- **Weight adjustment**: Apply reinforcement after each game
+- **Artifact export**: Generate base64-encoded weights
+- **Progress tracking**: Show training progress and statistics
+
+```bash
+# Train a new brain
+tttraining train --name new-brain --iterations 100000
+
+# Train with specific opponent
+tttraining train --name new-brain --iterations 100000 --vs ai --brain 10
+```
+
+### ttserver (Binary)
+
+The API server crate:
+
+- **Stateless routing**: Each request is independent
+- **Model pool**: Pre-loaded weights shared across threads
+- **Rate limiting**: `tower-governor` protects against abuse
+- **CORS**: Configurable access control
+
+Endpoints:
+
+| Path | Method | Description |
+|------|--------|-------------|
+| `/api/move` | POST | Get AI's next move |
+| `/api/state` | GET | Get current state encoding |
+| `/api/brain` | GET | List available brains |
+| `/health` | GET | Health check |
+
+### ttui (Binary)
+
+The terminal UI crate:
+
+- **Game display**: Render board using Ratatui
+- **Input handling**: Keyboard controls
+- **Brain selection**: Choose AI tier
+- **Statistics**: Show game history and outcomes
+
+### ttgui (Binary)
+
+The desktop GUI crate:
+
+- **GTK rendering**: Native desktop window
+- **Game visualization**: Animated board states
+- **Settings**: Configure brain and preferences
+- **About**: Credits and documentation links
+
+## Data Flow
+
+### Game Flow
+
+```
+┌─────────┐     ┌─────────┐     ┌─────────┐     ┌─────────┐
+│ ttweb   │────▶│ttserver │────▶│ttrustle │────▶│  assets │
+│   UI    │     │  API    │     │  lib    │     │ weights │
+└─────────┘     └─────────┘     └─────────┘     └─────────┘
+```
+
+### Training Flow
+
+```
+┌─────────┐     ┌─────────┐     ┌─────────┐     ┌─────────┐
+│  ttrust │────▶│  tt     │────▶│tttraini │────▶│  assets │
+│         │     │  traini │     │   ng    │     │ weights │
+└─────────┘     └─────────┘     └─────────┘     └─────────┘
+```
+
+## Compile-Time Pruning
+
+The `build.rs` script prunes the game tree:
+
+```rust
+// Build script: reduce from 19,683 to 5,478 states
+fn prune_game_tree() {
+    let mut states: HashMap<u32, u32> = HashMap::new();
+    // Insert legal states only
+    for state in legal_states() {
+        states.insert(state, 1);
+    }
+    // Export as lookup table
+    write_lookup_table(&states);
 }
 ```
 
-## Security Hardening
-- **Edge Layer**: Everything is behind a reverse proxy (Cloudflare/Nginx) to scrub volumetric DDoS attacks and handle TLS termination.
-- **Payload Isolation**: Axum's body-parser middleware limits requests to a maximum of 2KB to prevent oversized payloads.
-- **Rate Limiting**: `tower-governor` throttles requests by IP using token-bucket algorithms.
-- **Client Integrity**: SvelteKit enforces strict CSP to minimize XSS vulnerabilities.
+## Security Considerations
+
+### API Layer
+
+- **Payload limits**: 2KB max request body
+- **Rate limiting**: 100 requests/minute per IP
+- **CORS policy**: Configurable via env vars
+
+### Server Configuration
+
+```toml
+# ttserver/Cargo.toml
+[dependencies]
+tower-governor = "0.6"     # Rate limiting
+axum = { version = "0.7", features = ["cors"] }
+```
+
+## Offline-First Design
+
+All components work without network:
+
+1. **Baked weights**: No runtime downloads
+2. **No external lookups**: Self-contained operation
+3. **Deterministic output**: Same input = same output
+
+## State Diagram
+
+```
+                    ┌─────────────┐
+                    │   Startup   │
+                    └──────┬──────┘
+                           │
+        ┌──────────────────┼──────────────────┐
+        │                  │                  │
+        ▼                  ▼                  ▼
+   ┌─────────┐      ┌─────────┐        ┌─────────┐
+   │  Play   │      │ Train   │        │  Serve  │
+   └────┬────┘      └────┬────┘        └────┬────┘
+        │                │                  │
+        └────────────────┼──────────────────┘
+                         │
+                         ▼
+                   ┌─────────┐
+                   │  Game   │
+                   │  Loop   │
+                   └─────────┘
+```
+
+## ASCII Diagrams
+
+### Board Representation
+
+```
+  8 ┌───┬───┬───┐
+    │ A │ B │ C │
+  7 ├───┼───┼───┤
+    │ D │ E │ F │
+  6 ├───┼───┼───┤
+    │ G │ H │ I │
+  5 └───┴───┴───┘
+    1   2   3
+```
+
+Ternary encoding (flattened):
+
+```
+Index:  0  1  2  3  4  5  6  7  8
+Value: X  O  -  -  X  O  -  X  O
+State:  1  2  0  0  1  2  0  1  2
+Encoded: 120012012 (base 3)
+Decimal:   4257 (state index)
+```
+
+### Memory Layout
+
+```
+┌────────────────────────────────────────┐
+│  Matchbox[5478]                        │
+│   ┌──────────────────────────────────┐ │
+│   │  State 0: [(0,5), (1,5), (2,5)] │ │
+│   │  State 1: [(0,6), (1,5), (2,5)] │ │
+│   │  ...                             │ │
+│   └──────────────────────────────────┘ │
+└────────────────────────────────────────┘
+```
