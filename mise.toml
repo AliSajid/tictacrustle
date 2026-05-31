@@ -8,7 +8,7 @@
 "cargo:cargo-audit" = "0.22.0"
 "cargo:cargo-llvm-cov" = "0.6.16"
 "cargo:cargo-nextest" = "0.9.116"
-"cargo:mdbook" = "0.4.43"
+"cargo:mdbook" = "0.5.0"
 "cargo:mdbook-inline-highlighting" = "0.1.0"
 "cargo:bacon" = "3.7.0"
 "cargo:cargo-about" = "0.6.6"
