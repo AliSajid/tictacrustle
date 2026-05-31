@@ -11,7 +11,7 @@
 "cargo:mdbook" = "0.5.0"
 "cargo:mdbook-inline-highlighting" = "0.1.0"
 "cargo:bacon" = "3.7.0"
-"cargo:cargo-about" = "0.6.6"
+"cargo:cargo-about" = "0.9.0"
 "cargo:cargo-toml-lint" = "0.1.1"
 "cargo:cross" = "0.2.5"
 "cargo:mdbook-plantuml" = "0.8.0"
