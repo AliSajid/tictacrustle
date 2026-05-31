@@ -6,8 +6,8 @@
 use std::cmp::{Eq, PartialEq};
 use std::fmt::{self, Display, Formatter};
 
-use crate::square_value::SquareValue;
 use crate::Symbol;
+use crate::square_value::SquareValue;
 
 /// A single square on the Tic Tac Toe board.
 ///
@@ -130,22 +130,22 @@ mod tests {
     #[test]
     fn test_set_x() {
         let mut square = Square::new();
-        square.set_x();
+        let square = square.set_x();
         assert_eq!(square.get_value(), SquareValue::X);
     }
 
     #[test]
     fn test_set_o() {
         let mut square = Square::new();
-        square.set_o();
+        let square = square.set_o();
         assert_eq!(square.get_value(), SquareValue::O);
     }
 
     #[test]
     fn test_set_empty() {
         let mut square = Square::new();
-        square.set_x();
-        square.set_empty();
+        let square = square.set_x();
+        let square = square.set_empty();
         assert_eq!(square.get_value(), SquareValue::Empty);
     }
 

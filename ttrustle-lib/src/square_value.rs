@@ -3,8 +3,8 @@
 // SPDX-License-Identifier: Apache-2.0
 // SPDX-License-Identifier: MIT
 
-use std::fmt;
 use std::cmp::{Eq, PartialEq};
+use std::fmt;
 
 /// The possible values for a square on the board.
 ///
@@ -21,12 +21,12 @@ pub enum SquareValue {
 
 impl PartialEq for SquareValue {
     fn eq(&self, other: &Self) -> bool {
-        match (self, other) {
-            (SquareValue::X, SquareValue::X) => true,
-            (SquareValue::O, SquareValue::O) => true,
-            (SquareValue::Empty, SquareValue::Empty) => true,
-            _ => false,
-        }
+        matches!(
+            (self, other),
+            (SquareValue::X, SquareValue::X)
+                | (SquareValue::O, SquareValue::O)
+                | (SquareValue::Empty, SquareValue::Empty)
+        )
     }
 }
 
