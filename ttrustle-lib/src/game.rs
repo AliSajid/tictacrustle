@@ -33,8 +33,8 @@ impl Game {
         Self {
             player_x: current_player,
             player_o: other_player,
-            board:    Board::new(),
-            winner:   None,
+            board: Board::new(),
+            winner: None,
         }
     }
 
