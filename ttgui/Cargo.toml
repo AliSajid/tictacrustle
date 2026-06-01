@@ -32,7 +32,7 @@ ttrustle-lib = { path = "../ttrustle-lib" }
 
 # GUI dependencies
 egui = "0.34"
-eframe = "0.30"
+eframe = "0.34"
 
 [lints]
 rust.missing_docs = "allow"
