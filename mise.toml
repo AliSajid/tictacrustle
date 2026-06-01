@@ -19,7 +19,7 @@
 "cargo:cargo-deny" = "0.18.9"
 node = "22.22.3"
 "npm:conventional-changelog-conventionalcommits" = "8.0.0"
-"npm:semantic-release" = "24.2.9"
+"npm:semantic-release" = "25.0.3"
 "npm:semantic-release-export-data" = "1.1.0"
 "pipx:pre-commit" = "4.0.1"
 "pipx:texthooks" = "0.7.1"
