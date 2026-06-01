@@ -16,7 +16,7 @@
 "cargo:cross" = "0.2.5"
 "cargo:mdbook-plantuml" = "0.8.0"
 "cargo:semantic-release-cargo" = "2.4.0"
-"cargo:cargo-deny" = "0.18.9"
+"cargo:cargo-deny" = "0.19.0"
 node = "22.22.3"
 "npm:conventional-changelog-conventionalcommits" = "8.0.0"
 "npm:semantic-release" = "24.2.9"
