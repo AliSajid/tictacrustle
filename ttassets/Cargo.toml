@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: MIT
 
 [package]
-name = "tttui"
+name = "ttassets"
 authors.workspace = true
 categories.workspace = true
 description.workspace = true
@@ -18,11 +18,11 @@ repository.workspace = true
 version.workspace = true
 rust-version.workspace = true
 
-# Per-crate settings for tttui
+# Per-crate settings for ttassets
 # Terminal UI using crossterm/ratatui
 
 [[bin]]
-name = "tttui"
+name = "ttassets"
 path = "src/main.rs"
 
 [dependencies]

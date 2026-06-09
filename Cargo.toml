@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: MIT
 
 [workspace]
-resolver = "2"
-members = ["ttrustle-lib", "ttrustle", "tttui", "ttgui", "ttserver"]
+resolver = "3"
+members = ["ttrustle-lib", "ttrustle", "tttui", "ttgui", "ttserver", "ttassets"]
 
 [workspace.package]
 authors = ["Ali Sajid Imami <395482+AliSajid@users.noreply.github.com>"]

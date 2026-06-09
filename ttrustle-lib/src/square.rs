@@ -12,18 +12,10 @@ use crate::square_value::SquareValue;
 /// A single square on the Tic Tac Toe board.
 ///
 /// Each square can be empty, contain an X, or contain an O.
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub struct Square {
     value: SquareValue,
 }
-
-impl PartialEq for Square {
-    fn eq(&self, other: &Self) -> bool {
-        self.value == other.value
-    }
-}
-
-impl Eq for Square {}
 
 impl Display for Square {
     fn fmt(&self, f: &mut Formatter) -> fmt::Result {

@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 // SPDX-License-Identifier: MIT
 
-use crate::{Board, GameError, Player, Symbol};
+use crate::{Board, Player, Symbol};
 
 /// Represents a complete game of Tic Tac Toe between two players.
 ///
@@ -41,7 +41,7 @@ impl Game {
     /// Plays a move to the center of the board.
     ///
     /// This is a stub method and should be expanded for interactive gameplay.
-    pub const fn play(&mut self) -> Result<(), GameError> {
+    pub const fn play(&mut self) -> Result<(), ()> {
         let center = self.board.get_square_mut(2, 2);
         let _ = center.set_x();
         Ok(())
