@@ -4500,6 +4500,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "ttassets"
+version = "1.0.0-next.2"
+dependencies = [
+ "anyhow",
+ "crossterm",
+ "ratatui",
+ "ttrustle-lib",
+]
+
+[[package]]
 name = "ttf-parser"
 version = "0.25.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"

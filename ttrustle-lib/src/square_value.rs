@@ -3,13 +3,12 @@
 // SPDX-License-Identifier: Apache-2.0
 // SPDX-License-Identifier: MIT
 
-use std::cmp::{Eq, PartialEq};
 use std::fmt;
 
 /// The possible values for a square on the board.
 ///
 /// This enum represents the state of a single square: empty, X, or O.
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum SquareValue {
     /// An empty square with no piece.
     Empty,
@@ -18,19 +17,6 @@ pub enum SquareValue {
     /// A square occupied by O.
     O,
 }
-
-impl PartialEq for SquareValue {
-    fn eq(&self, other: &Self) -> bool {
-        matches!(
-            (self, other),
-            (SquareValue::X, SquareValue::X)
-                | (SquareValue::O, SquareValue::O)
-                | (SquareValue::Empty, SquareValue::Empty)
-        )
-    }
-}
-
-impl Eq for SquareValue {}
 
 impl fmt::Display for SquareValue {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
