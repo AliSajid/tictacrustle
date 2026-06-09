@@ -3,8 +3,8 @@
 // SPDX-License-Identifier: Apache-2.0
 // SPDX-License-Identifier: MIT
 
-amends "package://github.com/jdx/hk/releases/download/v1.35.0/hk@1.35.0#/Config.pkl"
-import "package://github.com/jdx/hk/releases/download/v1.35.0/hk@1.35.0#/Builtins.pkl"
+amends "package://github.com/jdx/hk/releases/download/v1.47.0/hk@1.47.0#/Config.pkl"
+import "package://github.com/jdx/hk/releases/download/v1.47.0/hk@1.47.0#/Builtins.pkl"
 
 // ============================================================================
 // FILE FORMAT & WHITESPACE LINTERS
@@ -32,11 +32,8 @@ local structured_data_linters = new Mapping<String, Step> {
   ["check-toml"] = (Builtins.taplo) {
     exclude = Regex(#"^\.hk/"#)
   }
-  ["yamlfmt"] {
-    glob = List("**/*.yml", "**/*.yaml")
+  ["yamlfmt"] = (Builtins.yamlfmt) {
     exclude = Regex(#"^\.hk/"#)
-    check = "yamlfmt -lint {{files}}"
-    fix = "yamlfmt {{files}}"
   }
 }
 
@@ -75,12 +72,6 @@ local security_linters = new Mapping<String, Step> {
     exclude = Regex(#"^\.hk/"#)
     check = "gitleaks detect --no-banner --baseline-path .gitleaks_baseline.json --log-level warn"
   }
-
-  // Note: detect-secrets not available as builtin, requires vendored repo
-  // ["detect-secrets"] {
-  //     exclude = Regex(#"meta/licenses.*|^\.hk/"#)
-  //     check = "detect-secrets scan --baseline .secrets.baseline"
-  // }
 }
 
 // ============================================================================
@@ -90,11 +81,10 @@ local encoding_linters = new Mapping<String, Step> {
   ["fix-smart-quotes"] = (Builtins.fix_smart_quotes) {
     exclude = Regex(#"^\.hk/"#)
   }
-  ["check-byte-order-marker"] = (Builtins.check_byte_order_marker) {
+  ["byte-order-marker"] = (Builtins.byte_order_marker) {
     exclude = Regex(#"^\.hk/"#)
   }
 
-  // Note: The following are not available as builtins
   ["fix-ligatures"] {
     glob = List("**/*")
     exclude = Regex(#"^\.hk/"#)
@@ -157,22 +147,13 @@ local config_validation_linters = new Mapping<String, Step> {
 // ============================================================================
 local rust_linters = new Mapping<String, Step> {
   // Rust format
-  ["fmt"] {
-    glob = List("**/*.rs")
-    exclude = Regex(#"^\.hk/"#)
-    check = "cargo fmt --all --check"
-    fix = "cargo fmt --all"
-  }
+  ["fmt"] = Builtins.cargo_fmt
   // Run clippy linter
-  ["clippy"] {
-    glob = List("**/*.rs")
-    exclude = Regex(#"^\.hk/"#)
+  ["clippy"] = (Builtins.cargo_clippy) {
     check = "cargo clippy --all-targets --all-features -- -D warnings"
   }
   // Run cargo check
-  ["cargo-check"] {
-    glob = List("**/*.rs")
-    exclude = Regex(#"^\.hk/"#)
+  ["cargo-check"] = (Builtins.cargo_check) {
     check = "cargo check --all-targets --all-features"
   }
   // Check Cargo.toml

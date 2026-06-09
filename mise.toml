@@ -25,6 +25,13 @@ node = "24.16.0"
 "pipx:texthooks" = "0.7.1"
 taplo = "0.10.0"
 prettier = "3.8.3"
+hk = "1.47.0"
+pkl = "0.31.1"
+"pipx:reuse" = "6.2.0"
+gitleaks = "8.30.1"
+cocogitto = "7.0.0"
+vale = "3.14.2"
+yamllint = "1.38.0"
 
 [env]
 # Workspace-level environment variables
